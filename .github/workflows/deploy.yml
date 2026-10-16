@@ -1,0 +1,46 @@
+# Uploads the website to the live server over FTPS.
+# Run it by hand: Actions tab → "Deploy website" → Run workflow.
+# It doesn't run on push yet, so nothing goes live until someone runs it.
+# Once the site is approved, add `push: branches: [main]` under `on:` to
+# deploy every change to main.
+#
+# Required repo secrets (Settings → Secrets and variables → Actions):
+#   FTP_SERVER    e.g. ftp.ibsolutionsglobal.com
+#   FTP_USERNAME
+#   FTP_PASSWORD
+# Optional repo variable:
+#   FTP_SERVER_DIR  the web root as the FTP account sees it, ending in "/".
+#                   Defaults to "./" (an account whose root is the web root).
+#                   Use "public_html/" for the main cPanel account.
+#
+# Only index.html and assets/ are uploaded. Files already on the server
+# that this workflow didn't upload are never deleted. The first run
+# overwrites the old index.html, so back it up from cPanel first.
+name: Deploy website
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-website
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
+          # Excluded paths are never uploaded or deleted on the server
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            README.md
