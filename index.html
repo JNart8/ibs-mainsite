@@ -20,8 +20,22 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Lato:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Lato:wght@700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+
+<!-- Turns on the animations, and the preloader on the first page view of a visit -->
+<script>
+(function (r) {
+  r.classList.add('js');
+  try {
+    if (!sessionStorage.getItem('ibs-seen') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      sessionStorage.setItem('ibs-seen', '1');
+      r.classList.add('is-loading');
+      setTimeout(function () { r.classList.remove('is-loading'); }, 4000);
+    }
+  } catch (e) {}
+})(document.documentElement);
+</script>
 
 <script type="application/ld+json">
 {
@@ -37,41 +51,102 @@
 </script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-chev" viewBox="0 0 16 16"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M12 1.5c6.2 4.2 8.6 10.4 5.6 16.3C16 21 13.9 22.4 12 22.5c-1.9-.1-4-1.5-5.6-4.7C3.4 11.9 5.8 5.7 12 1.5Z" fill="currentColor"/></symbol>
+  <symbol id="i-close" viewBox="0 0 16 16"><path d="m4 4 8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-up" viewBox="0 0 16 16"><path d="M8 13V3.5M3.5 8 8 3.5 12.5 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
 <a class="skip" href="#main">Skip to content</a>
 
+<!-- First view of a visit: logo and a count to 100 -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-brand">
+    <img src="assets/img/ibs-logo.png" alt="" width="56" height="76">
+    <span>IB Solutions <em>Global</em></span>
+  </div>
+  <div class="loader-count">
+    <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/><circle class="loader-ring" cx="50" cy="50" r="45" pathLength="100"/></svg>
+    <span><b>0</b><small>%</small></span>
+  </div>
+  <p class="loader-line">Business Management · Haulage · Custom software</p>
+</div>
+
 <header class="site-header" id="top">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="IB Solutions Global, home">
-      <img src="assets/img/ibs-logo.png" alt="" width="28" height="38">
-      <span>IB Solutions<small>Global</small></span>
-    </a>
-    <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="#business">Business Management</a>
-      <a href="#haulage">Haulage</a>
-      <a href="#plans">Plans</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn btn-primary" href="#tour">Take the tour</a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <a class="brand" href="#top" aria-label="IB Solutions Global, home">
+    <img src="assets/img/ibs-logo.png" alt="" width="28" height="38">
+    <span>IB Solutions<small>Global</small></span>
+  </a>
+  <nav class="nav-inline" aria-label="Main">
+    <a href="#business">Business Management</a>
+    <a href="#tours">Tours</a>
+    <a href="#haulage">Haulage</a>
+    <a href="#plans">Plans</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <a class="pill pill-light pill-sm hide-sm" href="#tour"><span class="pill-label">Take the tour</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="menu-word"><span>Menu</span><span>Close</span></span>
+      <span class="menu-dots" aria-hidden="true"><i></i><i></i></span>
+    </button>
   </div>
 </header>
+
+<!-- Full-screen menu -->
+<div class="menu" id="menu" aria-label="Menu" hidden>
+  <div class="menu-glow" aria-hidden="true"></div>
+  <div class="menu-inner">
+    <nav aria-label="Main">
+      <ol class="menu-links">
+        <li><a href="#top"><span>Home</span></a></li>
+        <li><a href="#business"><span>Business Management</span></a></li>
+        <li><a href="#tours"><span>Product tours</span></a></li>
+        <li><a href="#haulage"><span>Haulage</span></a></li>
+        <li><a href="#plans"><span>Plans</span></a></li>
+        <li><a href="#contact"><span>Contact</span></a></li>
+      </ol>
+    </nav>
+    <div class="menu-aside">
+      <p class="menu-label">Email us</p>
+      <a class="menu-mail" href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a>
+      <p class="menu-label">Try it</p>
+      <a href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Business%20Management%20demo%20access&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20try%20the%20IBS%20Business%20Management%20demo.%0A%0ABusiness%20name%3A%20%0AWhat%20we%20sell%3A%20%0ANumber%20of%20branches%3A%20%0A">Request demo access</a>
+      <a href="https://haulage.ibsolutionsglobal.com/" target="_blank" rel="noopener">IBS Haulage sign-in</a>
+      <p class="menu-label">Office</p>
+      <p>Accra, Ghana</p>
+    </div>
+  </div>
+</div>
 
 <main id="main">
 
   <!-- ── Hero ─────────────────────────────────────────── -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap">
-      <div>
-        <h1 id="hero-title">Know what you sold, what's on the shelf and who owes you.</h1>
-        <p class="lede">IBS Business Management runs the whole business, not just the till. Ring up sales, take mobile money, sell on credit, buy from suppliers, track stock down to the expiry date, and see your profit and tax. One branch or ten, from any browser.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#tour">Take the 2-minute tour</a>
-          <a class="btn btn-plain" href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Business%20Management%20demo%20access&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20try%20the%20IBS%20Business%20Management%20demo.%0A%0ABusiness%20name%3A%20%0AWhat%20we%20sell%3A%20%0ANumber%20of%20branches%3A%20%0A">Request demo access</a>
-        </div>
-        <p class="note muted">Works on a laptop, tablet or phone. Nothing to install.</p>
-      </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-glow"></div>
+      <svg class="leaf-glass leaf-glass-1" viewBox="0 0 400 600"><path d="M200 10C330 120 390 280 330 430 295 520 245 575 200 590 155 575 105 520 70 430 10 280 70 120 200 10Z"/></svg>
+      <svg class="leaf-glass leaf-glass-2" viewBox="0 0 400 600"><path d="M200 10C330 120 390 280 330 430 295 520 245 575 200 590 155 575 105 520 70 430 10 280 70 120 200 10Z"/></svg>
+      <svg class="leaf-glass leaf-glass-3" viewBox="0 0 400 600"><path d="M200 10C330 120 390 280 330 430 295 520 245 575 200 590 155 575 105 520 70 430 10 280 70 120 200 10Z"/></svg>
+    </div>
+
+    <div class="hero-grid">
+      <h1 id="hero-title" class="hero-title" data-split>Know what you sold, what's on the shelf and who <em>owes you.</em></h1>
 
       <figure class="receipt-stage" aria-label="A receipt printed by IBS Business Management">
+        <!-- the leaf from the logo, large, behind the receipt -->
+        <svg class="leaf-big" viewBox="0 0 400 600" aria-hidden="true">
+          <defs>
+            <linearGradient id="leaf-fill" x1="0" y1="0" x2=".35" y2="1">
+              <stop offset="0" stop-color="#6f8fff"/>
+              <stop offset=".55" stop-color="#3556c4"/>
+              <stop offset="1" stop-color="#27418b"/>
+            </linearGradient>
+          </defs>
+          <path d="M200 10C330 120 390 280 330 430 295 520 245 575 200 590 155 575 105 520 70 430 10 280 70 120 200 10Z" fill="url(#leaf-fill)"/>
+          <path d="M200 590V140M200 300 282 222M200 410 300 330M200 360 112 280M200 470 104 398" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="7" stroke-linecap="round"/>
+        </svg>
         <div class="receipt" aria-hidden="true">
           <div class="head">
             <strong>SUNRISE PHARMACY</strong>
@@ -93,150 +168,274 @@
         </div>
         <figcaption>
           <ul class="receipt-notes">
+            <li class="n-tin">Your TIN on every receipt, and your customer's when they have one.</li>
             <li class="n-tax">VAT worked out inside your prices, and added up for your monthly return.</li>
             <li class="n-paid">Mobile money lands in its own account balance, next to cash and bank.</li>
-            <li class="n-tin">Your TIN on every receipt, and your customer's when they have one.</li>
           </ul>
         </figcaption>
       </figure>
+
+      <div class="hero-foot">
+        <div class="facts">
+          <ul class="visually-hidden">
+            <li>2 products live: IBS Business Management and IBS Haulage</li>
+            <li>7 click-through product tours</li>
+            <li>3 plans to grow into</li>
+          </ul>
+          <div class="facts-show" aria-hidden="true">
+            <span class="facts-num"><b class="on">2</b><b>7</b><b>3</b></span>
+            <span class="facts-label"><b class="on">products live</b><b>click-through tours</b><b>plans to grow into</b></span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <p class="lede">IBS Business Management runs the whole business, not just the till. Sales, mobile money, credit, suppliers, stock down to the expiry date, profit and tax. One branch or ten, from any browser.</p>
+          <div class="actions">
+            <a class="pill pill-primary" href="#tour"><span class="pill-label">Take the 2-minute tour</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+            <a class="pill pill-outline" href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Business%20Management%20demo%20access&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20try%20the%20IBS%20Business%20Management%20demo.%0A%0ABusiness%20name%3A%20%0AWhat%20we%20sell%3A%20%0ANumber%20of%20branches%3A%20%0A"><span class="pill-label">Request demo access</span></a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ── Product tour (Supademo) ──────────────────────── -->
+  <!-- ── 2-minute tour (Supademo), opens out as it scrolls in ── -->
   <section class="tour" id="tour" aria-labelledby="tour-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="tour-title">Take the 2-minute tour</h2>
-        <p class="lede">Click through a real sale, a supplier delivery and the month-end reports at our demo pharmacy. No sign-up, nothing to install.</p>
+    <div class="wrap split-head">
+      <div>
+        <p class="eyebrow" data-reveal>The product tour</p>
+        <h2 id="tour-title" data-split>Take the <em>2-minute</em> tour</h2>
       </div>
+      <p class="lede" data-reveal>Click through a real sale, a supplier delivery and the month-end reports at our demo pharmacy. No sign-up, nothing to install.</p>
+    </div>
+    <div class="tour-stage">
       <div class="tour-frame">
         <iframe src="https://app.supademo.com/embed/cmvblpbd3026jqmcq2dmvz7dk?embed_v=2&amp;utm_source=embed" loading="lazy" title="IBS Business Management: 2-minute tour" allow="clipboard-write" allowfullscreen></iframe>
       </div>
-      <p class="tour-more muted">Want more detail? <a href="https://app.supademo.com/showcase/cmvbob0da02c5ng21wubv7aj0" target="_blank" rel="noopener">See each feature in its own short tour</a>, or look for “Click through it” below.</p>
+    </div>
+    <p class="wrap tour-more" data-reveal>Prefer one feature at a time? <a href="#tours">Pick one of six short tours</a>.</p>
+  </section>
+
+  <!-- ── Who we are: the words fill in as you scroll ──── -->
+  <section class="intro" aria-labelledby="intro-title">
+    <div class="wrap">
+      <h2 class="eyebrow" id="intro-title" data-reveal>Who we are</h2>
+      <p class="statement" data-fill>IB Solutions Global builds business software in Accra. IBS Business Management runs your sales, stock, credit and tax. IBS Haulage runs your trips, trucks and invoices. <em>We set it up, train your team and stay with you.</em></p>
+      <div class="actions" data-reveal>
+        <a class="pill pill-outline" href="#tours"><span class="pill-label">See the feature tours</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+        <a class="pill pill-outline" href="#plans"><span class="pill-label">Compare the plans</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+      </div>
     </div>
   </section>
 
-  <!-- ── A day with IBS Business Management ───────────── -->
-  <section class="band" id="business" aria-labelledby="day-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="day-title">A day in your business, with IBS Business Management</h2>
-        <p class="lede">From opening up to the end of the month, the same system follows every cedi and every carton.</p>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">A day in <em>your business</em></span>
+      <svg class="marquee-sep"><use href="#i-leaf"/></svg>
+      <span class="marquee-item">from the till to the <em>tax return</em></span>
+      <svg class="marquee-sep"><use href="#i-leaf"/></svg>
+    </div>
+  </div>
+
+  <!-- ── A day in your business: a sideways track, pinned while you scroll ── -->
+  <section class="day" id="business" aria-labelledby="day-title">
+    <div class="day-pin">
+      <div class="day-track">
+        <div class="day-intro">
+          <div>
+            <p class="eyebrow">IBS Business Management</p>
+            <h2 id="day-title">A day in your business, <em>with IBS</em></h2>
+          </div>
+          <p>From opening up to the end of the month, the same system follows every cedi and every carton.</p>
+          <p class="keep-scrolling" aria-hidden="true"><span class="spin"></span><span class="hint-pin">Keep scrolling</span><span class="hint-swipe">Swipe through the day</span></p>
+        </div>
+
+        <ol class="day-list">
+          <li class="day-card">
+            <img src="assets/img/tours/dashboard.jpg" alt="" width="1000" height="619" loading="lazy">
+            <div class="day-body">
+              <time>7:45</time>
+              <h3>Open the dashboard</h3>
+              <p>Low stock, batches close to expiry and customers who are overdue are waiting at the top, before the first sale.</p>
+              <a class="pill pill-glass pill-sm" href="https://app.supademo.com/demo/cmvbo15s701dyng21lxe8nj4b" target="_blank" rel="noopener" data-tour="cmvbo15s701dyng21lxe8nj4b" data-title="Your dashboard"><span class="pill-label">Click through it</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+            </div>
+          </li>
+          <li class="day-card">
+            <img src="assets/img/tours/till.jpg" alt="" width="1000" height="619" loading="lazy">
+            <div class="day-body">
+              <time>10:30</time>
+              <h3>Sell at the counter</h3>
+              <p>Scan or search, then take cash, mobile money, bank or credit. Account customers can't go past their credit limit, and money they paid in advance is used first.</p>
+              <a class="pill pill-glass pill-sm" href="https://app.supademo.com/demo/cmvbo17xl01iong21nn1f0uqf" target="_blank" rel="noopener" data-tour="cmvbo17xl01iong21nn1f0uqf" data-title="Sell at the till"><span class="pill-label">Click through it</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+            </div>
+          </li>
+          <li class="day-card">
+            <img src="assets/img/tours/restock.jpg" alt="" width="1000" height="619" loading="lazy">
+            <div class="day-body">
+              <time>13:00</time>
+              <h3>Receive a delivery</h3>
+              <p>Record the supplier's invoice with last time's cost already filled in. Batch numbers and expiry dates go in with the stock, and your average cost updates itself.</p>
+              <a class="pill pill-glass pill-sm" href="https://app.supademo.com/demo/cmvbo1a0401neng216h0c788i" target="_blank" rel="noopener" data-tour="cmvbo1a0401neng216h0c788i" data-title="Restock with batch and expiry"><span class="pill-label">Click through it</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+            </div>
+          </li>
+          <li class="day-card day-card-plain">
+            <svg class="day-leaf" aria-hidden="true"><use href="#i-leaf"/></svg>
+            <div class="day-body">
+              <time>18:00</time>
+              <h3>Close the till</h3>
+              <p>See today's sales by cash, mobile money and bank, what each account holds, and what is still owed.</p>
+            </div>
+          </li>
+          <li class="day-card">
+            <img src="assets/img/tours/reports.jpg" alt="" width="1000" height="619" loading="lazy">
+            <div class="day-body">
+              <time>Month end</time>
+              <h3>Know your numbers</h3>
+              <p>Profit and loss, expenses, the tax report for your VAT return, who owes you and who you owe, and the stock that isn't moving.</p>
+              <a class="pill pill-glass pill-sm" href="https://app.supademo.com/demo/cmvbo1dz401wung21k90qn9fg" target="_blank" rel="noopener" data-tour="cmvbo1dz401wung21k90qn9fg" data-title="Profit and tax reports"><span class="pill-label">Click through it</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+            </div>
+          </li>
+        </ol>
+
+        <div class="day-end">
+          <h3>Every tour in <em>one place</em></h3>
+          <p>The 2-minute tour and six feature tours, together on one page.</p>
+          <a class="pill pill-light" href="https://app.supademo.com/showcase/cmvbob0da02c5ng21wubv7aj0" target="_blank" rel="noopener"><span class="pill-label">Open the showcase</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+        </div>
       </div>
-      <ol class="day">
-        <li>
-          <time>7:45</time>
-          <h3>Open the dashboard</h3>
-          <p>Low stock, batches close to expiry and customers who are overdue are waiting at the top, before the first sale. <a class="try" href="https://app.supademo.com/demo/cmvbo15s701dyng21lxe8nj4b" target="_blank" rel="noopener">Click through it</a></p>
-        </li>
-        <li>
-          <time>10:30</time>
-          <h3>Sell at the counter</h3>
-          <p>Scan or search, then take cash, mobile money, bank or credit. Account customers can't go past their credit limit, and money they paid in advance is used first. <a class="try" href="https://app.supademo.com/demo/cmvbo17xl01iong21nn1f0uqf" target="_blank" rel="noopener">Click through it</a></p>
-        </li>
-        <li>
-          <time>13:00</time>
-          <h3>Receive a delivery</h3>
-          <p>Record the supplier's invoice with last time's cost already filled in. Batch numbers and expiry dates go in with the stock, and your average cost updates itself. <a class="try" href="https://app.supademo.com/demo/cmvbo1a0401neng216h0c788i" target="_blank" rel="noopener">Click through it</a></p>
-        </li>
-        <li>
-          <time>18:00</time>
-          <h3>Close the till</h3>
-          <p>See today's sales by cash, mobile money and bank, what each account holds, and what is still owed.</p>
-        </li>
-        <li>
-          <time>Month end</time>
-          <h3>Know your numbers</h3>
-          <p>Profit and loss, expenses, the tax report for your VAT return, who owes you and who you owe, and the stock that isn't moving. <a class="try" href="https://app.supademo.com/demo/cmvbo1dz401wung21k90qn9fg" target="_blank" rel="noopener">Click through it</a></p>
-        </li>
-      </ol>
+    </div>
+  </section>
+
+  <!-- ── Feature tours: several Supademo embeds in one player ── -->
+  <section class="tours theme-dark" id="tours" aria-labelledby="tours-title" data-header="dark">
+    <div class="wrap">
+      <div class="split-head">
+        <div>
+          <p class="eyebrow" data-reveal>Feature tours</p>
+          <h2 id="tours-title" data-split>Every feature, its own <em>short</em> tour</h2>
+        </div>
+        <p class="lede" data-reveal>Pick any one, in any order. Each takes about a minute, with a voice-over, at the same demo pharmacy.</p>
+      </div>
+
+      <div class="player">
+        <ol class="player-list">
+          <li><a class="player-item" aria-current="true" href="https://app.supademo.com/demo/cmvbo15s701dyng21lxe8nj4b" target="_blank" rel="noopener" data-tour="cmvbo15s701dyng21lxe8nj4b" data-title="Your dashboard"><span class="player-num">01</span><span class="player-name">Your dashboard</span><span class="player-steps">6 steps</span></a></li>
+          <li><a class="player-item" href="https://app.supademo.com/demo/cmvbo17xl01iong21nn1f0uqf" target="_blank" rel="noopener" data-tour="cmvbo17xl01iong21nn1f0uqf" data-title="Sell at the till"><span class="player-num">02</span><span class="player-name">Sell at the till</span><span class="player-steps">13 steps</span></a></li>
+          <li><a class="player-item" href="https://app.supademo.com/demo/cmvbo1a0401neng216h0c788i" target="_blank" rel="noopener" data-tour="cmvbo1a0401neng216h0c788i" data-title="Restock with batch and expiry"><span class="player-num">03</span><span class="player-name">Restock with batch and expiry</span><span class="player-steps">12 steps</span></a></li>
+          <li><a class="player-item" href="https://app.supademo.com/demo/cmvbo1bxc01s4ng21oltuy87i" target="_blank" rel="noopener" data-tour="cmvbo1bxc01s4ng21oltuy87i" data-title="Customer credit and statements"><span class="player-num">04</span><span class="player-name">Customer credit and statements</span><span class="player-steps">7 steps</span></a></li>
+          <li><a class="player-item" href="https://app.supademo.com/demo/cmvbo1dz401wung21k90qn9fg" target="_blank" rel="noopener" data-tour="cmvbo1dz401wung21k90qn9fg" data-title="Profit and tax reports"><span class="player-num">05</span><span class="player-name">Profit and tax reports</span><span class="player-steps">8 steps</span></a></li>
+          <li><a class="player-item" href="https://app.supademo.com/demo/cmvbo1g1r021kng21e146dchm" target="_blank" rel="noopener" data-tour="cmvbo1g1r021kng21e146dchm" data-title="Branches and audit trail"><span class="player-num">06</span><span class="player-name">Branches and audit trail</span><span class="player-steps">6 steps</span></a></li>
+        </ol>
+
+        <div class="player-screen">
+          <div class="player-frame">
+            <iframe src="https://app.supademo.com/embed/cmvbo15s701dyng21lxe8nj4b?embed_v=2&amp;utm_source=embed" loading="lazy" title="Feature tour: Your dashboard" allow="clipboard-write" allowfullscreen></iframe>
+          </div>
+          <p class="player-caption" aria-live="polite">Now showing: <strong>Your dashboard</strong></p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ── Who it's for ─────────────────────────────────── -->
-  <section id="who" aria-labelledby="who-title">
+  <section class="who" id="who" aria-labelledby="who-title">
     <div class="wrap">
-      <div class="section-head">
-        <h2 id="who-title">Made for how you trade</h2>
-      </div>
-      <div class="fits">
-        <div class="fit">
-          <h3>Pharmacies and chemical shops</h3>
-          <ul>
-            <li>Batch number and expiry date recorded on every delivery.</li>
-            <li>The till sells the earliest-expiring stock first, and can refuse expired stock.</li>
-            <li>An expiry report shows what to return to suppliers while you still can.</li>
-          </ul>
+      <div class="split-head">
+        <div>
+          <p class="eyebrow" data-reveal>Who it's for</p>
+          <h2 id="who-title" data-split>Made for how you <em>trade</em></h2>
         </div>
-        <div class="fit">
+      </div>
+      <ol class="trades">
+        <li class="trade" data-reveal>
+          <span class="trade-num">01</span>
+          <h3>Pharmacies and chemical shops</h3>
+          <div class="trade-body">
+            <ul>
+              <li>Batch number and expiry date recorded on every delivery.</li>
+              <li>The till sells the earliest-expiring stock first, and can refuse expired stock.</li>
+              <li>An expiry report shows what to return to suppliers while you still can.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="trade" data-reveal>
+          <span class="trade-num">02</span>
           <h3>Wholesalers and distributors</h3>
-          <div>
+          <div class="trade-body">
             <ul>
               <li>Credit limits, deposits and statements for every account customer.</li>
               <li>What you owe each supplier, and part-payments against it.</li>
               <li>Goods delivered straight from supplier to customer, with the truck and driver recorded.</li>
             </ul>
-            <p class="plan-note"><a class="try" href="https://app.supademo.com/demo/cmvbo1bxc01s4ng21oltuy87i" target="_blank" rel="noopener">Click through customer credit</a></p>
+            <p class="plan-note"><a class="try" href="https://app.supademo.com/demo/cmvbo1bxc01s4ng21oltuy87i" target="_blank" rel="noopener" data-tour="cmvbo1bxc01s4ng21oltuy87i" data-title="Customer credit and statements">Click through customer credit</a></p>
           </div>
-        </div>
-        <div class="fit">
+        </li>
+        <li class="trade" data-reveal>
+          <span class="trade-num">03</span>
           <h3>Shops and provisions stores</h3>
-          <ul>
-            <li>Quick counter sales by barcode or name, for walk-in and regular customers.</li>
-            <li>Low-stock alerts before the shelf runs empty.</li>
-            <li>Goods sold by weight or volume, not only by the piece.</li>
-          </ul>
-        </div>
-        <div class="fit">
+          <div class="trade-body">
+            <ul>
+              <li>Quick counter sales by barcode or name, for walk-in and regular customers.</li>
+              <li>Low-stock alerts before the shelf runs empty.</li>
+              <li>Goods sold by weight or volume, not only by the piece.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="trade" data-reveal>
+          <span class="trade-num">04</span>
           <h3>Businesses with more than one branch</h3>
-          <div>
+          <div class="trade-body">
             <ul>
               <li>Stock and cash kept per branch, and transfers between branches.</li>
               <li>Each cashier works at their own branch; owners see every branch from one login.</li>
               <li>Branch performance side by side.</li>
             </ul>
-            <p class="plan-note">On the Enterprise plan, or as an add-on to Growth. <a class="try" href="https://app.supademo.com/demo/cmvbo1g1r021kng21e146dchm" target="_blank" rel="noopener">Click through branches</a></p>
+            <p class="plan-note">On the Enterprise plan, or as an add-on to Growth. <a class="try" href="https://app.supademo.com/demo/cmvbo1g1r021kng21e146dchm" target="_blank" rel="noopener" data-tour="cmvbo1g1r021kng21e146dchm" data-title="Branches and audit trail">Click through branches</a></p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- ── Built for business here ──────────────────────── -->
-  <section class="band" aria-labelledby="local-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="local-title">Built in Accra, for business in Ghana</h2>
+  <!-- ── Built for business here: sticky heading, points light up ── -->
+  <section class="local theme-dark" aria-labelledby="local-title" data-header="dark">
+    <div class="wrap local-grid">
+      <div class="local-side">
+        <p class="eyebrow" data-reveal>Built here</p>
+        <h2 id="local-title" data-split>Built in Accra, for business in <em>Ghana</em></h2>
+        <div class="local-progress" aria-hidden="true"><i></i></div>
       </div>
-      <div class="local">
-        <div>
-          <h3>Cedis and mobile money</h3>
-          <p>Prices in GHS, and mobile money is a payment like cash, with its own balance you can check at any time.</p>
-        </div>
-        <div>
-          <h3>Tax handled properly</h3>
-          <p>Charge VAT inside your prices or on top. TINs print on receipts and goods-received notes, and the tax report totals what you charged and what you paid.</p>
-        </div>
-        <div>
-          <h3>You decide who does what</h3>
-          <p>Cashiers see the till; managers see the money. Every voided sale, edit and permission change is kept in an audit log.</p>
-        </div>
-        <div>
-          <h3>Your data, kept apart</h3>
-          <p>Each business runs on its own installation and database, never mixed with anyone else's.</p>
-        </div>
-      </div>
+      <ol class="local-list">
+        <li>
+          <p class="local-kicker">Cedis and <em>mobile money</em></p>
+          <p class="local-text" data-fill>Prices in GHS, and mobile money is a payment like cash, with its own balance you can check at any time.</p>
+        </li>
+        <li>
+          <p class="local-kicker">Tax handled <em>properly</em></p>
+          <p class="local-text" data-fill>Charge VAT inside your prices or on top. TINs print on receipts and goods-received notes, and the tax report totals what you charged and what you paid.</p>
+        </li>
+        <li>
+          <p class="local-kicker">You decide <em>who does what</em></p>
+          <p class="local-text" data-fill>Cashiers see the till; managers see the money. Every voided sale, edit and permission change is kept in an audit log.</p>
+        </li>
+        <li>
+          <p class="local-kicker">Your data, <em>kept apart</em></p>
+          <p class="local-text" data-fill>Each business runs on its own installation and database, never mixed with anyone else's.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
   <!-- ── Plans ────────────────────────────────────────── -->
-  <section id="plans" aria-labelledby="plans-title">
+  <section class="plans-section" id="plans" aria-labelledby="plans-title">
     <div class="wrap">
-      <div class="section-head">
-        <h2 id="plans-title">IBS Business Management plans</h2>
-        <p class="lede">Start with what you need today and move up when you open a second branch or grow the team.</p>
+      <div class="split-head">
+        <div>
+          <p class="eyebrow" data-reveal>Plans</p>
+          <h2 id="plans-title" data-split>IBS Business Management <em>plans</em></h2>
+        </div>
+        <p class="lede" data-reveal>Start with what you need today and move up when you open a second branch or grow the team.</p>
       </div>
-      <div class="plans-scroll" role="region" aria-labelledby="plans-title" tabindex="0">
+      <div class="plans-scroll" role="region" aria-labelledby="plans-title" tabindex="0" data-reveal>
         <table class="plans">
           <thead>
             <tr>
@@ -261,103 +460,147 @@
           </tbody>
         </table>
       </div>
-      <div class="plans-foot">
-        <a class="btn btn-primary" href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Business%20Management%20pricing">Ask for pricing</a>
+      <div class="plans-foot" data-reveal>
+        <a class="pill pill-primary" href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Business%20Management%20pricing"><span class="pill-label">Ask for pricing</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
         <span class="muted">We'll recommend a plan after seeing how you work.</span>
       </div>
     </div>
   </section>
 
   <!-- ── IBS Haulage ──────────────────────────────────── -->
-  <section class="band" id="haulage" aria-labelledby="haulage-title">
+  <section class="haulage theme-dark" id="haulage" aria-labelledby="haulage-title" data-header="dark">
+    <div class="marquee marquee-sm" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Requests</span><svg class="marquee-sep"><use href="#i-leaf"/></svg>
+        <span class="marquee-item">Quotes</span><svg class="marquee-sep"><use href="#i-leaf"/></svg>
+        <span class="marquee-item"><em>Trips</em></span><svg class="marquee-sep"><use href="#i-leaf"/></svg>
+        <span class="marquee-item">Trucks and drivers</span><svg class="marquee-sep"><use href="#i-leaf"/></svg>
+        <span class="marquee-item">Invoices</span><svg class="marquee-sep"><use href="#i-leaf"/></svg>
+        <span class="marquee-item"><em>Payments</em></span><svg class="marquee-sep"><use href="#i-leaf"/></svg>
+      </div>
+    </div>
     <div class="wrap">
-      <div class="section-head">
-        <h2 id="haulage-title">IBS Haulage, for transport and haulage companies</h2>
-        <p class="lede">From a client's transport request to the paid invoice, every trip, truck and driver in one system.</p>
+      <div class="split-head">
+        <div>
+          <p class="eyebrow" data-reveal>IBS Haulage</p>
+          <h2 id="haulage-title" data-split>For transport and <em>haulage</em> companies</h2>
+        </div>
+        <p class="lede" data-reveal>From a client's transport request to the paid invoice, every trip, truck and driver in one system.</p>
       </div>
-      <div class="local">
-        <div>
-          <h3>Requests and quotes</h3>
-          <p>Clients send transport requests, you reply with a quote, and an accepted quote becomes a trip.</p>
-        </div>
-        <div>
-          <h3>Trips, trucks and drivers</h3>
-          <p>Dispatch trips, assign trucks and drivers, and follow each trip's status from loading to delivery.</p>
-        </div>
-        <div>
-          <h3>Invoices and payments</h3>
-          <p>Invoice completed trips as PDFs, record payments, and send clients their statements.</p>
-        </div>
-        <div>
-          <h3>A client portal</h3>
-          <p>Clients log in to request transport and follow their own trips, invoices and statements.</p>
-        </div>
-        <div>
-          <h3>Money and expenses</h3>
-          <p>A cash book across your accounts, transfers between them, and expenses by category.</p>
-        </div>
-        <div>
-          <h3>Reports on every trip and truck</h3>
-          <p>Revenue, what clients owe and for how long, how busy each truck is, and the profit on every trip.</p>
-        </div>
-      </div>
-      <div class="plans-foot">
-        <a class="btn btn-primary" href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Haulage%20walkthrough">Book a haulage walkthrough</a>
+      <ol class="haul-list">
+        <li data-reveal><span class="haul-num">01</span><h3>Requests and quotes</h3><p>Clients send transport requests, you reply with a quote, and an accepted quote becomes a trip.</p></li>
+        <li data-reveal><span class="haul-num">02</span><h3>Trips, trucks and drivers</h3><p>Dispatch trips, assign trucks and drivers, and follow each trip's status from loading to delivery.</p></li>
+        <li data-reveal><span class="haul-num">03</span><h3>Invoices and payments</h3><p>Invoice completed trips as PDFs, record payments, and send clients their statements.</p></li>
+        <li data-reveal><span class="haul-num">04</span><h3>A client portal</h3><p>Clients log in to request transport and follow their own trips, invoices and statements.</p></li>
+        <li data-reveal><span class="haul-num">05</span><h3>Money and expenses</h3><p>A cash book across your accounts, transfers between them, and expenses by category.</p></li>
+        <li data-reveal><span class="haul-num">06</span><h3>Reports on every trip and truck</h3><p>Revenue, what clients owe and for how long, how busy each truck is, and the profit on every trip.</p></li>
+      </ol>
+      <div class="plans-foot" data-reveal>
+        <a class="pill pill-light" href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Haulage%20walkthrough"><span class="pill-label">Book a haulage walkthrough</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
         <span class="muted">Already using IBS Haulage? <a href="https://haulage.ibsolutionsglobal.com/" target="_blank" rel="noopener">Sign in</a></span>
       </div>
     </div>
   </section>
 
   <!-- ── Custom software ──────────────────────────────── -->
-  <section aria-labelledby="custom-title">
+  <section class="custom" aria-labelledby="custom-title">
     <div class="wrap">
-      <div class="fit">
-        <h3 id="custom-title">Need something built for you?</h3>
-        <p class="muted">We also build web and mobile applications around the way your business already works, and connect the systems you use.</p>
+      <div class="custom-panel" data-reveal>
+        <svg class="custom-leaf" aria-hidden="true"><use href="#i-leaf"/></svg>
+        <div>
+          <h2 id="custom-title">Need something <em>built</em> for you?</h2>
+          <p>We also build web and mobile applications around the way your business already works, and connect the systems you use.</p>
+        </div>
+        <a class="pill pill-light" href="mailto:info@ibsolutionsglobal.com?subject=Custom%20software"><span class="pill-label">Tell us what you need</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
       </div>
     </div>
   </section>
 
-  <!-- ── Onboarding ───────────────────────────────────── -->
-  <section class="band" aria-labelledby="steps-title">
+  <!-- ── Onboarding: a real sequence, the line fills as you scroll ── -->
+  <section class="onboard" aria-labelledby="steps-title">
     <div class="wrap">
-      <div class="section-head">
-        <h2 id="steps-title">How we get you running</h2>
+      <div class="split-head">
+        <div>
+          <p class="eyebrow" data-reveal>Getting started</p>
+          <h2 id="steps-title" data-split>How we get you <em>running</em></h2>
+        </div>
       </div>
-      <ol class="steps">
-        <li><h3>We visit and listen</h3><p>We see how you work today, and what slows you down.</p></li>
-        <li><h3>We set you up</h3><p>Your products, prices, customers, trucks or opening stock, loaded for you from your lists or spreadsheets.</p></li>
-        <li><h3>We train your team</h3><p>Each person learns the screens they'll use, from the cashier to the manager.</p></li>
-        <li><h3>We stay with you</h3><p>Updates and support after go-live, as your business changes.</p></li>
-      </ol>
+      <div class="steps-wrap">
+        <div class="steps-line" aria-hidden="true"><i></i></div>
+        <ol class="steps">
+          <li><span class="step-dot" aria-hidden="true">1</span><h3>We visit and listen</h3><p>We see how you work today, and what slows you down.</p></li>
+          <li><span class="step-dot" aria-hidden="true">2</span><h3>We set you up</h3><p>Your products, prices, customers, trucks or opening stock, loaded for you from your lists or spreadsheets.</p></li>
+          <li><span class="step-dot" aria-hidden="true">3</span><h3>We train your team</h3><p>Each person learns the screens they'll use, from the cashier to the manager.</p></li>
+          <li><span class="step-dot" aria-hidden="true">4</span><h3>We stay with you</h3><p>Updates and support after go-live, as your business changes.</p></li>
+        </ol>
+      </div>
     </div>
   </section>
 
   <!-- ── Contact ──────────────────────────────────────── -->
-  <section class="contact" id="contact" aria-labelledby="contact-title">
-    <div class="wrap">
+  <section class="contact theme-dark" id="contact" aria-labelledby="contact-title" data-header="dark">
+    <div class="wrap contact-grid">
       <div>
-        <h2 id="contact-title">See it working for a business like yours</h2>
-        <p>Tell us what you sell or move, and how many branches or trucks you run. We'll show you the system set up for a business like yours.</p>
-        <div class="actions" style="margin-top: 28px">
-          <a class="btn btn-primary" href="mailto:info@ibsolutionsglobal.com?subject=Walkthrough%20request">Book a walkthrough</a>
-          <a class="btn btn-plain" href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Business%20Management%20demo%20access&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20try%20the%20IBS%20Business%20Management%20demo.%0A%0ABusiness%20name%3A%20%0AWhat%20we%20sell%3A%20%0ANumber%20of%20branches%3A%20%0A">Request demo access</a>
+        <p class="eyebrow" data-reveal>Contact</p>
+        <h2 id="contact-title" data-split>See it working for a business <em>like yours</em></h2>
+        <p class="contact-text" data-reveal>Tell us what you sell or move, and how many branches or trucks you run. We'll show you the system set up for a business like yours.</p>
+        <div class="actions" data-reveal>
+          <a class="pill pill-light" href="mailto:info@ibsolutionsglobal.com?subject=Walkthrough%20request"><span class="pill-label">Book a walkthrough</span><span class="pill-icon"><svg><use href="#i-chev"/></svg></span></a>
+          <a class="pill pill-outline" href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Business%20Management%20demo%20access&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20try%20the%20IBS%20Business%20Management%20demo.%0A%0ABusiness%20name%3A%20%0AWhat%20we%20sell%3A%20%0ANumber%20of%20branches%3A%20%0A"><span class="pill-label">Request demo access</span></a>
         </div>
       </div>
-      <dl>
-        <div><dt>Email</dt><dd><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></dd></div>
+      <dl data-reveal>
+        <div><dt>Email</dt><dd><a class="big-link" href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></dd></div>
         <div><dt>Office</dt><dd>Accra, Ghana</dd></div>
       </dl>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" data-header="dark">
   <div class="wrap">
-    <span>© 2026 Implant Business Solutions (IB Solutions Global), Accra</span>
-    <span><a href="#tour">Product tour</a> &nbsp; <a href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Business%20Management%20demo%20access&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20try%20the%20IBS%20Business%20Management%20demo.%0A%0ABusiness%20name%3A%20%0AWhat%20we%20sell%3A%20%0ANumber%20of%20branches%3A%20%0A">Request demo access</a> &nbsp; <a href="https://haulage.ibsolutionsglobal.com/" target="_blank" rel="noopener">IBS Haulage sign-in</a></span>
+    <div class="footer-grid">
+      <a class="brand brand-foot" href="#top" aria-label="IB Solutions Global, back to top">
+        <img src="assets/img/ibs-logo.png" alt="" width="28" height="38">
+        <span>IB Solutions<small>Global</small></span>
+      </a>
+      <div>
+        <p class="footer-label">Products</p>
+        <a href="#business">IBS Business Management</a>
+        <a href="#haulage">IBS Haulage</a>
+        <a href="https://haulage.ibsolutionsglobal.com/" target="_blank" rel="noopener">IBS Haulage sign-in</a>
+      </div>
+      <div>
+        <p class="footer-label">Tours</p>
+        <a href="#tour">The 2-minute tour</a>
+        <a href="#tours">Feature tours</a>
+        <a href="https://app.supademo.com/showcase/cmvbob0da02c5ng21wubv7aj0" target="_blank" rel="noopener">All tours on one page</a>
+      </div>
+      <div>
+        <p class="footer-label">Contact</p>
+        <a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a>
+        <a href="mailto:info@ibsolutionsglobal.com?subject=IBS%20Business%20Management%20demo%20access&amp;body=Hello%2C%0A%0AI%27d%20like%20to%20try%20the%20IBS%20Business%20Management%20demo.%0A%0ABusiness%20name%3A%20%0AWhat%20we%20sell%3A%20%0ANumber%20of%20branches%3A%20%0A">Request demo access</a>
+        <span>Accra, Ghana</span>
+      </div>
+    </div>
+    <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
   </div>
 </footer>
+
+<!-- Back to top; the ring shows how far down the page you are -->
+<a class="to-top" href="#top" aria-label="Back to top">
+  <svg class="to-top-ring" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" pathLength="100"/></svg>
+  <svg class="to-top-icon" aria-hidden="true"><use href="#i-up"/></svg>
+</a>
+
+<!-- One player window for any tour opened from the page -->
+<dialog class="tour-modal" aria-labelledby="tour-modal-title">
+  <div class="tour-modal-head">
+    <h2 id="tour-modal-title">Tour</h2>
+    <button class="tour-modal-close" type="button" aria-label="Close the tour"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="tour-modal-frame"></div>
+</dialog>
 
 <script src="assets/js/site.js" defer></script>
 </body>
