@@ -38,6 +38,15 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # index.html links site.css?v=dev and site.js?v=dev. Swap "dev" for
+      # this commit, so a cached old stylesheet or script is never used
+      # with a newer page.
+      - name: Stamp the CSS and JS links with this commit
+        run: |
+          v="${GITHUB_SHA::7}"
+          sed -i "s/site\.css?v=dev/site.css?v=$v/; s/site\.js?v=dev/site.js?v=$v/" index.html
+          test "$(grep -c "?v=$v" index.html)" -eq 2
+
       # Pinned to the v4.4.0 commit: this action receives the FTP password
       - uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
         with:
