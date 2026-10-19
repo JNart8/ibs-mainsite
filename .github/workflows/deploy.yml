@@ -15,7 +15,7 @@
 #                   Defaults to "./" (an account whose root is the web root).
 #                   Use "public_html/" for the main cPanel account.
 #
-# Only index.html and assets/ are uploaded. Files already on the server
+# index.html, assets/ and help/ (the user manuals) are uploaded. Files already on the server
 # that this workflow didn't upload are never deleted. The first run
 # overwrites the old index.html, so back it up from cPanel first.
 name: Deploy website
@@ -62,3 +62,4 @@ jobs:
             **/.git*/**
             .github/**
             README.md
+            **/.help-site-build

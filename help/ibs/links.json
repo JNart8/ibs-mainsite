@@ -1,0 +1,570 @@
+[
+  {
+    "href": "introduction.html",
+    "title": "Chapter 1: Introduction"
+  },
+  {
+    "href": "introduction.html#what-this-system-does",
+    "title": "1.1 What this system does"
+  },
+  {
+    "href": "introduction.html#who-this-manual-is-for",
+    "title": "1.2 Who this manual is for"
+  },
+  {
+    "href": "introduction.html#how-this-manual-is-organized",
+    "title": "1.3 How this manual is organized"
+  },
+  {
+    "href": "introduction.html#conventions-used-in-this-manual",
+    "title": "1.4 Conventions used in this manual"
+  },
+  {
+    "href": "introduction.html#whats-new-since-version-1-0",
+    "title": "1.5 What's new since version 1.0"
+  },
+  {
+    "href": "getting-started.html",
+    "title": "Chapter 2: Getting Started"
+  },
+  {
+    "href": "getting-started.html#logging-in",
+    "title": "2.1 Logging in"
+  },
+  {
+    "href": "getting-started.html#the-navigation-bar",
+    "title": "2.2 The navigation bar"
+  },
+  {
+    "href": "getting-started.html#branches-and-the-branch-switcher",
+    "title": "2.3 Branches and the branch switcher"
+  },
+  {
+    "href": "getting-started.html#the-dashboard",
+    "title": "2.4 The Dashboard"
+  },
+  {
+    "href": "getting-started.html#my-account",
+    "title": "2.5 My Account"
+  },
+  {
+    "href": "getting-started.html#subscription-reminders",
+    "title": "2.6 Subscription reminders"
+  },
+  {
+    "href": "point-of-sale-pos.html",
+    "title": "Chapter 3: Point of Sale (POS)"
+  },
+  {
+    "href": "point-of-sale-pos.html#recording-a-sale",
+    "title": "3.1 Recording a sale"
+  },
+  {
+    "href": "point-of-sale-pos.html#walk-in-customers-credit-and-deposits",
+    "title": "3.2 Walk-in customers, credit, and deposits"
+  },
+  {
+    "href": "point-of-sale-pos.html#selling-products-tracked-by-batch-and-expiry",
+    "title": "3.3 Selling products tracked by batch and expiry"
+  },
+  {
+    "href": "point-of-sale-pos.html#back-dating-a-sale",
+    "title": "3.4 Back-dating a sale"
+  },
+  {
+    "href": "point-of-sale-pos.html#selling-damaged-stock",
+    "title": "3.5 Selling damaged stock"
+  },
+  {
+    "href": "point-of-sale-pos.html#selling-services",
+    "title": "3.6 Selling services"
+  },
+  {
+    "href": "sales-history.html",
+    "title": "Chapter 4: Sales History"
+  },
+  {
+    "href": "sales-history.html#finding-a-sale",
+    "title": "4.1 Finding a sale"
+  },
+  {
+    "href": "sales-history.html#what-you-can-do-with-a-sale",
+    "title": "4.2 What you can do with a sale"
+  },
+  {
+    "href": "sales-history.html#recording-a-payment-against-a-sale",
+    "title": "4.3 Recording a payment against a sale"
+  },
+  {
+    "href": "sales-history.html#editing-a-sale",
+    "title": "4.4 Editing a sale"
+  },
+  {
+    "href": "sales-history.html#voiding-a-sale",
+    "title": "4.5 Voiding a sale"
+  },
+  {
+    "href": "sales-history.html#proforma-invoices",
+    "title": "4.6 Proforma invoices"
+  },
+  {
+    "href": "sales-history.html#proforma-invoices-turning-it-on",
+    "title": "Turning it on"
+  },
+  {
+    "href": "sales-history.html#proforma-invoices-creating-a-proforma",
+    "title": "Creating a proforma"
+  },
+  {
+    "href": "sales-history.html#proforma-invoices-printing-and-sending-it",
+    "title": "Printing and sending it"
+  },
+  {
+    "href": "sales-history.html#proforma-invoices-editing-expiry-and-cancelling",
+    "title": "Editing, expiry, and cancelling"
+  },
+  {
+    "href": "sales-history.html#proforma-invoices-converting-it-to-a-sale",
+    "title": "Converting it to a sale"
+  },
+  {
+    "href": "sales-history.html#proforma-invoices-the-proformas-list",
+    "title": "The Proformas list"
+  },
+  {
+    "href": "purchases.html",
+    "title": "Chapter 5: Purchases"
+  },
+  {
+    "href": "purchases.html#the-purchases-list",
+    "title": "5.1 The Purchases list"
+  },
+  {
+    "href": "purchases.html#recording-a-purchase",
+    "title": "5.2 Recording a purchase"
+  },
+  {
+    "href": "purchases.html#managing-a-purchase-afterward",
+    "title": "5.3 Managing a purchase afterward"
+  },
+  {
+    "href": "customers.html",
+    "title": "Chapter 6: Customers"
+  },
+  {
+    "href": "customers.html#adding-a-customer",
+    "title": "6.1 Adding a customer"
+  },
+  {
+    "href": "customers.html#the-customer-detail-page",
+    "title": "6.2 The customer detail page"
+  },
+  {
+    "href": "customers.html#the-customer-detail-page-recording-a-deposit",
+    "title": "Recording a deposit"
+  },
+  {
+    "href": "customers.html#the-customer-detail-page-adjusting-a-credit-limit",
+    "title": "Adjusting a credit limit"
+  },
+  {
+    "href": "suppliers.html",
+    "title": "Chapter 7: Suppliers"
+  },
+  {
+    "href": "suppliers.html#adding-a-supplier",
+    "title": "7.1 Adding a supplier"
+  },
+  {
+    "href": "suppliers.html#the-supplier-detail-page",
+    "title": "7.2 The supplier detail page"
+  },
+  {
+    "href": "products-and-categories.html",
+    "title": "Chapter 8: Products & Categories"
+  },
+  {
+    "href": "products-and-categories.html#adding-a-product",
+    "title": "8.1 Adding a product"
+  },
+  {
+    "href": "products-and-categories.html#the-product-list-and-product-page",
+    "title": "8.2 The product list and product page"
+  },
+  {
+    "href": "products-and-categories.html#deactivating-and-reactivating-a-product",
+    "title": "8.3 Deactivating and reactivating a product"
+  },
+  {
+    "href": "products-and-categories.html#categories",
+    "title": "8.4 Categories"
+  },
+  {
+    "href": "products-and-categories.html#services",
+    "title": "8.5 Services"
+  },
+  {
+    "href": "products-and-categories.html#services-turning-it-on",
+    "title": "Turning it on"
+  },
+  {
+    "href": "products-and-categories.html#services-setting-up-a-service",
+    "title": "Setting up a service"
+  },
+  {
+    "href": "products-and-categories.html#services-cost-and-profit",
+    "title": "Cost and profit"
+  },
+  {
+    "href": "products-and-categories.html#services-where-services-show-and-where-they-dont",
+    "title": "Where services show, and where they don't"
+  },
+  {
+    "href": "products-and-categories.html#services-changing-a-product-into-a-service",
+    "title": "Changing a product into a service"
+  },
+  {
+    "href": "products-and-categories.html#services-turning-it-off",
+    "title": "Turning it off"
+  },
+  {
+    "href": "stock-management.html",
+    "title": "Chapter 9: Stock Management"
+  },
+  {
+    "href": "stock-management.html#stock-in-receiving-stock-outside-of-a-full-purchase",
+    "title": "9.1 Stock In (receiving stock outside of a full purchase)"
+  },
+  {
+    "href": "stock-management.html#stock-out",
+    "title": "9.2 Stock Out"
+  },
+  {
+    "href": "stock-management.html#stock-adjustment",
+    "title": "9.3 Stock Adjustment"
+  },
+  {
+    "href": "stock-management.html#damaged-stock",
+    "title": "9.4 Damaged stock"
+  },
+  {
+    "href": "stock-management.html#damaged-stock-turning-it-on",
+    "title": "Turning it on"
+  },
+  {
+    "href": "stock-management.html#damaged-stock-marking-stock-as-damaged",
+    "title": "Marking stock as damaged"
+  },
+  {
+    "href": "stock-management.html#damaged-stock-what-happens-to-damaged-stock",
+    "title": "What happens to damaged stock"
+  },
+  {
+    "href": "stock-management.html#damaged-stock-seeing-how-much-is-damaged",
+    "title": "Seeing how much is damaged"
+  },
+  {
+    "href": "stock-management.html#damaged-stock-turning-it-off",
+    "title": "Turning it off"
+  },
+  {
+    "href": "batch-and-expiry-tracking.html",
+    "title": "Chapter 10: Batch & Expiry Tracking"
+  },
+  {
+    "href": "batch-and-expiry-tracking.html#turning-it-on",
+    "title": "10.1 Turning it on"
+  },
+  {
+    "href": "batch-and-expiry-tracking.html#how-tracked-stock-moves",
+    "title": "10.2 How tracked stock moves"
+  },
+  {
+    "href": "batch-and-expiry-tracking.html#keeping-an-eye-on-expiry",
+    "title": "10.3 Keeping an eye on expiry"
+  },
+  {
+    "href": "batch-and-expiry-tracking.html#turning-it-off",
+    "title": "10.4 Turning it off"
+  },
+  {
+    "href": "truck-and-driver.html",
+    "title": "Chapter 11: Truck & Driver"
+  },
+  {
+    "href": "truck-and-driver.html#turning-it-on",
+    "title": "11.1 Turning it on"
+  },
+  {
+    "href": "truck-and-driver.html#where-you-enter-it",
+    "title": "11.2 Where you enter it"
+  },
+  {
+    "href": "truck-and-driver.html#keeping-entries-consistent",
+    "title": "11.3 Keeping entries consistent"
+  },
+  {
+    "href": "truck-and-driver.html#where-it-shows",
+    "title": "11.4 Where it shows"
+  },
+  {
+    "href": "truck-and-driver.html#importing-purchases-with-a-truck-and-driver",
+    "title": "11.5 Importing purchases with a truck & driver"
+  },
+  {
+    "href": "tax.html",
+    "title": "Chapter 12: Tax"
+  },
+  {
+    "href": "tax.html#setting-it-up",
+    "title": "12.1 Setting it up"
+  },
+  {
+    "href": "tax.html#prices-that-include-tax-or-tax-added-on-top",
+    "title": "12.2 Prices that include tax, or tax added on top"
+  },
+  {
+    "href": "tax.html#tax-at-the-pos",
+    "title": "12.3 Tax at the POS"
+  },
+  {
+    "href": "tax.html#tax-on-purchases-and-direct-deliveries",
+    "title": "12.4 Tax on purchases and direct deliveries"
+  },
+  {
+    "href": "tax.html#taxpayer-identification-numbers-tin",
+    "title": "12.5 Taxpayer Identification Numbers (TIN)"
+  },
+  {
+    "href": "tax.html#where-tax-shows",
+    "title": "12.6 Where tax shows"
+  },
+  {
+    "href": "stock-transfers-multi-branch.html",
+    "title": "Chapter 13: Stock Transfers (multi-branch)"
+  },
+  {
+    "href": "stock-transfers-multi-branch.html#sending-a-transfer",
+    "title": "13.1 Sending a transfer"
+  },
+  {
+    "href": "stock-transfers-multi-branch.html#receiving-a-transfer",
+    "title": "13.2 Receiving a transfer"
+  },
+  {
+    "href": "direct-deliveries-distributor.html",
+    "title": "Chapter 14: Direct Deliveries (Distributor)"
+  },
+  {
+    "href": "direct-deliveries-distributor.html#recording-a-direct-delivery",
+    "title": "14.1 Recording a direct delivery"
+  },
+  {
+    "href": "financial-accounts.html",
+    "title": "Chapter 15: Financial Accounts"
+  },
+  {
+    "href": "financial-accounts.html#cash-bank-and-mobile-money-accounts",
+    "title": "15.1 Cash, bank, and mobile money accounts"
+  },
+  {
+    "href": "financial-accounts.html#adding-an-account",
+    "title": "15.2 Adding an account"
+  },
+  {
+    "href": "financial-accounts.html#moving-funds-between-accounts",
+    "title": "15.3 Moving funds between accounts"
+  },
+  {
+    "href": "financial-accounts.html#account-ledger",
+    "title": "15.4 Account ledger"
+  },
+  {
+    "href": "customer-transactions.html",
+    "title": "Chapter 16: Customer Transactions"
+  },
+  {
+    "href": "expenses.html",
+    "title": "Chapter 17: Expenses"
+  },
+  {
+    "href": "expenses.html#recording-an-expense",
+    "title": "17.1 Recording an expense"
+  },
+  {
+    "href": "suspense-account.html",
+    "title": "Chapter 18: Suspense Account"
+  },
+  {
+    "href": "suspense-account.html#recording-an-unidentified-deposit",
+    "title": "18.1 Recording an unidentified deposit"
+  },
+  {
+    "href": "suspense-account.html#resolving-it-once-you-know-the-customer",
+    "title": "18.2 Resolving it once you know the customer"
+  },
+  {
+    "href": "reports.html",
+    "title": "Chapter 19: Reports"
+  },
+  {
+    "href": "reports.html#available-on-every-plan",
+    "title": "19.1 Available on every plan"
+  },
+  {
+    "href": "reports.html#advanced-reports-growth-and-enterprise-only",
+    "title": "19.2 Advanced reports (Growth & Enterprise only)"
+  },
+  {
+    "href": "reports.html#settling-customer-credit-between-branches",
+    "title": "19.3 Settling customer credit between branches"
+  },
+  {
+    "href": "import-and-export.html",
+    "title": "Chapter 20: Import & Export"
+  },
+  {
+    "href": "import-and-export.html#importing-data",
+    "title": "20.1 Importing data"
+  },
+  {
+    "href": "import-and-export.html#exporting-data",
+    "title": "20.2 Exporting data"
+  },
+  {
+    "href": "administration.html",
+    "title": "Chapter 21: Administration"
+  },
+  {
+    "href": "administration.html#users",
+    "title": "21.1 Users"
+  },
+  {
+    "href": "administration.html#users-creating-a-user",
+    "title": "Creating a user"
+  },
+  {
+    "href": "administration.html#users-managing-an-existing-user",
+    "title": "Managing an existing user"
+  },
+  {
+    "href": "administration.html#roles-and-permissions",
+    "title": "21.2 Roles & Permissions"
+  },
+  {
+    "href": "administration.html#roles-and-permissions-built-in-role-defaults",
+    "title": "Built-in role defaults"
+  },
+  {
+    "href": "administration.html#roles-and-permissions-full-permission-reference",
+    "title": "Full permission reference"
+  },
+  {
+    "href": "administration.html#branches",
+    "title": "21.3 Branches"
+  },
+  {
+    "href": "administration.html#audit-log",
+    "title": "21.4 Audit Log"
+  },
+  {
+    "href": "administration.html#settings",
+    "title": "21.5 Settings"
+  },
+  {
+    "href": "administration.html#subscription",
+    "title": "21.6 Subscription"
+  },
+  {
+    "href": "administration.html#subscription-renewing",
+    "title": "Renewing"
+  },
+  {
+    "href": "plan-tiers-and-feature-availability.html",
+    "title": "Chapter 22: Plan Tiers & Feature Availability"
+  },
+  {
+    "href": "frequently-asked-questions.html",
+    "title": "Appendix A: Frequently Asked Questions"
+  },
+  {
+    "href": "frequently-asked-questions.html#i-forgot-my-password-what-do-i-do",
+    "title": "I forgot my password. What do I do?"
+  },
+  {
+    "href": "frequently-asked-questions.html#my-account-is-locked-why",
+    "title": "My account is locked. Why?"
+  },
+  {
+    "href": "frequently-asked-questions.html#every-page-takes-me-to-the-subscription-page",
+    "title": "Every page takes me to the Subscription page."
+  },
+  {
+    "href": "frequently-asked-questions.html#a-menu-item-i-expect-to-see-is-missing",
+    "title": "A menu item I expect to see is missing."
+  },
+  {
+    "href": "frequently-asked-questions.html#i-voided-a-sale-purchase-by-mistake-can-i-undo-it",
+    "title": "I voided a sale/purchase by mistake. Can I undo it?"
+  },
+  {
+    "href": "frequently-asked-questions.html#i-dont-see-the-void-sale-or-edit-button",
+    "title": "I don't see the Void Sale or Edit button."
+  },
+  {
+    "href": "frequently-asked-questions.html#why-wont-the-pos-let-a-walk-in-customer-pay-only-part-of-the-bill",
+    "title": "Why won't the POS let a walk-in customer pay only part of the bill?"
+  },
+  {
+    "href": "frequently-asked-questions.html#a-product-isnt-showing-up-or-wont-go-into-the-cart-at-the-pos",
+    "title": "A product isn't showing up, or won't go into the cart, at the POS."
+  },
+  {
+    "href": "frequently-asked-questions.html#i-cant-receive-a-transfer-i-dispatched",
+    "title": "I can't receive a transfer I dispatched."
+  },
+  {
+    "href": "frequently-asked-questions.html#how-do-i-stop-getting-low-stock-warnings-for-a-product",
+    "title": "How do I stop getting low-stock warnings for a product?"
+  },
+  {
+    "href": "frequently-asked-questions.html#the-truck-number-i-typed-was-saved-differently",
+    "title": "The truck number I typed was saved differently."
+  },
+  {
+    "href": "frequently-asked-questions.html#why-does-a-batch-say-unknown-expiry",
+    "title": "Why does a batch say “Unknown expiry”?"
+  },
+  {
+    "href": "frequently-asked-questions.html#i-changed-the-tax-rate-at-the-pos-but-the-total-didnt-change",
+    "title": "I changed the tax rate at the POS, but the total didn't change."
+  },
+  {
+    "href": "frequently-asked-questions.html#why-is-a-products-cost-price-lower-than-what-i-paid-the-supplier",
+    "title": "Why is a product's cost price lower than what I paid the supplier?"
+  },
+  {
+    "href": "frequently-asked-questions.html#the-pos-says-only-part-of-a-products-stock-is-undamaged",
+    "title": "The POS says only part of a product's stock is undamaged."
+  },
+  {
+    "href": "frequently-asked-questions.html#proformas-is-missing-from-the-finance-menu",
+    "title": "Proformas is missing from the Finance menu."
+  },
+  {
+    "href": "frequently-asked-questions.html#some-items-were-missing-from-the-cart-when-i-converted-a-proforma",
+    "title": "Some items were missing from the cart when I converted a proforma."
+  },
+  {
+    "href": "frequently-asked-questions.html#why-cant-i-find-a-service-in-stock-management-or-on-a-purchase",
+    "title": "Why can't I find a service in Stock Management or on a purchase?"
+  },
+  {
+    "href": "frequently-asked-questions.html#i-cant-change-a-product-into-a-service",
+    "title": "I can't change a product into a service."
+  },
+  {
+    "href": "document-information.html",
+    "title": "Appendix B: Document Information"
+  }
+]
