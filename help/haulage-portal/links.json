@@ -1,0 +1,190 @@
+[
+  {
+    "href": "introduction.html",
+    "title": "Chapter 1: Introduction"
+  },
+  {
+    "href": "introduction.html#what-the-portal-does",
+    "title": "1.1 What the portal does"
+  },
+  {
+    "href": "introduction.html#who-this-guide-is-for",
+    "title": "1.2 Who this guide is for"
+  },
+  {
+    "href": "introduction.html#how-this-guide-is-organized",
+    "title": "1.3 How this guide is organized"
+  },
+  {
+    "href": "introduction.html#conventions-used-in-this-guide",
+    "title": "1.4 Conventions used in this guide"
+  },
+  {
+    "href": "getting-started.html",
+    "title": "Chapter 2: Getting Started"
+  },
+  {
+    "href": "getting-started.html#signing-in",
+    "title": "2.1 Signing in"
+  },
+  {
+    "href": "getting-started.html#staying-signed-in",
+    "title": "2.2 Staying signed in"
+  },
+  {
+    "href": "getting-started.html#finding-your-way-around",
+    "title": "2.3 Finding your way around"
+  },
+  {
+    "href": "getting-started.html#the-dashboard",
+    "title": "2.4 The Dashboard"
+  },
+  {
+    "href": "requests-and-quotes.html",
+    "title": "Chapter 3: Requests and Quotes"
+  },
+  {
+    "href": "requests-and-quotes.html#how-a-request-moves",
+    "title": "3.1 How a request moves"
+  },
+  {
+    "href": "requests-and-quotes.html#sending-a-request",
+    "title": "3.2 Sending a request"
+  },
+  {
+    "href": "requests-and-quotes.html#reviewing-a-quote",
+    "title": "3.3 Reviewing a quote"
+  },
+  {
+    "href": "requests-and-quotes.html#accepting-a-quote",
+    "title": "3.4 Accepting a quote"
+  },
+  {
+    "href": "requests-and-quotes.html#rejecting-a-quote",
+    "title": "3.5 Rejecting a quote"
+  },
+  {
+    "href": "requests-and-quotes.html#following-a-request",
+    "title": "3.6 Following a request"
+  },
+  {
+    "href": "trips.html",
+    "title": "Chapter 4: Trips"
+  },
+  {
+    "href": "trips.html#your-trips-list",
+    "title": "4.1 Your trips list"
+  },
+  {
+    "href": "trips.html#trip-stages",
+    "title": "4.2 Trip stages"
+  },
+  {
+    "href": "trips.html#the-trip-page",
+    "title": "4.3 The trip page"
+  },
+  {
+    "href": "invoices-and-payments.html",
+    "title": "Chapter 5: Invoices and Payments"
+  },
+  {
+    "href": "invoices-and-payments.html#your-invoices-list",
+    "title": "5.1 Your invoices list"
+  },
+  {
+    "href": "invoices-and-payments.html#the-invoice-page",
+    "title": "5.2 The invoice page"
+  },
+  {
+    "href": "invoices-and-payments.html#downloading-an-invoice",
+    "title": "5.3 Downloading an invoice"
+  },
+  {
+    "href": "invoices-and-payments.html#paying-an-invoice",
+    "title": "5.4 Paying an invoice"
+  },
+  {
+    "href": "proforma-invoices.html",
+    "title": "Chapter 6: Proforma Invoices"
+  },
+  {
+    "href": "proforma-invoices.html#viewing-and-downloading-a-proforma",
+    "title": "6.1 Viewing and downloading a proforma"
+  },
+  {
+    "href": "proforma-invoices.html#what-the-status-means",
+    "title": "6.2 What the status means"
+  },
+  {
+    "href": "your-profile-and-password.html",
+    "title": "Chapter 7: Your Profile and Password"
+  },
+  {
+    "href": "your-profile-and-password.html#updating-your-details",
+    "title": "7.1 Updating your details"
+  },
+  {
+    "href": "your-profile-and-password.html#changing-your-password",
+    "title": "7.2 Changing your password"
+  },
+  {
+    "href": "your-profile-and-password.html#keeping-your-account-safe",
+    "title": "7.3 Keeping your account safe"
+  },
+  {
+    "href": "frequently-asked-questions.html",
+    "title": "Appendix A: Frequently Asked Questions"
+  },
+  {
+    "href": "frequently-asked-questions.html#i-forgot-my-password-what-do-i-do",
+    "title": "I forgot my password. What do I do?"
+  },
+  {
+    "href": "frequently-asked-questions.html#the-sign-in-page-says-my-login-is-locked",
+    "title": "The sign-in page says my login is locked."
+  },
+  {
+    "href": "frequently-asked-questions.html#i-was-signed-out-while-i-was-working",
+    "title": "I was signed out while I was working."
+  },
+  {
+    "href": "frequently-asked-questions.html#i-sent-a-request-with-a-mistake-in-it",
+    "title": "I sent a request with a mistake in it."
+  },
+  {
+    "href": "frequently-asked-questions.html#my-pickup-or-delivery-place-isnt-in-the-list",
+    "title": "My pickup or delivery place isn’t in the list."
+  },
+  {
+    "href": "frequently-asked-questions.html#i-cant-see-the-accept-quote-button",
+    "title": "I can’t see the “Accept Quote” button."
+  },
+  {
+    "href": "frequently-asked-questions.html#i-rejected-a-quote-by-mistake",
+    "title": "I rejected a quote by mistake."
+  },
+  {
+    "href": "frequently-asked-questions.html#my-trips-status-hasnt-changed-for-a-while",
+    "title": "My trip’s status hasn’t changed for a while."
+  },
+  {
+    "href": "frequently-asked-questions.html#an-invoice-i-was-told-about-isnt-in-my-invoices",
+    "title": "An invoice I was told about isn’t in My Invoices."
+  },
+  {
+    "href": "frequently-asked-questions.html#i-have-paid-but-the-invoice-still-shows-money-outstanding",
+    "title": "I have paid, but the invoice still shows money outstanding."
+  },
+  {
+    "href": "frequently-asked-questions.html#proforma-invoices-isnt-in-my-menu",
+    "title": "Proforma Invoices isn’t in my menu."
+  },
+  {
+    "href": "frequently-asked-questions.html#a-colleague-needs-to-use-the-portal",
+    "title": "A colleague needs to use the portal."
+  },
+  {
+    "href": "document-information.html",
+    "title": "Appendix B: Document Information"
+  }
+]

@@ -280,6 +280,10 @@
     "title": "13.4 Audit log"
   },
   {
+    "href": "administration.html#currencies",
+    "title": "13.5 Currencies"
+  },
+  {
     "href": "the-client-portal.html",
     "title": "Chapter 14: The Client Portal"
   },
@@ -350,6 +354,14 @@
   {
     "href": "frequently-asked-questions.html#i-cant-delete-an-account-client-truck-or-driver",
     "title": "I can’t delete an account, client, truck or driver."
+  },
+  {
+    "href": "frequently-asked-questions.html#a-currency-is-missing-from-the-list",
+    "title": "A currency is missing from the list."
+  },
+  {
+    "href": "frequently-asked-questions.html#why-do-i-have-to-enter-an-exchange-rate",
+    "title": "Why do I have to enter an exchange rate?"
   },
   {
     "href": "document-information.html",
