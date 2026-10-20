@@ -1,10 +1,9 @@
 # Uploads the website to the live server over FTPS.
-# Run it by hand: Actions tab → "Deploy website" → Run workflow.
-# "Dry run" is ticked by default: it logs in and lists what would be
-# uploaded without changing anything. Untick it to really deploy.
-# It doesn't run on push yet, so nothing goes live until someone runs it.
-# Once the site is approved, add `push: branches: [main]` under `on:` to
-# deploy every change to main.
+# It runs by itself on every push to main (merged pull requests included)
+# and deploys for real. Pushes that only change README.md don't deploy.
+# It can also be run by hand: Actions tab → "Deploy website" → Run
+# workflow. There "Dry run" is ticked by default: it logs in and lists
+# what would be uploaded without changing anything.
 #
 # Required repo secrets (Settings → Secrets and variables → Actions):
 #   FTP_SERVER    e.g. ftp.ibsolutionsglobal.com
@@ -21,6 +20,10 @@
 name: Deploy website
 
 on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - README.md
   workflow_dispatch:
     inputs:
       dry_run:
@@ -55,7 +58,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
-          dry-run: ${{ inputs.dry_run }}
+          # Pushes always deploy; a hand run follows its "Dry run" box
+          dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
           # Excluded paths are never uploaded or deleted on the server
           exclude: |
             **/.git*
