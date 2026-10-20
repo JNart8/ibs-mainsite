@@ -58,7 +58,7 @@
 <li><a href="proforma-invoices.html"><span class="n">10</span><span>Proforma Invoices</span></a></li>
 <li><a href="accounts-and-cash-book.html"><span class="n">11</span><span>Accounts and Cash Book</span></a></li>
 <li><a href="reports.html"><span class="n">12</span><span>Reports</span></a></li>
-<li class="is-current"><a href="administration.html" aria-current="page"><span class="n">13</span><span>Administration</span></a><ol class="nav-sections"><li><a href="#users"><span class="n">13.1</span>Users</a></li><li><a href="#settings"><span class="n">13.2</span>Settings</a></li><li><a href="#expense-categories"><span class="n">13.3</span>Expense categories</a></li><li><a href="#audit-log"><span class="n">13.4</span>Audit log</a></li></ol></li>
+<li class="is-current"><a href="administration.html" aria-current="page"><span class="n">13</span><span>Administration</span></a><ol class="nav-sections"><li><a href="#users"><span class="n">13.1</span>Users</a></li><li><a href="#settings"><span class="n">13.2</span>Settings</a></li><li><a href="#expense-categories"><span class="n">13.3</span>Expense categories</a></li><li><a href="#audit-log"><span class="n">13.4</span>Audit log</a></li><li><a href="#currencies"><span class="n">13.5</span>Currencies</a></li></ol></li>
 <li><a href="the-client-portal.html"><span class="n">14</span><span>The Client Portal</span></a></li>
 <li><a href="frequently-asked-questions.html"><span class="n">A</span><span>Frequently Asked Questions</span></a></li>
 <li><a href="document-information.html"><span class="n">B</span><span>Document Information</span></a></li>
@@ -104,6 +104,32 @@
 <h2 id="audit-log"><span class="num">13.4</span> Audit log<a class="anchor" href="#audit-log" aria-label="Link to this section">#</a></h2>
 <p>The Audit Log records every important change: what was created, changed, deleted, issued, cancelled or reassigned, by whom, when, and from which IP address. Click “Details” on an entry to see the values before and after the change.</p>
 <p>Filter by entity (e.g. Trip or Invoice), action, staff user, or user type (Staff or Client, for changes made in the portal).</p>
+<h2 id="currencies"><span class="num">13.5</span> Currencies<a class="anchor" href="#currencies" aria-label="Link to this section">#</a></h2>
+<p>Administration → Currencies lists the currencies staff can choose for clients, quotes, trips, expenses, invoices, proformas and payments. It starts with GHS, USD, EUR and NGN.</p>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Column</th><th scope="col">What it means</th></tr></thead>
+<tbody>
+<tr><td>Code</td><td>The 3-letter international code, e.g. USD</td></tr>
+<tr><td>Name</td><td>The currency’s name, e.g. US Dollar</td></tr>
+<tr><td>Rate to GHS</td><td>How many cedis one unit is worth today, e.g. “1 USD = GHS 15.2500,” or “Not set”</td></tr>
+<tr><td>Rate Updated</td><td>When the rate was last changed</td></tr>
+<tr><td>Status</td><td>Active currencies appear on forms; inactive ones don’t</td></tr>
+</tbody></table></div>
+<p>Keep the rates up to date:</p>
+<ul>
+<li>When staff choose a currency on a form, its rate is filled in as that record’s exchange rate. Staff can change it on each record, for example to the rate a client actually paid at.</li>
+<li>Changing a rate here doesn’t change anything already saved: each trip, invoice, payment and expense keeps its own rate.</li>
+<li>A currency with no rate shows “Not set,” and staff have to type the rate on each record.</li>
+</ul>
+<p>To manage the list:</p>
+<ul>
+<li>“Edit” changes a currency’s name or rate. The code can’t be changed, because saved records use it.</li>
+<li>“New Currency” adds another, with its code (e.g. XOF), name and, if you know it, its rate.</li>
+<li>“Deactivate” takes a currency off the forms. Records already in that currency keep it. GHS, and the default currency in Settings, can’t be deactivated.</li>
+<li>“Delete” works only for a currency that nothing uses yet. Once a currency is used, deactivate it instead.</li>
+</ul>
+<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>GHS is the base currency. Accounts, reports and trip profit are all in cedis, worked out with each record’s own exchange rate.</p>
+</div></aside>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -111,17 +137,17 @@
   <a class="pager-next" href="the-client-portal.html"><span class="pager-dir">Next</span><span class="pager-title">The Client Portal</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Haulage user manual · Version 1.0 · October 2026</p>
+  <p class="footer-manual">IBS Haulage user manual · Version 1.1 · October 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
 </main>
 <aside class="on-this-page" aria-label="On this page">
   <p class="otp-title">On this page</p>
-  <ol><li class="lvl-2"><a href="#users">Users</a></li><li class="lvl-3"><a href="#users-creating-a-user">Creating a user</a></li><li class="lvl-3"><a href="#users-managing-an-existing-user">Managing an existing user</a></li><li class="lvl-2"><a href="#settings">Settings</a></li><li class="lvl-2"><a href="#expense-categories">Expense categories</a></li><li class="lvl-2"><a href="#audit-log">Audit log</a></li></ol>
+  <ol><li class="lvl-2"><a href="#users">Users</a></li><li class="lvl-3"><a href="#users-creating-a-user">Creating a user</a></li><li class="lvl-3"><a href="#users-managing-an-existing-user">Managing an existing user</a></li><li class="lvl-2"><a href="#settings">Settings</a></li><li class="lvl-2"><a href="#expense-categories">Expense categories</a></li><li class="lvl-2"><a href="#audit-log">Audit log</a></li><li class="lvl-2"><a href="#currencies">Currencies</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=62cb3def" defer></script>
+<script src="search-index.js?v=846b4f78" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
