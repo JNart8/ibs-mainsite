@@ -99,7 +99,7 @@
 <tr><td>Purchases</td><td>supplier, sku, quantity, unit_cost. Rows sharing supplier + invoice_number become one purchase. payment_method is cash / mobile / bank / cheque / credit (blank = credit). payment_account is an account name or number (blank = your branch's account for that method). Stock is received at your active branch.</td></tr>
 <tr><td>Customer opening debts</td><td>customer, amount, owing_since. One row per amount owed; customer is a phone or customer code. See <a href="customers.html#opening-debts">section 6.3</a>.</td></tr>
 <tr><td>Supplier opening debts</td><td>supplier, amount, owing_since. Supplier by company name or code. See <a href="suppliers.html#opening-debts">section 7.3</a>.</td></tr>
-<tr><td>Sales</td><td>sale_date, sku, quantity. Sales made between a stock count and your first day on IBS; rows sharing a receipt_number become one sale. Needs Back-date Sales. See <a href="sales-history.html#importing-past-sales">section 4.7</a>.</td></tr>
+<tr><td>Sales</td><td>sale_date, sku, quantity. Sales made between a stock count and your first day on IBS; rows sharing a receipt_number become one sale. Optional truck_number, driver_name, and driver_phone while truck &amp; driver is on. Needs Back-date Sales. See <a href="sales-history.html#importing-past-sales">section 4.7</a>.</td></tr>
 </tbody></table></div>
 <p>When truck &amp; driver recording is on, Purchases also take optional truck_number, driver_name, and driver_phone columns — taken per invoice from its first row that has them (see <a href="truck-and-driver.html#importing-purchases-with-a-truck-and-driver">section 11.5</a>).</p>
 <p>When batch tracking is on, Products also take optional track_expiry (yes/no), batch_number and expiry_date (YYYY-MM-DD) columns, and Purchases take batch_number and expiry_date. A blank expiry date means “unknown expiry”, and one purchase can list the same product on several rows, one per batch.</p>
@@ -129,7 +129,7 @@
   <ol><li class="lvl-2"><a href="#importing-data">Importing data</a></li><li class="lvl-2"><a href="#exporting-data">Exporting data</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=5ff036b9" defer></script>
+<script src="search-index.js?v=d1c70369" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
