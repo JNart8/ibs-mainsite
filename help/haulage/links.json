@@ -240,6 +240,10 @@
     "title": "11.6 Deactivating or deleting an account"
   },
   {
+    "href": "accounts-and-cash-book.html#currencies-and-exchange-rates",
+    "title": "11.7 Currencies and exchange rates"
+  },
+  {
     "href": "reports.html",
     "title": "Chapter 12: Reports"
   },
@@ -278,10 +282,6 @@
   {
     "href": "administration.html#audit-log",
     "title": "13.4 Audit log"
-  },
-  {
-    "href": "administration.html#currencies",
-    "title": "13.5 Currencies"
   },
   {
     "href": "the-client-portal.html",
