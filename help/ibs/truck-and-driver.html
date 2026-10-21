@@ -99,6 +99,7 @@
 <tr><td>Direct Delivery</td><td>One set of fields for the delivery; the details are saved on both the customer sale and the supplier purchase.</td></tr>
 <tr><td>Edit Sale</td><td>The fields can be corrected; the change is listed in the edit's audit entry.</td></tr>
 <tr><td>Purchase import (CSV)</td><td>Optional truck_number, driver_name, and driver_phone columns — see <a href="#importing-purchases-with-a-truck-and-driver">section 11.5</a>.</td></tr>
+<tr><td>Sales import (CSV)</td><td>Optional truck_number, driver_name, and driver_phone columns, one truck per sale — see <a href="sales-history.html#importing-past-sales">sections 4.7</a> and <a href="#importing-purchases-with-a-truck-and-driver">11.5</a>.</td></tr>
 </tbody></table></div>
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>Correcting the truck or driver on a direct delivery's sale (through Edit Sale) doesn't change its supplier purchase.</p>
 </div></aside>
@@ -125,6 +126,7 @@
 <li><strong>One truck per invoice:</strong> rows with the same supplier and invoice_number become one purchase, so the truck and driver are taken from that invoice's first row that has them. You only need to fill them in once per invoice.</li>
 <li><strong>Same rules as on screen:</strong> values are tidied and matched to spellings already on record (<a href="#keeping-entries-consistent">section 11.3</a>).</li>
 <li><strong>Checked in the preview:</strong> a driver_phone that isn't a phone number marks that row as an error in the preview, and it isn't imported until it's corrected or cleared.</li>
+<li><strong>The sales import (<a href="sales-history.html#importing-past-sales">section 4.7</a>) takes the same three columns, with the same rules: rows with the same receipt_number are one sale, so the truck and driver are taken from that sale's first row that has them.</strong></li>
 </ul>
 
   </article>
@@ -143,7 +145,7 @@
   <ol><li class="lvl-2"><a href="#turning-it-on">Turning it on</a></li><li class="lvl-2"><a href="#where-you-enter-it">Where you enter it</a></li><li class="lvl-2"><a href="#keeping-entries-consistent">Keeping entries consistent</a></li><li class="lvl-2"><a href="#where-it-shows">Where it shows</a></li><li class="lvl-2"><a href="#importing-purchases-with-a-truck-and-driver">Importing purchases with a truck &amp; driver</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=5ff036b9" defer></script>
+<script src="search-index.js?v=d1c70369" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
