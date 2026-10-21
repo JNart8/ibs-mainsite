@@ -115,7 +115,7 @@
 </div></aside>
 <h2 id="proforma-invoices"><span class="num">4.6</span> Proforma invoices<a class="anchor" href="#proforma-invoices" aria-label="Link to this section">#</a></h2>
 <p>A proforma invoice is a priced quote: what the customer would pay for a list of items, given to them before they buy — for example so they can get approval or arrange the money. Saving a proforma doesn't move any stock or money, and proformas are left out of every report. When the customer buys, you convert the proforma into a sale at the POS.</p>
-<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Available on the Growth and Enterprise plans, once switched on in Settings (settings.manage). Creating, editing, printing, and converting proformas need “Access Sales / POS” (sales.access); cancelling one needs “Edit / Void Sales” (sales.edit).</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Available on the Growth and Enterprise plans (on Core, as an add-on), once switched on in Settings (settings.manage). Creating, editing, printing, and converting proformas need “Access Sales / POS” (sales.access); cancelling one needs “Edit / Void Sales” (sales.edit).</p>
 </div></aside>
 <h3 id="proforma-invoices-turning-it-on">Turning it on<a class="anchor" href="#proforma-invoices-turning-it-on" aria-label="Link to this section">#</a></h3>
 <ol>
@@ -156,7 +156,7 @@
 <p>Finance → Proformas lists the proformas at your branch, with cards for Open, Value of open proformas, Expired, not converted, and Converted this month. Search by proforma number or customer, and filter by status: Open, Expired, Converted, or Cancelled.</p>
 <h2 id="importing-past-sales"><span class="num">4.7</span> Importing past sales<a class="anchor" href="#importing-past-sales" aria-label="Link to this section">#</a></h2>
 <p>If you counted your stock a few days before you started using IBS, the sales made since the count are missing, and your stock looks higher than it is. You don't need to count again: import those sales from a spreadsheet. Each one is recorded as if it had been rung up at the POS on its date.</p>
-<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires “Access Sales / POS” (sales.access) and “Back-date Sales” (sales.backdate), on the Growth or Enterprise plan.</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires “Access Sales / POS” (sales.access) and “Back-date Sales” (sales.backdate), on the Growth or Enterprise plan (on Core, with the Import &amp; Export add-on).</p>
 </div></aside>
 <h3 id="importing-past-sales-before-you-import">Before you import<a class="anchor" href="#importing-past-sales-before-you-import" aria-label="Link to this section">#</a></h3>
 <ol>
@@ -174,10 +174,10 @@
 <h3 id="importing-past-sales-the-columns">The columns<a class="anchor" href="#importing-past-sales-the-columns" aria-label="Link to this section">#</a></h3>
 <ul>
 <li><strong>sale_date</strong> (required): YYYY-MM-DD, optionally with a time, such as 2026-10-15 14:30. Without a time, the sale is recorded at noon. It can't be in the future.</li>
-<li><strong>sku</strong> (required): the product's SKU or barcode. <strong>quantity</strong> (required).</li>
-<li><strong>receipt_number</strong>: rows with the same receipt number are one sale; a row without one is a sale on its own. The sale's date, customer, payment, and notes come from its first row.</li>
+<li><strong>sku (required): the SKU or barcode of an active product. quantity (required).</strong></li>
+<li><strong>receipt_number: rows with the same receipt number are one sale; a row without one is a sale on its own. The sale's date, customer, payment, sale_discount, tax_percent, and notes come from its first row. The receipt number itself isn't kept — each sale gets a new sale number — so copy it into notes if you want to find the sale by it later.</strong></li>
 <li><strong>customer</strong>: the customer's phone or customer code (or exact name, if only one customer has it). Blank means a walk-in customer, who must pay in full.</li>
-<li><strong>unit_price</strong>: blank uses your branch's selling price. <strong>discount</strong> (per line) and <strong>sale_discount</strong> (the whole sale) are percentages or amounts, following your POS discount setting (<a href="administration.html#settings">section 21.5</a>).</li>
+<li><strong>unit_price: blank uses your branch's selling price; a service priced at sale (<a href="products-and-categories.html#services">section 8.5</a>) needs one. discount (per line) and sale_discount (the whole sale) are percentages or amounts, following your POS discount setting (<a href="administration.html#settings">section 21.5</a>).</strong></li>
 <li><strong>payment_method</strong>: cash, mobile, bank, credit, or deposit (blank means cash). <strong>payment_account</strong>: an account name or number (blank means your branch's account for that method).</li>
 <li><strong>amount_paid</strong>: blank means paid in full, or nothing on credit. Less than the total leaves the rest owing, as at the POS.</li>
 <li><strong>tax_percent</strong>: the sale's tax rate, when tax is on (blank means your usual rate).</li>
@@ -185,8 +185,8 @@
 </ul>
 <h3 id="importing-past-sales-what-happens">What happens<a class="anchor" href="#importing-past-sales-what-happens" aria-label="Link to this section">#</a></h3>
 <ul>
-<li>Sales are recorded oldest first, at your active branch, and each goes through the same checks as the POS: enough stock (not expired, if your settings refuse expired stock), walk-in customers pay in full, deposits, and credit limits.</li>
-<li>Stock comes off your branch, money goes into the account, and a credit sale adds to what the customer owes, all dated sale_date, so the reports for those days include them.</li>
+<li>Sales are recorded oldest first, at your active branch, and each goes through the same checks as the POS: enough undamaged stock (not expired, if your settings refuse expired stock), walk-in customers pay in full, deposits, and credit limits.</li>
+<li>Stock comes off your branch, and a credit sale adds to what the customer owes, dated sale_date, so the reports for those days include them. The money goes into the account too, but shows in the account's ledger on the day you import, as for any back-dated sale.</li>
 <li>A sale that fails a check is skipped and listed with the reason; the rest are imported. Fix the skipped ones and import a file with only those.</li>
 <li>Imported sales appear in Sales History like any other sale, and the import is recorded in the Audit Log.</li>
 </ul>
@@ -209,7 +209,7 @@
   <ol><li class="lvl-2"><a href="#finding-a-sale">Finding a sale</a></li><li class="lvl-2"><a href="#what-you-can-do-with-a-sale">What you can do with a sale</a></li><li class="lvl-2"><a href="#recording-a-payment-against-a-sale">Recording a payment against a sale</a></li><li class="lvl-2"><a href="#editing-a-sale">Editing a sale</a></li><li class="lvl-2"><a href="#voiding-a-sale">Voiding a sale</a></li><li class="lvl-2"><a href="#proforma-invoices">Proforma invoices</a></li><li class="lvl-3"><a href="#proforma-invoices-turning-it-on">Turning it on</a></li><li class="lvl-3"><a href="#proforma-invoices-creating-a-proforma">Creating a proforma</a></li><li class="lvl-3"><a href="#proforma-invoices-printing-and-sending-it">Printing and sending it</a></li><li class="lvl-3"><a href="#proforma-invoices-editing-expiry-and-cancelling">Editing, expiry, and cancelling</a></li><li class="lvl-3"><a href="#proforma-invoices-converting-it-to-a-sale">Converting it to a sale</a></li><li class="lvl-3"><a href="#proforma-invoices-the-proformas-list">The Proformas list</a></li><li class="lvl-2"><a href="#importing-past-sales">Importing past sales</a></li><li class="lvl-3"><a href="#importing-past-sales-before-you-import">Before you import</a></li><li class="lvl-3"><a href="#importing-past-sales-importing-the-file">Importing the file</a></li><li class="lvl-3"><a href="#importing-past-sales-the-columns">The columns</a></li><li class="lvl-3"><a href="#importing-past-sales-what-happens">What happens</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=16736d25" defer></script>
+<script src="search-index.js?v=5ff036b9" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>

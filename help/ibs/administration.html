@@ -91,7 +91,7 @@
 <li>Set a Password and Confirm Password (minimum 6 characters).</li>
 <li>Leave “Active (can log in)” checked, and click “Create User.”</li>
 </ol>
-<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>Your plan caps how many active users you can have: 3 on Core, 8 on Growth, unlimited on Enterprise.</p>
+<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>Your plan caps how many active users you can have: 3 on Core, 8 on Growth, unlimited on Enterprise. Extra users can be added to Core and Growth as an add-on; Settings → General shows your limit. Reactivating a user also needs a free place.</p>
 </div></aside>
 <h3 id="users-managing-an-existing-user">Managing an existing user<a class="anchor" href="#users-managing-an-existing-user" aria-label="Link to this section">#</a></h3>
 <ul>
@@ -101,7 +101,7 @@
 <li>Unlock — shown when an account is locked after 5 failed login attempts</li>
 </ul>
 <h2 id="roles-and-permissions"><span class="num">21.2</span> Roles &amp; Permissions<a class="anchor" href="#roles-and-permissions" aria-label="Link to this section">#</a></h2>
-<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires roles.manage, and the Enterprise “advanced permissions” plan feature (custom roles are not available on Core or Growth).</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires roles.manage, and custom roles: included in Enterprise, an add-on on Growth, and not available on Core.</p>
 </div></aside>
 <p>Administration → Roles lists built-in roles (Admin, Staff, Cashier — these can't be deleted) alongside any custom roles you've created. “+ Add Role” opens a name field and a checkbox grid of permissions grouped by category.</p>
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>The Admin role can never lose the users.manage or roles.manage permissions — if unchecked, they're automatically re-added on save, so you can't accidentally lock yourself out. A role currently assigned to a user can't be deleted. When building a custom role for anyone who sells, remember to tick “Access Sales / POS.”</p>
@@ -142,7 +142,7 @@
 <tr><td>profit.view</td><td>View Profit: profit in reports, exports, and on the Dashboard (<a href="reports.html#who-sees-profit">section 19.4</a>)</td></tr>
 </tbody></table></div>
 <h2 id="branches"><span class="num">21.3</span> Branches<a class="anchor" href="#branches" aria-label="Link to this section">#</a></h2>
-<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires branches.manage, and multi-branch enabled on your account (automatic on Enterprise, purchasable as an add-on on Growth).</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires branches.manage. Core and Growth include one branch, and Growth can add more as an add-on; Enterprise has no limit.</p>
 </div></aside>
 <ol>
 <li>Administration → Branches → “+ Add Branch.”</li>
@@ -150,6 +150,7 @@
 <li>Click “Create Branch.”</li>
 </ol>
 <p>The new branch automatically gets its own Cash account (see <a href="financial-accounts.html#cash-bank-and-mobile-money-accounts">section 15.1</a>).</p>
+<p>The Branches page shows how many of your branches are in use. When they all are, “+ Add Branch” is replaced by “All your branches are in use. Contact your provider to add another.” Reactivating a branch also needs a free place.</p>
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>Branches are never deleted, only deactivated (to preserve their history), and the last remaining active branch can't be deactivated.</p>
 </div></aside>
 <h2 id="audit-log"><span class="num">21.4</span> Audit Log<a class="anchor" href="#audit-log" aria-label="Link to this section">#</a></h2>
@@ -165,7 +166,7 @@
 <div class="table-wrap"><table>
 <thead><tr><th scope="col">Setting</th><th scope="col">What it does</th></tr></thead>
 <tbody>
-<tr><td>General → Current plan</td><td>Your plan and its user limit. Upgrading isn't self-service; contact your provider.</td></tr>
+<tr><td>General → Current plan</td><td>Your plan, any add-ons, and how many users you can have. Changing plans or adding features isn't self-service; contact your provider.</td></tr>
 <tr><td>General → Timezone</td><td>What “now” means everywhere — sale and purchase timestamps, reports, exports. Pick where the business operates; the local time is shown under it. Takes effect for everyone from their next page load.</td></tr>
 <tr><td>Point of sale → Discount type</td><td>Percentage or Flat amount, for both cart-item discounts and the order discount beside the POS total.</td></tr>
 <tr><td>Point of sale → Start each sale with Walk-in Customer selected</td><td>Switch off if most of your sales go to registered (often credit) customers and you'd rather the cashier always chose one.</td></tr>
@@ -173,15 +174,15 @@
 <tr><td>Tax → Taxpayer Identification Number (TIN)</td><td>Your business's TIN, printed on receipts, goods-received notes, and customer statements. See <a href="tax.html#taxpayer-identification-numbers-tin">section 12.5</a>.</td></tr>
 <tr><td>Tax → Charge tax on sales</td><td>Charges tax on POS sales at the Default tax rate shown under it. See <a href="tax.html">Chapter 12</a>.</td></tr>
 <tr><td>Tax → Selling and cost prices include tax</td><td>Whether your prices already include tax, or tax is added on top. See <a href="tax.html#prices-that-include-tax-or-tax-added-on-top">section 12.2</a>.</td></tr>
-<tr><td>Optional features → Record truck &amp; driver on sales and purchases</td><td>Adds optional truck number, driver's name, and driver's phone fields to the POS, purchases, and direct deliveries. See <a href="truck-and-driver.html">Chapter 11</a>.</td></tr>
-<tr><td>Optional features → Track batches and expiry dates</td><td>Turns batch and expiry tracking on; the “expiring soon” warning period and whether expired stock can be sold appear under it. See <a href="batch-and-expiry-tracking.html">Chapter 10</a>.</td></tr>
-<tr><td>Optional features → Sell services as well as products</td><td>Lets a product be set up as a service, which sells with no stock. See <a href="products-and-categories.html#services">section 8.5</a>.</td></tr>
+<tr><td>Optional features → Record truck &amp; driver on sales and purchases</td><td>Enterprise, or an add-on. Adds optional truck number, driver's name, and driver's phone fields to the POS, purchases, and direct deliveries. See <a href="truck-and-driver.html">Chapter 11</a>.</td></tr>
+<tr><td>Optional features → Track batches and expiry dates</td><td>Growth &amp; Enterprise, or an add-on. Turns batch and expiry tracking on; the “expiring soon” warning period and whether expired stock can be sold appear under it. See <a href="batch-and-expiry-tracking.html">Chapter 10</a>.</td></tr>
+<tr><td>Optional features → Sell services as well as products</td><td>Enterprise, or an add-on. Lets a product be set up as a service, which sells with no stock. See <a href="products-and-categories.html#services">section 8.5</a>.</td></tr>
 <tr><td>Optional features → Proforma invoices</td><td>Growth &amp; Enterprise. Adds Finance → Proformas, with how many days a new proforma is valid for and the default terms printed on it. See <a href="sales-history.html#proforma-invoices">section 4.6</a>.</td></tr>
-<tr><td>Optional features → Keep count of damaged stock</td><td>Keeps count of damaged goods that may still be sold at a discount, and adds the Damaged Stock report. See <a href="stock-management.html#damaged-stock">section 9.4</a>.</td></tr>
+<tr><td>Optional features → Keep count of damaged stock</td><td>Enterprise, or an add-on. Keeps count of damaged goods that may still be sold at a discount, and adds the Damaged Stock report. See <a href="stock-management.html#damaged-stock">section 9.4</a>.</td></tr>
 <tr><td>Optional features → Set a different selling price at each branch</td><td>Multi-branch only. Lets each branch sell a product at its own price; the product's selling price becomes the standard price. See <a href="products-and-categories.html#prices-at-each-branch">section 8.6</a>.</td></tr>
 <tr><td>Optional features → Keep average cost per branch</td><td>Multi-branch only. Each branch keeps its own average cost, so its purchases only change its own cost and profit. See <a href="products-and-categories.html#average-cost-per-branch">section 8.7</a>.</td></tr>
 </tbody></table></div>
-<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>If the Tax section, or the truck &amp; driver, services, proforma, or damaged stock switch, is missing, your installation hasn't had that update yet — contact your provider. On the Core plan, Proforma invoices shows as not included. The branch price and branch cost switches only show when your business has more than one branch.</p>
+<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>If the Tax section, or the truck &amp; driver, services, proforma, or damaged stock switch, is missing, your installation hasn't had that update yet — contact your provider. On the Core plan, Proforma invoices shows as not included. A truck &amp; driver, batch &amp; expiry, services, or damaged stock switch your plan doesn't include shows “Included in the … plan, or available for your … plan as an add-on. Contact your provider to add it.” instead. One your business already used when the system was updated stays on. The branch price and branch cost switches only show when your business has more than one branch.</p>
 </div></aside>
 <h2 id="subscription"><span class="num">21.6</span> Subscription<a class="anchor" href="#subscription" aria-label="Link to this section">#</a></h2>
 <p>Administration → 🔑 Subscription shows the status of your subscription and is where a renewal (unlock) code is entered. Any user is taken here automatically if the system is locked.</p>
@@ -197,9 +198,11 @@
 <ol>
 <li>Open Administration → 🔑 Subscription and copy the Installation ID.</li>
 <li>Send the Installation ID to your provider with your renewal request. The code you receive only works on your installation.</li>
-<li>Paste the full code exactly as received (it starts “IBS2-”) into “Enter unlock code” and click “Activate.”</li>
+<li>Paste the full code exactly as received (it starts “IBS3-”; older “IBS2-” codes still work) into “Enter unlock code” and click “Activate.”</li>
 </ol>
 <aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Only users with settings.manage can enter an unlock code. Other users see “Ask an administrator to enter a renewal code to restore access.”</p>
+</div></aside>
+<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>An IBS3 code also carries your plan, add-ons, and extra users and branches: entering it sets them to exactly what the code lists. A code older than one already entered is refused with “A newer code has already been entered on this installation.”</p>
 </div></aside>
 
   </article>
@@ -218,7 +221,7 @@
   <ol><li class="lvl-2"><a href="#users">Users</a></li><li class="lvl-3"><a href="#users-creating-a-user">Creating a user</a></li><li class="lvl-3"><a href="#users-managing-an-existing-user">Managing an existing user</a></li><li class="lvl-2"><a href="#roles-and-permissions">Roles &amp; Permissions</a></li><li class="lvl-3"><a href="#roles-and-permissions-built-in-role-defaults">Built-in role defaults</a></li><li class="lvl-3"><a href="#roles-and-permissions-full-permission-reference">Full permission reference</a></li><li class="lvl-2"><a href="#branches">Branches</a></li><li class="lvl-2"><a href="#audit-log">Audit Log</a></li><li class="lvl-2"><a href="#settings">Settings</a></li><li class="lvl-2"><a href="#subscription">Subscription</a></li><li class="lvl-3"><a href="#subscription-renewing">Renewing</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=16736d25" defer></script>
+<script src="search-index.js?v=5ff036b9" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
