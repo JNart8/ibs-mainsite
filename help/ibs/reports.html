@@ -64,7 +64,7 @@
 <li><a href="customer-transactions.html"><span class="n">16</span><span>Customer Transactions</span></a></li>
 <li><a href="expenses.html"><span class="n">17</span><span>Expenses</span></a></li>
 <li><a href="suspense-account.html"><span class="n">18</span><span>Suspense Account</span></a></li>
-<li class="is-current"><a href="reports.html" aria-current="page"><span class="n">19</span><span>Reports</span></a><ol class="nav-sections"><li><a href="#available-on-every-plan"><span class="n">19.1</span>Available on every plan</a></li><li><a href="#advanced-reports-growth-and-enterprise-only"><span class="n">19.2</span>Advanced reports (Growth &amp; Enterprise only)</a></li><li><a href="#settling-customer-credit-between-branches"><span class="n">19.3</span>Settling customer credit between branches</a></li></ol></li>
+<li class="is-current"><a href="reports.html" aria-current="page"><span class="n">19</span><span>Reports</span></a><ol class="nav-sections"><li><a href="#available-on-every-plan"><span class="n">19.1</span>Available on every plan</a></li><li><a href="#advanced-reports-growth-and-enterprise-only"><span class="n">19.2</span>Advanced reports (Growth &amp; Enterprise only)</a></li><li><a href="#settling-customer-credit-between-branches"><span class="n">19.3</span>Settling customer credit between branches</a></li><li><a href="#who-sees-profit"><span class="n">19.4</span>Who sees profit</a></li></ol></li>
 <li><a href="import-and-export.html"><span class="n">20</span><span>Import &amp; Export</span></a></li>
 <li><a href="administration.html"><span class="n">21</span><span>Administration</span></a></li>
 <li><a href="plan-tiers-and-feature-availability.html"><span class="n">22</span><span>Plan Tiers &amp; Feature Availability</span></a></li>
@@ -98,13 +98,13 @@
 <div class="table-wrap"><table>
 <thead><tr><th scope="col">Report</th><th scope="col">What it shows</th></tr></thead>
 <tbody>
-<tr><td>Receivables</td><td>Outstanding customer debt, with 0/30/60/90+ day aging buckets and risk level</td></tr>
-<tr><td>Payables</td><td>Outstanding supplier debt, sortable by amount, name, or age</td></tr>
-<tr><td>Profit &amp; Loss Statement</td><td>Revenue, cost of goods sold, gross profit, operating expenses, and net profit for a period, with category breakdown, a daily trend, and comparison to the prior period</td></tr>
+<tr><td>Receivables</td><td>Outstanding customer debt, with 0/30/60/90+ day aging buckets and risk level. Opening debts are aged from the date they're owed since (<a href="customers.html#opening-debts">section 6.3</a>).</td></tr>
+<tr><td>Payables</td><td>Outstanding supplier debt, sortable by amount, name, or age, including opening debts (<a href="suppliers.html#opening-debts">section 7.3</a>). Payments made on a supplier's page count against their oldest debts.</td></tr>
+<tr><td>Profit &amp; Loss Statement</td><td>Revenue, cost of goods sold, gross profit, operating expenses, and net profit for a period, with category breakdown, a daily trend, and comparison to the prior period. Only for those who can see profit (<a href="#who-sees-profit">section 19.4</a>).</td></tr>
 <tr><td>Dead Stock</td><td>Products with no sales in a chosen number of days (default 90) that are still holding stock value</td></tr>
-<tr><td>Profit Margins</td><td>Per-product margin analysis, sortable by margin, profit, or revenue</td></tr>
+<tr><td>Profit Margins</td><td>Per-product margin analysis, sortable by margin, profit, or revenue. Only for those who can see profit (<a href="#who-sees-profit">section 19.4</a>).</td></tr>
 <tr><td>Customer Credit Settlement</td><td>Multi-branch only. When customers deposit money at one branch and spend it at another, this shows each branch's Deposits Issued, Credit Redeemed, amount already Settled, and Net Position — plus a Suggested Settlement table saying which branch should pay which, and how much.</td></tr>
-<tr><td>Branch Performance</td><td>Multi-branch, company-wide users only. Branches ranked by revenue for the period, with sales count, average sale value, gross profit, and margin.</td></tr>
+<tr><td>Branch Performance</td><td>Multi-branch, company-wide users only. Branches ranked by revenue for the period, with sales count, average sale value, gross profit, and margin. Only for those who can see profit (<a href="#who-sees-profit">section 19.4</a>).</td></tr>
 </tbody></table></div>
 <h2 id="settling-customer-credit-between-branches"><span class="num">19.3</span> Settling customer credit between branches<a class="anchor" href="#settling-customer-credit-between-branches" aria-label="Link to this section">#</a></h2>
 <ol>
@@ -122,6 +122,20 @@
 </div></aside>
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>On a plan without advanced reports, these appear greyed out in the Reports menu marked “🔒 Advanced reports (upgrade).”</p>
 </div></aside>
+<h2 id="who-sees-profit"><span class="num">19.4</span> Who sees profit<a class="anchor" href="#who-sees-profit" aria-label="Link to this section">#</a></h2>
+<p>Not everyone needs to see how much the business makes. Only these users see its profit:</p>
+<ul>
+<li><strong>Core and Growth:</strong> users with the Admin role.</li>
+<li><strong>Enterprise:</strong> users whose role has the View Profit permission (profit.view). The Admin role has it, and you can give it to any other role (<a href="administration.html#roles-and-permissions">section 21.2</a>).</li>
+</ul>
+<p>Everyone else:</p>
+<ul>
+<li>Doesn't see Profit &amp; Loss, Profit Margins, or Branch Performance in the Reports menu, and can't open or export them.</li>
+<li>Sees the Dashboard without today's and this month's profit, and without the profit line on the trend chart. Top Products and Category Performance are ranked by quantity and revenue instead.</li>
+<li>Sees Top Selling and Stock Valuation without their profit, potential profit, and margin columns, and gets the Stock Valuation, Top Selling, and Dead Stock exports without them.</li>
+</ul>
+<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>Product costs, and the margin on a product's own page, are still shown to anyone who can see products. Cashiers land on the POS when they log in, and can open the Dashboard from the menu for its stock alerts.</p>
+</div></aside>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -129,17 +143,17 @@
   <a class="pager-next" href="import-and-export.html"><span class="pager-dir">Next</span><span class="pager-title">Import &amp; Export</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.6 · October 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.7 · October 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
 </main>
 <aside class="on-this-page" aria-label="On this page">
   <p class="otp-title">On this page</p>
-  <ol><li class="lvl-2"><a href="#available-on-every-plan">Available on every plan</a></li><li class="lvl-2"><a href="#advanced-reports-growth-and-enterprise-only">Advanced reports (Growth &amp; Enterprise only)</a></li><li class="lvl-2"><a href="#settling-customer-credit-between-branches">Settling customer credit between branches</a></li></ol>
+  <ol><li class="lvl-2"><a href="#available-on-every-plan">Available on every plan</a></li><li class="lvl-2"><a href="#advanced-reports-growth-and-enterprise-only">Advanced reports (Growth &amp; Enterprise only)</a></li><li class="lvl-2"><a href="#settling-customer-credit-between-branches">Settling customer credit between branches</a></li><li class="lvl-2"><a href="#who-sees-profit">Who sees profit</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=458e38f6" defer></script>
+<script src="search-index.js?v=16736d25" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>

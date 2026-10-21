@@ -132,6 +132,26 @@
     "title": "The Proformas list"
   },
   {
+    "href": "sales-history.html#importing-past-sales",
+    "title": "4.7 Importing past sales"
+  },
+  {
+    "href": "sales-history.html#importing-past-sales-before-you-import",
+    "title": "Before you import"
+  },
+  {
+    "href": "sales-history.html#importing-past-sales-importing-the-file",
+    "title": "Importing the file"
+  },
+  {
+    "href": "sales-history.html#importing-past-sales-the-columns",
+    "title": "The columns"
+  },
+  {
+    "href": "sales-history.html#importing-past-sales-what-happens",
+    "title": "What happens"
+  },
+  {
     "href": "purchases.html",
     "title": "Chapter 5: Purchases"
   },
@@ -168,6 +188,30 @@
     "title": "Adjusting a credit limit"
   },
   {
+    "href": "customers.html#opening-debts",
+    "title": "6.3 Opening debts"
+  },
+  {
+    "href": "customers.html#opening-debts-adding-an-opening-debt",
+    "title": "Adding an opening debt"
+  },
+  {
+    "href": "customers.html#opening-debts-importing-opening-debts",
+    "title": "Importing opening debts"
+  },
+  {
+    "href": "customers.html#opening-debts-paying-it-off",
+    "title": "Paying it off"
+  },
+  {
+    "href": "customers.html#opening-debts-where-it-shows",
+    "title": "Where it shows"
+  },
+  {
+    "href": "customers.html#opening-debts-correcting-a-mistake",
+    "title": "Correcting a mistake"
+  },
+  {
     "href": "suppliers.html",
     "title": "Chapter 7: Suppliers"
   },
@@ -178,6 +222,18 @@
   {
     "href": "suppliers.html#the-supplier-detail-page",
     "title": "7.2 The supplier detail page"
+  },
+  {
+    "href": "suppliers.html#opening-debts",
+    "title": "7.3 Opening debts"
+  },
+  {
+    "href": "suppliers.html#opening-debts-adding-an-opening-debt",
+    "title": "Adding an opening debt"
+  },
+  {
+    "href": "suppliers.html#opening-debts-paying-a-supplier",
+    "title": "Paying a supplier"
   },
   {
     "href": "products-and-categories.html",
@@ -468,6 +524,10 @@
     "title": "19.3 Settling customer credit between branches"
   },
   {
+    "href": "reports.html#who-sees-profit",
+    "title": "19.4 Who sees profit"
+  },
+  {
     "href": "import-and-export.html",
     "title": "Chapter 20: Import & Export"
   },
@@ -618,6 +678,22 @@
   {
     "href": "frequently-asked-questions.html#why-does-a-product-cost-more-at-one-branch-than-another",
     "title": "Why does a product cost more at one branch than another?"
+  },
+  {
+    "href": "frequently-asked-questions.html#i-cant-see-profit-and-loss-or-the-profit-on-the-dashboard",
+    "title": "I can't see Profit & Loss, or the profit on the Dashboard."
+  },
+  {
+    "href": "frequently-asked-questions.html#a-customer-owed-us-money-before-we-started-using-ibs-how-do-i-enter-it",
+    "title": "A customer owed us money before we started using IBS. How do I enter it?"
+  },
+  {
+    "href": "frequently-asked-questions.html#we-counted-our-stock-a-few-days-before-going-live-do-we-need-to-count-again",
+    "title": "We counted our stock a few days before going live. Do we need to count again?"
+  },
+  {
+    "href": "frequently-asked-questions.html#why-does-a-purchase-say-its-covered-by-payments-on-the-suppliers-account",
+    "title": "Why does a purchase say it's covered by payments on the supplier's account?"
   },
   {
     "href": "document-information.html",

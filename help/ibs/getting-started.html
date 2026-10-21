@@ -95,7 +95,7 @@
 <div class="table-wrap"><table>
 <thead><tr><th scope="col">Menu</th><th scope="col">What's inside</th></tr></thead>
 <tbody>
-<tr><td>Dashboard</td><td>Business overview: alerts, today's performance, charts, quick actions. Shown to anyone with at least one management permission.</td></tr>
+<tr><td>Dashboard</td><td>Business overview: alerts, today's performance, charts, quick actions. Shown to everyone; the profit only to those who can see it (<a href="reports.html#who-sees-profit">section 19.4</a>).</td></tr>
 <tr><td>🛒 POS</td><td>The point-of-sale screen for ringing up a sale. Needs the “Access Sales / POS” permission, which every built-in role has.</td></tr>
 <tr><td>Inventory</td><td>Products, Categories, Stock Management, Stock Transfers (multi-branch only)</td></tr>
 <tr><td>People</td><td>Customers, Suppliers</td></tr>
@@ -113,11 +113,11 @@
 <li>Company-wide users also get a <strong>🌐 All branches</strong> option. It combines every branch in lists and reports, but only changes what you see — new sales and stock changes still go to your active branch, which the dropdown's tooltip names.</li>
 </ul>
 <h2 id="the-dashboard"><span class="num">2.4</span> The Dashboard<a class="anchor" href="#the-dashboard" aria-label="Link to this section">#</a></h2>
-<p>The Dashboard is the home screen for anyone who manages the business (it is hidden from pure cashier accounts, who land on POS instead). It gives a one-screen snapshot:</p>
+<p>The Dashboard is the home screen for anyone who manages the business. Cashiers land on POS when they log in, and can open the Dashboard from the menu for its stock alerts. It gives a one-screen snapshot:</p>
 <ul>
 <li>Critical Alerts — counts of out-of-stock items, low-stock items, overdue receivables, overdue payables and, when batch tracking is on, expired batches and batches expiring soon — each linking to the relevant report</li>
 <li>High-Risk Changes — for users who can view the Audit Log, an amber panel lists sensitive changes made since you last opened the Audit Log: a sale voided or edited, a role deleted or losing user/role management, or a product's selling price cut by 30% or more. Opening the Audit Log clears it.</li>
-<li>Today's Performance — revenue, profit and margin %, average transaction size, and this month's totals</li>
+<li>Today's Performance — revenue, profit and margin %, average transaction size, and this month's totals (profit only for those who can see it; see <a href="reports.html#who-sees-profit">section 19.4</a>)</li>
 <li>Financial Health — stock value, receivables, payables, and deposits held, each linking to its report</li>
 <li>Charts — a 30-day revenue &amp; profit trend, and category performance by profit</li>
 <li>Top Products by profit, and Quick Reports shortcuts</li>
@@ -141,7 +141,7 @@
   <a class="pager-next" href="point-of-sale-pos.html"><span class="pager-dir">Next</span><span class="pager-title">Point of Sale (POS)</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.6 · October 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.7 · October 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -151,7 +151,7 @@
   <ol><li class="lvl-2"><a href="#logging-in">Logging in</a></li><li class="lvl-2"><a href="#the-navigation-bar">The navigation bar</a></li><li class="lvl-2"><a href="#branches-and-the-branch-switcher">Branches and the branch switcher</a></li><li class="lvl-2"><a href="#the-dashboard">The Dashboard</a></li><li class="lvl-2"><a href="#my-account">My Account</a></li><li class="lvl-2"><a href="#subscription-reminders">Subscription reminders</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=458e38f6" defer></script>
+<script src="search-index.js?v=16736d25" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>

@@ -83,7 +83,7 @@
 </div></aside>
 <h2 id="importing-data"><span class="num">20.1</span> Importing data<a class="anchor" href="#importing-data" aria-label="Link to this section">#</a></h2>
 <ol>
-<li>Open Import from the relevant module (Categories, Products, Suppliers, Customers, or Purchases).</li>
+<li>Open Import from the relevant module (Categories, Products, Suppliers, Customers, Purchases, or Sales).</li>
 <li>Click “Download Template” and fill it in — its sample rows show every accepted variation; replace them with your own data.</li>
 <li>Drag your completed CSV onto the upload area, or click to browse (max 5 MB).</li>
 <li>Choose what happens “If Duplicate Found”: Skip Duplicate, or Update Existing (Categories, Suppliers, and Customers only — blank cells keep the current value, they never erase it).</li>
@@ -97,6 +97,9 @@
 <tr><td>Suppliers</td><td>company_name — plus phone for a new supplier, which can't match another supplier's phone. Optional tin.</td></tr>
 <tr><td>Customers</td><td>full_name, phone. Matched by phone, which must be unique. Optional tin.</td></tr>
 <tr><td>Purchases</td><td>supplier, sku, quantity, unit_cost. Rows sharing supplier + invoice_number become one purchase. payment_method is cash / mobile / bank / cheque / credit (blank = credit). payment_account is an account name or number (blank = your branch's account for that method). Stock is received at your active branch.</td></tr>
+<tr><td>Customer opening debts</td><td>customer, amount, owing_since. One row per amount owed; customer is a phone or customer code. See <a href="customers.html#opening-debts">section 6.3</a>.</td></tr>
+<tr><td>Supplier opening debts</td><td>supplier, amount, owing_since. Supplier by company name or code. See <a href="suppliers.html#opening-debts">section 7.3</a>.</td></tr>
+<tr><td>Sales</td><td>sale_date, sku, quantity. Sales made between a stock count and your first day on IBS; rows sharing a receipt_number become one sale. Needs Back-date Sales. See <a href="sales-history.html#importing-past-sales">section 4.7</a>.</td></tr>
 </tbody></table></div>
 <p>When truck &amp; driver recording is on, Purchases also take optional truck_number, driver_name, and driver_phone columns — taken per invoice from its first row that has them (see <a href="truck-and-driver.html#importing-purchases-with-a-truck-and-driver">section 11.5</a>).</p>
 <p>When batch tracking is on, Products also take optional track_expiry (yes/no), batch_number and expiry_date (YYYY-MM-DD) columns, and Purchases take batch_number and expiry_date. A blank expiry date means “unknown expiry”, and one purchase can list the same product on several rows, one per batch.</p>
@@ -108,6 +111,7 @@
 <h2 id="exporting-data"><span class="num">20.2</span> Exporting data<a class="anchor" href="#exporting-data" aria-label="Link to this section">#</a></h2>
 <p>“Export” buttons appear throughout the system — on Customer Transactions, Account Ledgers, the Audit Log, and most Reports (including Stock by Branch and the Expiry Report) — and download a CSV of whatever is currently filtered on screen. The sales export lists each line item once, with that line's share of any whole-cart discount, and — while truck &amp; driver recording is on — truck_number, driver_name, and driver_phone columns. The Reports → Sales Report export gets matching Truck, Driver, and Driver's Phone columns. Both the sales export and the purchases export (Finance → Purchases → “📤 Export Filtered”) have net_line_total, tax_percent, tax_amount, and gross_line_total columns; the purchases export also gives unit_cost_excl_tax. The customer and supplier exports include a tin column, and the Tax Report has its own export (<a href="reports.html#available-on-every-plan">section 19.1</a>). While selling services is on, the products export has type and price_at_sale columns; the stock exports leave services out.</p>
 <p>While branch prices are on, the products export has a branch_selling_price column for your branch, and the Branch Prices page has “Download Current Prices” for every branch you can price (<a href="products-and-categories.html#prices-at-each-branch">section 8.6</a>).</p>
+<p>Users who can't see profit (<a href="reports.html#who-sees-profit">section 19.4</a>) get the Stock Valuation, Top Selling, and Dead Stock exports without their profit columns, and can't export Profit &amp; Loss or Profit Margins.</p>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -115,7 +119,7 @@
   <a class="pager-next" href="administration.html"><span class="pager-dir">Next</span><span class="pager-title">Administration</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.6 · October 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.7 · October 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -125,7 +129,7 @@
   <ol><li class="lvl-2"><a href="#importing-data">Importing data</a></li><li class="lvl-2"><a href="#exporting-data">Exporting data</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=458e38f6" defer></script>
+<script src="search-index.js?v=16736d25" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
