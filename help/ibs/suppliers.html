@@ -52,7 +52,7 @@
 <li><a href="sales-history.html"><span class="n">4</span><span>Sales History</span></a></li>
 <li><a href="purchases.html"><span class="n">5</span><span>Purchases</span></a></li>
 <li><a href="customers.html"><span class="n">6</span><span>Customers</span></a></li>
-<li class="is-current"><a href="suppliers.html" aria-current="page"><span class="n">7</span><span>Suppliers</span></a><ol class="nav-sections"><li><a href="#adding-a-supplier"><span class="n">7.1</span>Adding a supplier</a></li><li><a href="#the-supplier-detail-page"><span class="n">7.2</span>The supplier detail page</a></li></ol></li>
+<li class="is-current"><a href="suppliers.html" aria-current="page"><span class="n">7</span><span>Suppliers</span></a><ol class="nav-sections"><li><a href="#adding-a-supplier"><span class="n">7.1</span>Adding a supplier</a></li><li><a href="#the-supplier-detail-page"><span class="n">7.2</span>The supplier detail page</a></li><li><a href="#opening-debts"><span class="n">7.3</span>Opening debts</a></li></ol></li>
 <li><a href="products-and-categories.html"><span class="n">8</span><span>Products &amp; Categories</span></a></li>
 <li><a href="stock-management.html"><span class="n">9</span><span>Stock Management</span></a></li>
 <li><a href="batch-and-expiry-tracking.html"><span class="n">10</span><span>Batch &amp; Expiry Tracking</span></a></li>
@@ -91,8 +91,27 @@
 </ol>
 <h2 id="the-supplier-detail-page"><span class="num">7.2</span> The supplier detail page<a class="anchor" href="#the-supplier-detail-page" aria-label="Link to this section">#</a></h2>
 <p>Shows how many products this supplier provides and their credit limit, with buttons for “+ New Purchase” (pre-fills this supplier on the Create Purchase screen), “💳 + Payment,” and Edit.</p>
+<p>A payment made with “💳 + Payment” counts against the supplier's oldest purchases and opening debts first (<a href="#opening-debts">section 7.3</a>). “+ Opening Debt” records what you already owed them when you started using IBS.</p>
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>A supplier with purchase history isn't deleted — it's deactivated instead, using the toggle on their profile, so past purchase records stay intact.</p>
 </div></aside>
+<h2 id="opening-debts"><span class="num">7.3</span> Opening debts<a class="anchor" href="#opening-debts" aria-label="Link to this section">#</a></h2>
+<p>Money you already owed a supplier when you started using IBS works like a customer's opening debt (<a href="customers.html#opening-debts">section 6.3</a>). It isn't a purchase: no stock comes in, and it isn't counted as cost.</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires suppliers.manage. Importing opening debts needs the Growth or Enterprise plan.</p>
+</div></aside>
+<h3 id="opening-debts-adding-an-opening-debt">Adding an opening debt<a class="anchor" href="#opening-debts-adding-an-opening-debt" aria-label="Link to this section">#</a></h3>
+<ol>
+<li>Open the supplier and click “+ Opening Debt.”</li>
+<li>Enter the Amount owed, the Owed since date, and an optional Reference (such as the supplier's invoice number) and Notes.</li>
+<li>Click “Add Opening Debt.”</li>
+</ol>
+<p>To enter many at once, use People → Suppliers → “📋 Import Opening Debts,” with the columns <strong>supplier</strong> (company name or supplier code), <strong>amount</strong>, and <strong>owing_since</strong>, and optional <strong>reference</strong> and <strong>notes</strong>.</p>
+<h3 id="opening-debts-paying-a-supplier">Paying a supplier<a class="anchor" href="#opening-debts-paying-a-supplier" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>“Record Payment” next to an opening debt pays it from one of your accounts.</li>
+<li>A payment made with “💳 + Payment” on the supplier's page isn't tied to one purchase. It counts against the supplier's oldest purchases and opening debts first. A purchase or opening debt it covers says it's covered by payments made on the supplier's account, and its Record Payment starts at what's still owed.</li>
+<li>Opening debts show in the supplier's balance and ledger, in Payables (aged from the owed-since date), and in the Dashboard's payables.</li>
+</ul>
+<p>An opening debt entered by mistake can be deleted from the supplier's page while nothing has been paid on it.</p>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -100,17 +119,17 @@
   <a class="pager-next" href="products-and-categories.html"><span class="pager-dir">Next</span><span class="pager-title">Products &amp; Categories</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.6 · October 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.7 · October 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
 </main>
 <aside class="on-this-page" aria-label="On this page">
   <p class="otp-title">On this page</p>
-  <ol><li class="lvl-2"><a href="#adding-a-supplier">Adding a supplier</a></li><li class="lvl-2"><a href="#the-supplier-detail-page">The supplier detail page</a></li></ol>
+  <ol><li class="lvl-2"><a href="#adding-a-supplier">Adding a supplier</a></li><li class="lvl-2"><a href="#the-supplier-detail-page">The supplier detail page</a></li><li class="lvl-2"><a href="#opening-debts">Opening debts</a></li><li class="lvl-3"><a href="#opening-debts-adding-an-opening-debt">Adding an opening debt</a></li><li class="lvl-3"><a href="#opening-debts-paying-a-supplier">Paying a supplier</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=458e38f6" defer></script>
+<script src="search-index.js?v=16736d25" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
