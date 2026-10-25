@@ -281,6 +281,7 @@ html:not(.js) .menu-btn, html:not(.js) .header-actions { display: none; }
 .menu.is-open .menu-links li:nth-child(4) a { transition-delay: .3s; }
 .menu.is-open .menu-links li:nth-child(5) a { transition-delay: .35s; }
 .menu.is-open .menu-links li:nth-child(6) a { transition-delay: .4s; }
+.menu.is-open .menu-links li:nth-child(7) a { transition-delay: .45s; }
 .menu-aside { display: grid; gap: 6px; opacity: 0; transform: translateY(16px); transition: opacity .6s .35s, transform .8s var(--ease) .35s; }
 .menu.is-open .menu-aside { opacity: 1; transform: none; }
 .menu-aside a { color: #fff; }
@@ -617,6 +618,72 @@ html:not(.js) .menu-btn, html:not(.js) .header-actions { display: none; }
 .haul-list h3 { color: #fff; font-size: 1.45rem; }
 .haul-list p { color: var(--on-night-soft); }
 .haulage .plans-foot { margin-top: 48px; }
+
+/* ── meSika (coming soon) ─────────────────────────────── */
+.soon-tag {
+  display: inline-block; vertical-align: middle;
+  font: 700 .72rem/1 var(--body); letter-spacing: .06em; text-transform: uppercase;
+  padding: 6px 10px; border-radius: 99px;
+  background: color-mix(in srgb, var(--owing) 18%, transparent); color: var(--owing);
+}
+.menu-links .soon-tag { font-size: .8rem; letter-spacing: .04em; margin-left: 6px; vertical-align: .9em; }
+.mesika {
+  background:
+    radial-gradient(45% 55% at 100% 30%, color-mix(in srgb, var(--spark) 14%, transparent), transparent 70%),
+    var(--page);
+}
+.mesika .eyebrow::before { display: none; }
+.mesika-mark { border-radius: 6px; }
+.mesika-grid { display: grid; gap: 56px; align-items: center; }
+@media (min-width: 1000px) { .mesika-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 72px; } }
+.mesika-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 48px; }
+@media (min-width: 700px) { .mesika-list { grid-template-columns: 1fr 1fr; } }
+.mesika-list li { display: grid; grid-template-columns: 2.6rem 1fr; gap: 6px 10px; padding: 24px 0; border-top: 1px solid var(--rule); align-content: start; }
+.mesika-num { font: italic 500 1.05rem/1.5 var(--serif); color: var(--leaf); grid-row: span 2; }
+.mesika-list h3 { font-size: 1.3rem; }
+.mesika-list p { color: var(--ink-soft); }
+.mesika .plans-foot { margin-top: 48px; }
+
+/* The phone uses meSika's own colours, the same in light and dark */
+.mesika-phone {
+  margin: 0 auto; width: min(320px, 100%);
+  padding: 12px; border-radius: 44px;
+  background: #0f1b2d;
+  box-shadow: 0 40px 80px -40px rgba(15, 27, 61, .55), inset 0 0 0 2px #2a3a57;
+  rotate: 2.5deg;
+}
+.phone-screen {
+  position: relative; border-radius: 34px; overflow: hidden;
+  background: #f1f5fb; color: #0f1b2d;
+  padding: 22px 18px 76px;
+  font: 400 .92rem/1.4 var(--body);
+}
+.phone-top { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.phone-top img { border-radius: 8px; }
+.phone-top b { display: block; font: 900 1rem/1.1 var(--display); color: #1e4fd0; }
+.phone-top small { color: #5a6982; font-size: .78rem; }
+.phone-sync { margin-left: auto; font-size: .72rem; font-weight: 700; color: #1f7a3e; background: #dff1e5; padding: 4px 9px; border-radius: 99px; }
+.phone-label { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #5a6982; }
+.phone-big { font: 900 2.4rem/1.1 var(--display); letter-spacing: -0.02em; margin: 2px 0 14px; }
+.phone-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.phone-stats div { background: #fff; border: 1px solid #d9e1ee; border-radius: 14px; padding: 9px 11px; }
+.phone-stats small { display: block; font-size: .72rem; color: #5a6982; }
+.phone-stats b { font: 900 1.05rem/1.3 var(--display); }
+.phone-stats .owing { color: #b4531a; }
+.phone-orders { list-style: none; margin: 0; padding: 0; background: #fff; border: 1px solid #d9e1ee; border-radius: 14px; }
+.phone-orders li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 11px; }
+.phone-orders li + li { border-top: 1px solid #d9e1ee; }
+.phone-orders b { display: block; font-size: .86rem; }
+.phone-orders small { color: #5a6982; font-size: .74rem; }
+.phone-orders .paid, .phone-orders .owe { flex: none; font-size: .68rem; font-weight: 700; padding: 3px 8px; border-radius: 99px; }
+.phone-orders .paid { background: #dff1e5; color: #1f7a3e; }
+.phone-orders .owe { background: #f8e4d8; color: #b4531a; }
+.phone-fab {
+  position: absolute; right: 16px; bottom: 18px;
+  background: #1e4fd0; color: #fff; font: 700 .82rem/1 var(--body);
+  padding: 12px 16px; border-radius: 99px; box-shadow: 0 10px 20px -10px rgba(30, 79, 208, .8);
+}
+@media (prefers-reduced-motion: reduce) { .mesika-phone { rotate: none; } }
 
 /* ── Custom software ─────────────────────────────────── */
 .custom { padding-bottom: 0; }
