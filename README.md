@@ -10,6 +10,9 @@ top of `.github/workflows/deploy.yml`. Uploading the same files by hand
 works too.
 
 - `index.html`: the page
+- `404.html`: the "page not found" page; `.htaccess` tells the server to
+  use it. Its links and file paths are absolute (`/assets/...`) because it
+  is shown at any missing address
 - `assets/css/site.css`: styles (light and dark themes follow the visitor's device)
 - `assets/js/site.js`: the mobile menu
 - `assets/img/`: logo, favicons and the link-preview image

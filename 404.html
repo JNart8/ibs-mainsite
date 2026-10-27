@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-GH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — IB Solutions Global</title>
+<meta name="description" content="We couldn't find that page on ibsolutionsglobal.com.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0f1b3d">
+<!-- This page is served at any missing address, so every link and file path is absolute -->
+<link rel="icon" type="image/png" href="/assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Lato:wght@700;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* Same tokens as assets/css/site.css. Kept inline so this page never
+   depends on a cached stylesheet from another version of the site. */
+:root {
+  --leaf: #27418b;
+  --leaf-strong: #1d3270;
+  --on-leaf: #ffffff;
+  --spark: #4d74f0;
+  --ink: #0f1b3d;
+  --ink-soft: #4a5573;
+  --page: #f5f7fb;
+  --paper: #ffffff;
+  --rule: #dbe1ec;
+  --leaf-tint: #e6ebf8;
+  --owing: #c98a0c;
+  --display: 'Lato', 'Segoe UI', sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+  --body: 'Atkinson Hyperlegible', 'Segoe UI', sans-serif;
+  --receipt: 'IBM Plex Mono', 'Consolas', monospace;
+  --gutter: clamp(16px, 5.5vw, 80px);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --leaf: #8ea6ec;
+    --leaf-strong: #b4c4f4;
+    --on-leaf: #0a1228;
+    --spark: #6f8fff;
+    --ink: #eef1f8;
+    --ink-soft: #a9b2c8;
+    --page: #0a1228;
+    --paper: #111c3a;
+    --rule: #24315a;
+    --leaf-tint: rgba(142, 166, 236, .1);
+    --owing: #f0b93b;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh; min-height: 100svh;
+  display: flex; flex-direction: column;
+  background:
+    radial-gradient(55% 60% at 100% 0%, color-mix(in srgb, var(--spark) 22%, transparent), transparent 70%),
+    radial-gradient(40% 45% at 0% 100%, color-mix(in srgb, var(--leaf) 10%, transparent), transparent 70%),
+    var(--page);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--leaf); text-underline-offset: 3px; }
+a:hover { color: var(--leaf-strong); }
+:focus-visible { outline: 3px solid var(--owing); outline-offset: 3px; border-radius: 6px; }
+svg { flex: none; }
+p { margin: 0; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--paper); padding: 8px 12px; z-index: 200; }
+.skip:focus { left: 8px; }
+
+/* Header */
+.top { display: flex; align-items: center; gap: 24px; padding: 18px var(--gutter); position: relative; z-index: 2; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; margin-right: auto; }
+.brand:hover { color: inherit; }
+.brand img { height: 38px; width: auto; }
+.brand span { font: 900 1.12rem/1.05 var(--display); letter-spacing: -0.02em; }
+.brand small { display: block; font: 400 .8rem/1.3 var(--body); opacity: .7; letter-spacing: 0; }
+@media (prefers-color-scheme: dark) { .brand img { filter: brightness(2.1) saturate(.7); } }
+
+/* Pill buttons, as on the home page */
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.pill {
+  --h: 54px;
+  display: inline-flex; align-items: center; gap: 14px;
+  height: var(--h); padding: 0 7px 0 26px;
+  border-radius: 999px;
+  font: 700 1rem/1 var(--body);
+  text-decoration: none;
+  transition: background-color .3s, color .3s, border-color .3s;
+  white-space: nowrap;
+}
+.pill-sm { --h: 46px; padding: 0 5px 0 20px; font-size: .95rem; }
+.pill-icon {
+  width: calc(var(--h) - 14px); height: calc(var(--h) - 14px);
+  border-radius: 50%; display: grid; place-items: center;
+  transition: transform .45s var(--ease), background-color .3s;
+}
+.pill-icon svg { width: 16px; height: 16px; }
+.pill:hover .pill-icon { transform: translateX(3px) scale(1.06); }
+.pill-label { position: relative; display: inline-block; overflow: hidden; line-height: 1.25; padding-block: 1px; }
+.pill-label > span { display: block; transition: transform .5s var(--ease); }
+.pill-label > span + span { position: absolute; left: 0; top: 100%; }
+.pill:hover .pill-label > span { transform: translateY(-100%); }
+.pill-primary { background: var(--leaf); color: var(--on-leaf); }
+.pill-primary:hover { background: var(--leaf-strong); color: var(--on-leaf); }
+.pill-primary .pill-icon { background: rgba(255, 255, 255, .16); }
+.pill-light { background: #fff; color: #0f1b3d; box-shadow: 0 8px 24px -14px rgba(15, 27, 61, .45); }
+.pill-light:hover { color: #0f1b3d; }
+.pill-light .pill-icon { background: #27418b; color: #fff; }
+.pill-outline { border: 1.5px solid color-mix(in srgb, var(--ink) 30%, transparent); color: var(--ink); background: transparent; }
+.pill-outline:hover { border-color: var(--leaf); color: var(--leaf); }
+.pill-outline .pill-icon { background: var(--leaf-tint); color: var(--leaf); }
+
+/* The page */
+main { flex: 1; display: grid; align-items: center; position: relative; z-index: 1; }
+.grid {
+  width: min(1280px, 100% - 2 * var(--gutter)); margin-inline: auto;
+  display: grid; gap: 48px; padding-block: clamp(24px, 5vw, 64px);
+}
+@media (min-width: 960px) {
+  .grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; gap: 40px; }
+}
+.eyebrow { font: 400 1.05rem/1.3 var(--body); color: var(--ink-soft); margin: 0 0 18px; display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--owing); }
+h1 {
+  font: 700 clamp(2.8rem, 6.4vw, 6rem)/1 var(--display);
+  letter-spacing: -0.035em;
+  margin: 0 0 24px;
+  max-width: 11ch;
+  text-wrap: balance;
+}
+h1 em { font-family: var(--serif); font-style: italic; font-weight: 500; letter-spacing: -0.01em; color: var(--leaf); padding-right: .04em; }
+.lede { font-size: clamp(1.1rem, 1.5vw, 1.3rem); color: var(--ink-soft); max-width: 40ch; margin-bottom: 32px; }
+
+.elsewhere { margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--rule); max-width: 560px; }
+.elsewhere p { font-size: .95rem; color: var(--ink-soft); margin-bottom: 10px; }
+.elsewhere ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.elsewhere a { font-weight: 700; text-decoration: none; }
+.elsewhere a:hover { text-decoration: underline; }
+
+/* The leaf and the receipt */
+.stage { position: relative; display: grid; place-items: center; min-height: 460px; }
+.leaf-big {
+  position: absolute; width: 300px; left: 50%; top: 50%;
+  translate: -20% -55%; rotate: 24deg;
+  filter: drop-shadow(0 40px 60px rgba(39, 65, 139, .35));
+  overflow: visible;
+}
+.leaf-glass { position: absolute; overflow: visible; pointer-events: none; }
+.leaf-glass path { fill: rgba(255, 255, 255, .22); stroke: rgba(255, 255, 255, .75); stroke-width: 1.5; }
+@media (prefers-color-scheme: dark) { .leaf-glass path { fill: rgba(142, 166, 236, .06); stroke: rgba(142, 166, 236, .3); } }
+.leaf-glass-1 { width: 170px; left: -2%; top: 4%; rotate: -28deg; }
+.leaf-glass-2 { width: 140px; right: -4%; bottom: 0; rotate: 40deg; backdrop-filter: blur(4px); }
+
+.receipt {
+  position: relative; z-index: 1;
+  width: min(310px, 100%);
+  background: #fff; color: #1a1d24;
+  font: 400 .8rem/1.55 var(--receipt);
+  padding: 26px 22px 30px;
+  box-shadow: 0 1px 0 #e6e8ee, 0 30px 60px -24px rgba(15, 27, 61, .55);
+  -webkit-mask: radial-gradient(7px at 50% calc(100% + 2px), transparent 98%, #000) 50% / 14px 100%;
+          mask: radial-gradient(7px at 50% calc(100% + 2px), transparent 98%, #000) 50% / 14px 100%;
+  rotate: -3deg;
+}
+.receipt .head { text-align: center; margin-bottom: 14px; }
+.receipt .head strong { display: block; font-weight: 500; font-size: .9rem; }
+.receipt hr { border: 0; border-top: 1px dashed #b9bdc8; margin: 10px 0; }
+.receipt .row { display: flex; justify-content: space-between; gap: 12px; }
+.receipt .row[hidden] { display: none; }
+.receipt .path { display: block; margin-top: 2px; word-break: break-all; color: #27418b; }
+.receipt .total { font-weight: 500; font-size: .95rem; }
+.receipt .status { color: #8a5d00; font-weight: 500; }
+.receipt .foot { text-align: center; margin-top: 14px; color: #5b6070; }
+
+@media (max-width: 959px) {
+  .stage { min-height: 400px; }
+  .leaf-big { width: 230px; }
+}
+
+/* Footer */
+.foot-line {
+  padding: 22px var(--gutter) 28px; position: relative; z-index: 1;
+  display: flex; flex-wrap: wrap; gap: 6px 24px; justify-content: space-between;
+  font-size: .9rem; color: var(--ink-soft);
+}
+
+/* Motion: only with script and when the visitor allows it, so the page
+   reads in full either way */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rise { opacity: 0; transform: translateY(26px); animation: rise 1s var(--ease) both; animation-delay: calc(var(--d, 0) * 90ms + 80ms); }
+  .js .receipt { animation: print 1.9s cubic-bezier(.3, .7, .3, 1) .45s both; }
+  .js .leaf-big { animation: leaf-in 1.4s var(--ease) both; }
+  .js .leaf-glass { animation: drift 9s ease-in-out infinite alternate; }
+  .js .leaf-glass-2 { animation-duration: 11s; animation-delay: -4s; }
+}
+@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes print {
+  from { clip-path: inset(0 0 100% 0); translate: 0 -18px; }
+  to   { clip-path: inset(0 0 0 0);    translate: 0 0; }
+}
+@keyframes leaf-in { from { opacity: 0; scale: .85; rotate: 6deg; } }
+@keyframes drift { to { transform: translate(10px, -14px) rotate(6deg); } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-chev" viewBox="0 0 16 16"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="brand" href="/" aria-label="IB Solutions Global, home">
+    <img src="/assets/img/ibs-logo.png" alt="" width="28" height="38">
+    <span>IB Solutions<small>Global</small></span>
+  </a>
+  <a class="pill pill-light pill-sm" href="/#tour"><span class="pill-label"><span>Take the tour</span><span aria-hidden="true">Take the tour</span></span><span class="pill-icon"><svg aria-hidden="true"><use href="#i-chev"/></svg></span></a>
+</header>
+
+<main id="main">
+  <div class="grid">
+    <div>
+      <p class="eyebrow rise">Error 404, page not found</p>
+      <h1 class="rise" style="--d:1">This page isn't on the <em>shelf.</em></h1>
+      <p class="lede rise" style="--d:2">The link may be out of date, or the address may have a typo. Everything else is still here.</p>
+      <div class="actions rise" style="--d:3">
+        <a class="pill pill-primary" href="/"><span class="pill-label"><span>Back to the home page</span><span aria-hidden="true">Back to the home page</span></span><span class="pill-icon"><svg aria-hidden="true"><use href="#i-chev"/></svg></span></a>
+        <a class="pill pill-outline" href="/help/"><span class="pill-label"><span>Open the help centre</span><span aria-hidden="true">Open the help centre</span></span><span class="pill-icon"><svg aria-hidden="true"><use href="#i-chev"/></svg></span></a>
+      </div>
+      <nav class="elsewhere rise" style="--d:4" aria-label="Popular pages">
+        <p>Or go straight to</p>
+        <ul>
+          <li><a href="/#business">Business Management</a></li>
+          <li><a href="/#tours">Product tours</a></li>
+          <li><a href="/#haulage">Haulage</a></li>
+          <li><a href="/#plans">Plans</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <svg class="leaf-glass leaf-glass-1" viewBox="0 0 400 600"><path d="M200 10C330 120 390 280 330 430 295 520 245 575 200 590 155 575 105 520 70 430 10 280 70 120 200 10Z"/></svg>
+      <svg class="leaf-big" viewBox="0 0 400 600">
+        <defs>
+          <linearGradient id="leaf-fill" x1="0" y1="0" x2=".35" y2="1">
+            <stop offset="0" stop-color="#6f8fff"/>
+            <stop offset=".55" stop-color="#3556c4"/>
+            <stop offset="1" stop-color="#27418b"/>
+          </linearGradient>
+        </defs>
+        <path d="M200 10C330 120 390 280 330 430 295 520 245 575 200 590 155 575 105 520 70 430 10 280 70 120 200 10Z" fill="url(#leaf-fill)"/>
+        <path d="M200 590V140M200 300 282 222M200 410 300 330M200 360 112 280M200 470 104 398" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      <svg class="leaf-glass leaf-glass-2" viewBox="0 0 400 600"><path d="M200 10C330 120 390 280 330 430 295 520 245 575 200 590 155 575 105 520 70 430 10 280 70 120 200 10Z"/></svg>
+
+      <div class="receipt">
+        <div class="head">
+          <strong>IB SOLUTIONS GLOBAL</strong>
+          Accra, Ghana
+        </div>
+        <div class="row" id="r-when" hidden><span id="r-date"></span><span id="r-time"></span></div>
+        <div class="row"><span>Receipt</span><span>ERR-404</span></div>
+        <hr>
+        <div>Page asked for<span class="path" id="r-path">This address</span></div>
+        <hr>
+        <div class="row"><span>Pages found</span><span>0</span></div>
+        <div class="row total"><span>TOTAL GHS</span><span>0.00</span></div>
+        <div class="row status"><span>Status</span><span>Not found</span></div>
+        <hr>
+        <div class="foot">Nothing charged. Try another page</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot-line">
+  <span>© 2026 Implant Business Solutions (IB Solutions Global), Accra</span>
+  <a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a>
+</footer>
+
+<script>
+// Print the missing address and today's date on the receipt
+(function () {
+  var path = location.pathname;
+  try { path = decodeURI(path); } catch (e) {}
+  if (path.length > 64) path = path.slice(0, 61) + '...';
+  if (path && path !== '/404.html') document.getElementById('r-path').textContent = path;
+
+  try {
+    var now = new Date();
+    document.getElementById('r-date').textContent =
+      now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    document.getElementById('r-time').textContent =
+      now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('r-when').hidden = false;
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
