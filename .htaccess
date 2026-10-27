@@ -1,0 +1,2 @@
+# Show the site's own page for addresses that don't exist
+ErrorDocument 404 /404.html
