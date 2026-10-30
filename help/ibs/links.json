@@ -484,6 +484,26 @@
     "title": "15.4 Account ledger"
   },
   {
+    "href": "financial-accounts.html#counting-the-cash",
+    "title": "15.5 Counting the cash"
+  },
+  {
+    "href": "financial-accounts.html#counting-the-cash-counting-the-drawer",
+    "title": "Counting the drawer"
+  },
+  {
+    "href": "financial-accounts.html#counting-the-cash-shortages-and-overages",
+    "title": "Shortages and overages"
+  },
+  {
+    "href": "financial-accounts.html#counting-the-cash-sales-after-the-count",
+    "title": "Sales after the count"
+  },
+  {
+    "href": "financial-accounts.html#counting-the-cash-counting-blind",
+    "title": "Counting blind"
+  },
+  {
     "href": "customer-transactions.html",
     "title": "Chapter 16: Customer Transactions"
   },
@@ -526,6 +546,22 @@
   {
     "href": "reports.html#who-sees-profit",
     "title": "19.4 Who sees profit"
+  },
+  {
+    "href": "reports.html#daily-cash-report",
+    "title": "19.5 Daily Cash Report"
+  },
+  {
+    "href": "reports.html#daily-cash-report-one-day",
+    "title": "One day"
+  },
+  {
+    "href": "reports.html#daily-cash-report-several-days",
+    "title": "Several days"
+  },
+  {
+    "href": "reports.html#daily-cash-report-changed-since-counted",
+    "title": "Changed since counted"
   },
   {
     "href": "import-and-export.html",
@@ -710,6 +746,18 @@
   {
     "href": "frequently-asked-questions.html#everything-in-settings-is-greyed-out",
     "title": "Everything in Settings is greyed out."
+  },
+  {
+    "href": "frequently-asked-questions.html#why-cant-i-see-how-much-should-be-in-the-drawer-when-i-count",
+    "title": "Why can't I see how much should be in the drawer when I count?"
+  },
+  {
+    "href": "frequently-asked-questions.html#i-entered-the-wrong-amount-when-counting-the-cash",
+    "title": "I entered the wrong amount when counting the cash."
+  },
+  {
+    "href": "frequently-asked-questions.html#someone-bought-something-after-i-counted-the-cash",
+    "title": "Someone bought something after I counted the cash."
   },
   {
     "href": "document-information.html",
