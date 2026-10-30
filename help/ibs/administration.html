@@ -87,7 +87,7 @@
 <li>Administration → Users → “Add User.”</li>
 <li>Enter Full Name and a unique Username.</li>
 <li>Choose a Role: Cashier (POS and sales only), Staff (all features, no user management), Admin (full access including user management), or any custom role your business has created.</li>
-<li>If your business has multiple branches, choose the user's Branch (one only) and their Visibility: Branch-level (the default — sees only that branch) or Company-wide (sees every branch; only a company-wide admin can grant this).</li>
+<li>If your business has multiple branches, choose the user's Branch (one only) and their Visibility: Branch-level (the default — sees only that branch) or Company-wide (sees every branch; only a company-wide admin can grant this). Make anyone who should change Settings, roles, or branches Company-wide (<a href="#settings">section 21.5</a>).</li>
 <li>Set a Password and Confirm Password (minimum 6 characters).</li>
 <li>Leave “Active (can log in)” checked, and click “Create User.”</li>
 </ol>
@@ -101,7 +101,7 @@
 <li>Unlock — shown when an account is locked after 5 failed login attempts</li>
 </ul>
 <h2 id="roles-and-permissions"><span class="num">21.2</span> Roles &amp; Permissions<a class="anchor" href="#roles-and-permissions" aria-label="Link to this section">#</a></h2>
-<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires roles.manage, and custom roles: included in Enterprise, an add-on on Growth, and not available on Core.</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires roles.manage, and custom roles: included in Enterprise, an add-on on Growth, and not available on Core. With more than one branch, only company-wide users can add, change, or delete a role; a branch-level user can open the roles to look.</p>
 </div></aside>
 <p>Administration → Roles lists built-in roles (Admin, Staff, Cashier — these can't be deleted) alongside any custom roles you've created. “+ Add Role” opens a name field and a checkbox grid of permissions grouped by category.</p>
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>The Admin role can never lose the users.manage or roles.manage permissions — if unchecked, they're automatically re-added on save, so you can't accidentally lock yourself out. A role currently assigned to a user can't be deleted. When building a custom role for anyone who sells, remember to tick “Access Sales / POS.”</p>
@@ -142,11 +142,11 @@
 <tr><td>profit.view</td><td>View Profit: profit in reports, exports, and on the Dashboard (<a href="reports.html#who-sees-profit">section 19.4</a>)</td></tr>
 </tbody></table></div>
 <h2 id="branches"><span class="num">21.3</span> Branches<a class="anchor" href="#branches" aria-label="Link to this section">#</a></h2>
-<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires branches.manage. Core and Growth include one branch, and more can be added as an add-on; Enterprise has no limit.</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires branches.manage. Core and Growth include one branch, and more can be added as an add-on; Enterprise has no limit. Only company-wide users can add a branch or switch one on or off; a branch-level admin can open and edit only their own branch.</p>
 </div></aside>
 <ol>
 <li>Administration → Branches → “+ Add Branch.”</li>
-<li>Enter the Branch Name and, optionally, Address and Phone.</li>
+<li>Enter the Branch Name and, optionally, its Name on Receipts, Address, and Phone. They print at the top of the branch's receipts, goods-received notes, and proformas; any left blank print the business's (<a href="#settings">section 21.5</a>).</li>
 <li>Click “Create Branch.”</li>
 </ol>
 <p>The new branch automatically gets its own Cash account (see <a href="financial-accounts.html#cash-bank-and-mobile-money-accounts">section 15.1</a>).</p>
@@ -160,14 +160,16 @@
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>The Audit Log is branch-scoped like Sales and Purchases history — a branch-level user sees only that branch's entries. System-wide entries, such as role changes, are only visible to company-wide viewers.</p>
 </div></aside>
 <h2 id="settings"><span class="num">21.5</span> Settings<a class="anchor" href="#settings" aria-label="Link to this section">#</a></h2>
-<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires settings.manage.</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires settings.manage. With more than one branch, only company-wide users change the settings. A branch-level admin sees them greyed out, and changes only their own branch's details in the Receipts section, saved with “Save receipt details.”</p>
 </div></aside>
-<p>Administration → Settings groups its options into four sections — General, Point of sale, Tax, and Optional features — listed down the left of the page (across the top on a phone); click one to jump to it. Each on/off option is a switch with a one-line explanation under it; click “How this works” for the full explanation. Options that depend on another, such as the tax rate and the expiry options, only appear while it is switched on. Change what you need, then click “Save settings” — the button stays at the bottom of the screen as you scroll.</p>
+<p>Administration → Settings groups its options into five sections — General, Receipts, Point of sale, Tax, and Optional features — listed down the left of the page (across the top on a phone); click one to jump to it. Each on/off option is a switch with a one-line explanation under it; click “How this works” for the full explanation. Options that depend on another, such as the tax rate and the expiry options, only appear while it is switched on. Change what you need, then click “Save settings” — the button stays at the bottom of the screen as you scroll.</p>
 <div class="table-wrap"><table>
 <thead><tr><th scope="col">Setting</th><th scope="col">What it does</th></tr></thead>
 <tbody>
 <tr><td>General → Current plan</td><td>Your plan, any add-ons, and how many users you can have. Changing plans or adding features isn't self-service; contact your provider.</td></tr>
 <tr><td>General → Timezone</td><td>What “now” means everywhere — sale and purchase timestamps, reports, exports. Pick where the business operates; the local time is shown under it. Takes effect for everyone from their next page load.</td></tr>
+<tr><td>Receipts → Business details</td><td>The business name, address, and phone printed at the top of receipts, goods-received notes, proformas, and customer statements. The name is required. A phone can hold two numbers, e.g. “024 123 4567 / 020 765 4321”. With more than one branch, only a company-wide admin changes these.</td></tr>
+<tr><td>Receipts → each branch (multi-branch only)</td><td>A branch's Name on Receipts, Phone, and Address, printed on that branch's receipts, goods-received notes, and proformas. Leave any blank to print the business's. Customer statements always show the business's details. A company-wide admin sees every branch here; a branch-level admin only their own.</td></tr>
 <tr><td>Point of sale → Discount type</td><td>Percentage or Flat amount, for both cart-item discounts and the order discount beside the POS total.</td></tr>
 <tr><td>Point of sale → Start each sale with Walk-in Customer selected</td><td>Switch off if most of your sales go to registered (often credit) customers and you'd rather the cashier always chose one.</td></tr>
 <tr><td>Point of sale → Show account balances to all staff</td><td>Switch off to hide account balances wherever staff choose an account (POS, purchases, expenses, deposits); only roles with Financial Accounts access keep seeing them.</td></tr>
@@ -211,7 +213,7 @@
   <a class="pager-next" href="plan-tiers-and-feature-availability.html"><span class="pager-dir">Next</span><span class="pager-title">Plan Tiers &amp; Feature Availability</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.8 · October 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.9 · October 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -221,7 +223,7 @@
   <ol><li class="lvl-2"><a href="#users">Users</a></li><li class="lvl-3"><a href="#users-creating-a-user">Creating a user</a></li><li class="lvl-3"><a href="#users-managing-an-existing-user">Managing an existing user</a></li><li class="lvl-2"><a href="#roles-and-permissions">Roles &amp; Permissions</a></li><li class="lvl-3"><a href="#roles-and-permissions-built-in-role-defaults">Built-in role defaults</a></li><li class="lvl-3"><a href="#roles-and-permissions-full-permission-reference">Full permission reference</a></li><li class="lvl-2"><a href="#branches">Branches</a></li><li class="lvl-2"><a href="#audit-log">Audit Log</a></li><li class="lvl-2"><a href="#settings">Settings</a></li><li class="lvl-2"><a href="#subscription">Subscription</a></li><li class="lvl-3"><a href="#subscription-renewing">Renewing</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=82ba4f56" defer></script>
+<script src="search-index.js?v=ffed47d9" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
