@@ -112,7 +112,7 @@
 <tbody>
 <tr><td>Admin</td><td>Every permission in the system</td></tr>
 <tr><td>Staff</td><td>Everything except Users, Settings, Roles, Branches, Audit Log, Stock Transfers, Back-date Sales, Edit / Void Sales, and View Profit</td></tr>
-<tr><td>Cashier</td><td>POS and Sales (Access Sales / POS) only — none of the management permissions</td></tr>
+<tr><td>Cashier</td><td>POS and Sales (Access Sales / POS) — none of the management permissions. On Core and Growth, also Count Cash while Settings → “Cashiers can count the cash” is on.</td></tr>
 </tbody></table></div>
 <h3 id="roles-and-permissions-full-permission-reference">Full permission reference<a class="anchor" href="#roles-and-permissions-full-permission-reference" aria-label="Link to this section">#</a></h3>
 <div class="table-wrap"><table>
@@ -137,6 +137,7 @@
 <tr><td>sales.backdate</td><td>Back-date a sale in POS</td></tr>
 <tr><td>sales.edit</td><td>Edit / Void Sales (and cancel proformas)</td></tr>
 <tr><td>financial_accounts.access</td><td>Access Financial Accounts</td></tr>
+<tr><td>cash.count</td><td>Count Cash: count a drawer at closing (<a href="financial-accounts.html#counting-the-cash">section 15.5</a>)</td></tr>
 <tr><td>expenses.manage</td><td>Manage Expenses</td></tr>
 <tr><td>suspense.manage</td><td>Manage the Suspense Account</td></tr>
 <tr><td>profit.view</td><td>View Profit: profit in reports, exports, and on the Dashboard (<a href="reports.html#who-sees-profit">section 19.4</a>)</td></tr>
@@ -173,6 +174,7 @@
 <tr><td>Point of sale → Discount type</td><td>Percentage or Flat amount, for both cart-item discounts and the order discount beside the POS total.</td></tr>
 <tr><td>Point of sale → Start each sale with Walk-in Customer selected</td><td>Switch off if most of your sales go to registered (often credit) customers and you'd rather the cashier always chose one.</td></tr>
 <tr><td>Point of sale → Show account balances to all staff</td><td>Switch off to hide account balances wherever staff choose an account (POS, purchases, expenses, deposits); only roles with Financial Accounts access keep seeing them.</td></tr>
+<tr><td>Point of sale → Cashiers can count the cash</td><td>Core, and Growth without the Custom Roles add-on. Lets cashiers count the drawer at closing; Admin and Staff always can. Cashiers count blind. See <a href="financial-accounts.html#counting-the-cash">section 15.5</a>.</td></tr>
 <tr><td>Tax → Taxpayer Identification Number (TIN)</td><td>Your business's TIN, printed on receipts, goods-received notes, and customer statements. See <a href="tax.html#taxpayer-identification-numbers-tin">section 12.5</a>.</td></tr>
 <tr><td>Tax → Charge tax on sales</td><td>Charges tax on POS sales at the Default tax rate shown under it. See <a href="tax.html">Chapter 12</a>.</td></tr>
 <tr><td>Tax → Selling and cost prices include tax</td><td>Whether your prices already include tax, or tax is added on top. See <a href="tax.html#prices-that-include-tax-or-tax-added-on-top">section 12.2</a>.</td></tr>
@@ -213,7 +215,7 @@
   <a class="pager-next" href="plan-tiers-and-feature-availability.html"><span class="pager-dir">Next</span><span class="pager-title">Plan Tiers &amp; Feature Availability</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.9 · October 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.10 · October 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -223,7 +225,7 @@
   <ol><li class="lvl-2"><a href="#users">Users</a></li><li class="lvl-3"><a href="#users-creating-a-user">Creating a user</a></li><li class="lvl-3"><a href="#users-managing-an-existing-user">Managing an existing user</a></li><li class="lvl-2"><a href="#roles-and-permissions">Roles &amp; Permissions</a></li><li class="lvl-3"><a href="#roles-and-permissions-built-in-role-defaults">Built-in role defaults</a></li><li class="lvl-3"><a href="#roles-and-permissions-full-permission-reference">Full permission reference</a></li><li class="lvl-2"><a href="#branches">Branches</a></li><li class="lvl-2"><a href="#audit-log">Audit Log</a></li><li class="lvl-2"><a href="#settings">Settings</a></li><li class="lvl-2"><a href="#subscription">Subscription</a></li><li class="lvl-3"><a href="#subscription-renewing">Renewing</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=ffed47d9" defer></script>
+<script src="search-index.js?v=e5a4fc79" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
