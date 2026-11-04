@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Document Information · IBS Haulage Help</title>
-<meta name="description" content="This manual was produced from the current state of the IBS Haulage codebase and reflects the screens, fields and roles in the application as of the date below. ">
+<meta name="description" content="This manual was produced from the current state of the IBS TMS codebase and reflects the screens, fields and roles in the application as of the date below. If t">
 <link rel="canonical" href="https://ibsolutionsglobal.com/help/haulage/document-information.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="IB Solutions Global Help">
 <meta property="og:title" content="Document Information · IBS Haulage Help">
-<meta property="og:description" content="This manual was produced from the current state of the IBS Haulage codebase and reflects the screens, fields and roles in the application as of the date below. ">
+<meta property="og:description" content="This manual was produced from the current state of the IBS TMS codebase and reflects the screens, fields and roles in the application as of the date below. If t">
 <meta property="og:url" content="https://ibsolutionsglobal.com/help/haulage/document-information.html">
 <meta property="og:image" content="https://ibsolutionsglobal.com/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -71,11 +71,18 @@
   <article class="doc">
     <p class="eyebrow">Appendix B</p>
     <h1>Document Information</h1>
-<p>This manual was produced from the current state of the IBS Haulage codebase and reflects the screens, fields and roles in the application as of the date below. If the application is updated after this date, some field names or workflows described here may change.</p>
+<p>This manual was produced from the current state of the IBS TMS codebase and reflects the screens, fields and roles in the application as of the date below. If the application is updated after this date, some field names or workflows described here may change.</p>
 <p>Version 1.0 — October 2026.</p>
 <p>Version 1.1 — October 2026. Adds the currency list (<a href="accounts-and-cash-book.html#currencies-and-exchange-rates">section 11.7</a>): currencies are chosen from a list, today’s exchange rate is filled in on forms, and invoices have their own currency and exchange rate fields.</p>
 <p>Version 1.2 — October 2026. Invoice balances and status are worked out in each invoice’s own currency (<a href="payments.html#recording-a-payment">section 9.1</a>); client balances show one line per currency, and statements are in cedis (<a href="clients.html#the-client-page">section 7.2</a>).</p>
 <p>Version 1.3 — October 2026. Currencies move to the Finance menu and Finance users can manage them (<a href="accounts-and-cash-book.html#currencies-and-exchange-rates">section 11.7</a>). Exchange rates are kept with the date they apply from, and forms fill in the rate for the record’s date.</p>
+<p>Version 1.4 — November 2026. The system is renamed IBS Transport Management System (IBS TMS). Locations have a unique code, and Ghana locations pick their region from a list (<a href="locations-and-service-types.html#locations">section 6.1</a>). New Routes list with distances (<a href="locations-and-service-types.html#routes">section 6.2</a>), and a Settings switch for routes that cover both directions (<a href="administration.html#settings">section 13.2</a>). Service types move to <a href="locations-and-service-types.html#service-types">section 6.3</a>.</p>
+<p>Version 1.5 — November 2026. Truck types become a managed list (<a href="fleet-trucks-and-drivers.html#truck-types">section 5.3</a>). Client groups (<a href="clients.html#client-groups">section 7.5</a>). Requests can record a quantity in bags or units and the truck type needed (<a href="transport-requests.html#recording-a-request">section 3.2</a>). New rate cards (<a href="locations-and-service-types.html#rates">section 6.4</a>) price quotes automatically (<a href="transport-requests.html#quoting">section 3.3</a>); the service type’s default rate per ton is replaced by them. Trips take their value from the quote, record the delivered weight, quantity and distance, and follow the rate card on them (<a href="trips.html#creating-a-trip">sections 4.1</a> and <a href="trips.html#editing-a-trip-and-its-value">4.6</a>).</p>
+<p>Version 1.6 — November 2026. Additional charges: a list of charge types with client and group prices (<a href="locations-and-service-types.html#additional-charges">section 6.5</a>), charges on quotes (<a href="transport-requests.html#quoting">section 3.3</a>) and trips (<a href="trips.html#charges-on-a-trip">section 4.8</a>), a line per charge on invoices (<a href="invoices.html#creating-an-invoice">section 8.2</a>), and pass-through charges whose cost is recorded against them and kept out of profit (<a href="trips.html#charges-on-a-trip">sections 4.8</a> and <a href="reports.html#the-reports">12.1</a>).</p>
+<p>Version 1.7 — November 2026. Invoice and proforma lines can be ticked “No tax”: the tax rate applies to the other lines only, and pass-through charges come in ticked (<a href="invoices.html#creating-an-invoice">sections 8.2</a> and <a href="proforma-invoices.html#creating-a-proforma">10.2</a>).</p>
+<p>Version 1.8 — November 2026. Trip types: requests and trips are One-way or Return empty (<a href="transport-requests.html#recording-a-request">sections 3.2</a> and <a href="trips.html#creating-a-trip">4.1</a>). A Return empty job has a return price, taken from the rate card (<a href="locations-and-service-types.html#rates">section 6.4</a>), shown as its own line on quotes (<a href="transport-requests.html#quoting">section 3.3</a>), trips (<a href="trips.html#the-trip-page">sections 4.3</a> and <a href="trips.html#editing-a-trip-and-its-value">4.6</a>) and invoices (<a href="invoices.html#creating-an-invoice">section 8.2</a>), and counted in trip profit.</p>
+<p>Version 1.9 — November 2026. Return loads: a second, linked trip for the same truck and driver, with its own client and invoice (section 4.9). Multi-drop trips: stops, an Extra drop charge for each stop after the first, and delivery stop by stop (section 4.10).</p>
+<p>Version 1.10 — November 2026. Multi-drop requests list their drops on the request form (<a href="transport-requests.html#recording-a-request">section 3.2</a>). The quote starts with an Extra drop charge for them, and the trip made from the request starts with the same stops (section 4.10).</p>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -83,14 +90,14 @@
   <span></span>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Haulage user manual · Version 1.3 · October 2026</p>
+  <p class="footer-manual">IBS Haulage user manual · Version 1.10 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
 </main>
 <aside class="on-this-page" aria-hidden="true"></aside>
 </div>
-<script src="search-index.js?v=d72fe9bd" defer></script>
+<script src="search-index.js?v=86a6b1e0" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>

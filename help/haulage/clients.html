@@ -52,7 +52,7 @@
 <li><a href="trips.html"><span class="n">4</span><span>Trips</span></a></li>
 <li><a href="fleet-trucks-and-drivers.html"><span class="n">5</span><span>Fleet: Trucks and Drivers</span></a></li>
 <li><a href="locations-and-service-types.html"><span class="n">6</span><span>Locations and Service Types</span></a></li>
-<li class="is-current"><a href="clients.html" aria-current="page"><span class="n">7</span><span>Clients</span></a><ol class="nav-sections"><li><a href="#adding-a-client"><span class="n">7.1</span>Adding a client</a></li><li><a href="#the-client-page"><span class="n">7.2</span>The client page</a></li><li><a href="#portal-users"><span class="n">7.3</span>Portal users</a></li><li><a href="#deactivating-or-deleting-a-client"><span class="n">7.4</span>Deactivating or deleting a client</a></li></ol></li>
+<li class="is-current"><a href="clients.html" aria-current="page"><span class="n">7</span><span>Clients</span></a><ol class="nav-sections"><li><a href="#adding-a-client"><span class="n">7.1</span>Adding a client</a></li><li><a href="#the-client-page"><span class="n">7.2</span>The client page</a></li><li><a href="#portal-users"><span class="n">7.3</span>Portal users</a></li><li><a href="#deactivating-or-deleting-a-client"><span class="n">7.4</span>Deactivating or deleting a client</a></li><li><a href="#client-groups"><span class="n">7.5</span>Client groups</a></li></ol></li>
 <li><a href="invoices.html"><span class="n">8</span><span>Invoices</span></a></li>
 <li><a href="payments.html"><span class="n">9</span><span>Payments</span></a></li>
 <li><a href="proforma-invoices.html"><span class="n">10</span><span>Proforma Invoices</span></a></li>
@@ -77,7 +77,7 @@
 <ol>
 <li>Finance → Clients → “New Client.”</li>
 <li>Enter the Company Name, Contact Person, Email (each client needs its own) and Phone.</li>
-<li>Optionally add the Address, City, Region, Country and Notes, and choose the Default Currency. New quotes for the client start in that currency, but any quote, trip or invoice can use another one if you have agreed it.</li>
+<li>Optionally add the Address, City, Region, Country and Notes, pick a Client Group (<a href="#client-groups">section 7.5</a>), and choose the Default Currency. New quotes for the client start in that currency, but any quote, trip or invoice can use another one if you have agreed it.</li>
 <li>Save. The client gets a code such as CLT-2026-0001.</li>
 </ol>
 <h2 id="the-client-page"><span class="num">7.2</span> The client page<a class="anchor" href="#the-client-page" aria-label="Link to this section">#</a></h2>
@@ -102,6 +102,10 @@
 </ul>
 <h2 id="deactivating-or-deleting-a-client"><span class="num">7.4</span> Deactivating or deleting a client<a class="anchor" href="#deactivating-or-deleting-a-client" aria-label="Link to this section">#</a></h2>
 <p>A client with trips, invoices or payments can’t be deleted; the message lists what is in the way. Deactivate the client instead: they stop appearing as an active client, and their history stays.</p>
+<h2 id="client-groups"><span class="num">7.5</span> Client groups<a class="anchor" href="#client-groups" aria-label="Link to this section">#</a></h2>
+<p>A client group brings together clients who share the same negotiated prices, for example all your cement distributors. Admin and Finance users manage groups under Finance → Client Groups: click “New Client Group” and enter a Name and an optional Description.</p>
+<p>To put a client in a group, edit the client and pick the Client Group. A client can be in one group at most. When prices are worked out, a client’s own rate comes first, then their group’s rate, then the general rate.</p>
+<p>Filter the client list by group, or see a client’s group on their page. A group that still has clients can’t be deleted; move the clients out first, or deactivate the group.</p>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -109,17 +113,17 @@
   <a class="pager-next" href="invoices.html"><span class="pager-dir">Next</span><span class="pager-title">Invoices</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Haulage user manual · Version 1.3 · October 2026</p>
+  <p class="footer-manual">IBS Haulage user manual · Version 1.10 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
 </main>
 <aside class="on-this-page" aria-label="On this page">
   <p class="otp-title">On this page</p>
-  <ol><li class="lvl-2"><a href="#adding-a-client">Adding a client</a></li><li class="lvl-2"><a href="#the-client-page">The client page</a></li><li class="lvl-2"><a href="#portal-users">Portal users</a></li><li class="lvl-2"><a href="#deactivating-or-deleting-a-client">Deactivating or deleting a client</a></li></ol>
+  <ol><li class="lvl-2"><a href="#adding-a-client">Adding a client</a></li><li class="lvl-2"><a href="#the-client-page">The client page</a></li><li class="lvl-2"><a href="#portal-users">Portal users</a></li><li class="lvl-2"><a href="#deactivating-or-deleting-a-client">Deactivating or deleting a client</a></li><li class="lvl-2"><a href="#client-groups">Client groups</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=d72fe9bd" defer></script>
+<script src="search-index.js?v=86a6b1e0" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
