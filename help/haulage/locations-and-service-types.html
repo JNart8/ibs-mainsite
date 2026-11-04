@@ -51,7 +51,7 @@
 <li><a href="transport-requests.html"><span class="n">3</span><span>Transport Requests</span></a></li>
 <li><a href="trips.html"><span class="n">4</span><span>Trips</span></a></li>
 <li><a href="fleet-trucks-and-drivers.html"><span class="n">5</span><span>Fleet: Trucks and Drivers</span></a></li>
-<li class="is-current"><a href="locations-and-service-types.html" aria-current="page"><span class="n">6</span><span>Locations and Service Types</span></a><ol class="nav-sections"><li><a href="#locations"><span class="n">6.1</span>Locations</a></li><li><a href="#service-types"><span class="n">6.2</span>Service types</a></li></ol></li>
+<li class="is-current"><a href="locations-and-service-types.html" aria-current="page"><span class="n">6</span><span>Locations and Service Types</span></a><ol class="nav-sections"><li><a href="#locations"><span class="n">6.1</span>Locations</a></li><li><a href="#routes"><span class="n">6.2</span>Routes</a></li><li><a href="#service-types"><span class="n">6.3</span>Service types</a></li><li><a href="#rates"><span class="n">6.4</span>Rates</a></li><li><a href="#additional-charges"><span class="n">6.5</span>Additional charges</a></li></ol></li>
 <li><a href="clients.html"><span class="n">7</span><span>Clients</span></a></li>
 <li><a href="invoices.html"><span class="n">8</span><span>Invoices</span></a></li>
 <li><a href="payments.html"><span class="n">9</span><span>Payments</span></a></li>
@@ -74,13 +74,41 @@
 <h2 id="locations"><span class="num">6.1</span> Locations<a class="anchor" href="#locations" aria-label="Link to this section">#</a></h2>
 <aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Admin and Operations, under Operations → Locations.</p>
 </div></aside>
-<p>Locations are the pickup and delivery points used on requests and trips. Each has a Name, City, Region and Country (Ghana unless you change it). Add them here with “New Location,” or on the fly with “+ Add” on a request form.</p>
-<p>A location that is used on a request or trip can’t be deleted; deactivate it instead so it no longer appears in the lists.</p>
-<h2 id="service-types"><span class="num">6.2</span> Service types<a class="anchor" href="#service-types" aria-label="Link to this section">#</a></h2>
+<p>Locations are the pickup and delivery points used on requests and trips. Each has a Code, Name, City, Region and Country (Ghana unless you change it). Add them here with “New Location,” or on the fly with “+ Add” on a request or trip form.</p>
+<p>The Code is a short, unique tag of 3 to 6 letters or numbers, such as ACC for Accra or TML for Tamale. It’s saved in capitals and shown in front of the name in location lists (for example “TMP — Tema Port, Tema”), so you can find a place quickly by its code. Locations that existed before codes were added were given a suggested code made from their name; check these and change any that don’t suit you.</p>
+<p>For a location in Ghana, pick the Region from the list of the 16 regions. For a location in another country, such as a transit point in Burkina Faso, type the region yourself. If an older location’s region doesn’t match the list, its edit form asks you to pick one before you can save.</p>
+<p>A location that is used on a request, trip or route can’t be deleted; deactivate it instead so it no longer appears in the lists.</p>
+<h2 id="routes"><span class="num">6.2</span> Routes<a class="anchor" href="#routes" aria-label="Link to this section">#</a></h2>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Admin and Operations, under Operations → Routes.</p>
+</div></aside>
+<p>A route is a trip from one location to another, such as ACC → KSI, with its road distance in kilometres. Add one with “New Route”: pick the Origin and Destination, enter the Distance (km), and add any Notes, such as the road to take. Each route can be added only once, and the origin and destination must be different places.</p>
+<p>By default each direction is its own route, so Accra → Kumasi and Kumasi → Accra are set up separately and can have different distances and, later, different prices. If your trips are the same both ways, an Admin can switch on “Routes cover both directions” under Administration → Settings → Routes (<a href="administration.html#settings">section 13.2</a>). Routes then show as ACC ⇄ KSI, one route covers trips either way, and the system won’t let you add the reverse of a route that already exists.</p>
+<p>Search the list by any location’s code, name or city. A route you no longer use can be deactivated or deleted.</p>
+<h2 id="service-types"><span class="num">6.3</span> Service types<a class="anchor" href="#service-types" aria-label="Link to this section">#</a></h2>
 <aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Admin only, under Operations → Service Types.</p>
 </div></aside>
-<p>Service types describe the kinds of work you do, for example general haulage or container transport. Each has a Name, an optional Description and an optional Default Rate/Ton. Choosing a service type on a request is optional, but it lets the Revenue report break your income down by service.</p>
+<p>Service types describe the kinds of work you do, for example general haulage or container transport. Each has a Name and an optional Description. Prices are set on rate cards (<a href="#rates">section 6.4</a>), which can be set per service type. Choosing a service type on a request is optional, but it lets the Revenue report break your income down by service.</p>
 <p>A service type that is in use can’t be deleted; deactivate it instead.</p>
+<h2 id="rates"><span class="num">6.4</span> Rates<a class="anchor" href="#rates" aria-label="Link to this section">#</a></h2>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Admin and Finance can add and change rates, under Finance → Rates. Operations can view them under Operations → Rates.</p>
+</div></aside>
+<p>A rate card is an agreed price. Each rate has: the Route it is for (or “All routes”); who it Applies to (everyone, a client group, or one client); optionally a Service Type and a Truck Type (otherwise any); how it is Charged (per trip, per tonne, per kilometre, per bag or per unit); the Rate and Currency; an optional Minimum Charge; and the dates it is Valid From and, optionally, Valid To.</p>
+<p>When a request is quoted, the system picks the rate for the request’s preferred pickup date (or today, if there is none), in this order: the client’s own rate, then their group’s rate, then the general rate. At each level, a rate for this route comes before an all-routes rate, and a rate for the request’s exact service type and truck type comes before an “any” one. If no rate fits the service type and truck type, the nearest rate is offered with a warning.</p>
+<aside class="callout callout-caution"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.75 18.25 17H1.75L10 2.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="14.4" r="1" fill="currentColor"/></svg><span>Caution</span></p><div class="callout-body"><p>Who the rate is for is checked before the route. A client’s own “All routes” rate therefore beats every general rate for a specific route: give a client an “All routes” per-km rate, and that client’s Accra → Kumasi trips use it, not the general GHS 5,000 Accra → Kumasi rate. If a client rate is only meant as a fallback, set it for the routes it should cover instead, or don’t create it. The same goes for a client group’s “All routes” rate. The rate form shows this caution when you set up either one.</p>
+</div></aside>
+<aside class="callout callout-caution"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.75 18.25 17H1.75L10 2.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="14.4" r="1" fill="currentColor"/></svg><span>Caution</span></p><div class="callout-body"><p>A rate for “Any truck” always fits, so it beats a rate set for a different truck type, even one for the exact route. For example, if Tema Port → Tamale only has a Tipper rate and there is a general “All routes, any truck” per-km rate, a Flatbed job on that route is priced per km. Give every truck type you carry on a route its own rate, or check the rate card box on the quote form before sending. Service types work the same way: a route rate set for one service is not used for jobs with another service, which take an “Any service” rate instead. The rate form shows this caution when you choose a route together with a truck type or a service type.</p>
+</div></aside>
+<p>The price is the rate times the weight in tonnes, the route’s distance in km, or the number of bags or units on the request, or the flat rate for a per-trip rate. It is never less than the minimum charge.</p>
+<p>Two active rates for the same route, client (or group or everyone), service type and truck type can’t cover the same dates; the system says which rate is in the way. To change a price from a date, give the old rate a Valid To date and add a new rate from the next day. “Copy” starts a new rate from an existing one, dated to begin the day after it ends, which is handy for renewing contracts each year.</p>
+<p>A rate used on a quote can’t be deleted; deactivate it or end it instead. Routes, clients, client groups, service types and truck types that a rate uses can’t be deleted either.</p>
+<p>A rate can also carry a Return Empty price, for trips where the truck comes back empty: either an amount, or a percentage of the transport price (for example 50%). Leave it blank if the return is free. The rate list shows it under the price as “Return empty.”</p>
+<h2 id="additional-charges"><span class="num">6.5</span> Additional charges<a class="anchor" href="#additional-charges" aria-label="Link to this section">#</a></h2>
+<p><strong>Who can do this:</strong>  Admin and Finance, under Finance → Charges. Operations can view them under Operations → Charges.</p>
+<p>A charge type is an extra billed on top of the transport rate, such as loading, waiting time, an escort, or port fees. Each has a Name and Description; how it is Charged (per job, per tonne, per kilometre, per bag, per unit, per day or per hour); a Default Amount and Currency, which is what most clients pay (leave the amount blank if it changes every time, as with port fees); and whether it is a Pass-through charge.</p>
+<p>A pass-through charge is a cost you pay on the client’s behalf and bill back to them, such as port or border fees. It is shown as “paid on your behalf” to the client and on invoices, and it is kept out of the trip’s profit along with what you paid for it (<a href="trips.html#charges-on-a-trip">section 4.8</a>).</p>
+<p>To give a client or client group a different price, click “Client &amp; Group Prices,” then “New Price.” Pick the Charge, who it Applies to (a client group or one client), the Amount and Currency, the dates it is Valid From and To, and any Notes. A client’s own price beats their group’s, which beats the charge’s default amount. Prices are picked for the request’s preferred pickup date (or today).</p>
+<p>Two active prices for the same charge and the same client (or group) can’t cover the same dates. To change a price from a date, end the old one and add a new one; “Copy” starts next year’s price from an existing one.</p>
+<p>Changing a default amount or a price doesn’t change charges already on quotes or trips: each keeps the amount it was given. A charge type used on a quote, a trip or a special price can’t be deleted; deactivate it instead.</p>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -88,17 +116,17 @@
   <a class="pager-next" href="clients.html"><span class="pager-dir">Next</span><span class="pager-title">Clients</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Haulage user manual · Version 1.3 · October 2026</p>
+  <p class="footer-manual">IBS Haulage user manual · Version 1.10 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
 </main>
 <aside class="on-this-page" aria-label="On this page">
   <p class="otp-title">On this page</p>
-  <ol><li class="lvl-2"><a href="#locations">Locations</a></li><li class="lvl-2"><a href="#service-types">Service types</a></li></ol>
+  <ol><li class="lvl-2"><a href="#locations">Locations</a></li><li class="lvl-2"><a href="#routes">Routes</a></li><li class="lvl-2"><a href="#service-types">Service types</a></li><li class="lvl-2"><a href="#rates">Rates</a></li><li class="lvl-2"><a href="#additional-charges">Additional charges</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=d72fe9bd" defer></script>
+<script src="search-index.js?v=86a6b1e0" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>

@@ -91,18 +91,23 @@
 <li>Choose the Client.</li>
 <li>Optionally choose a Service Type.</li>
 <li>Choose the Origin and the Destination. They must be different places.</li>
-<li>Enter the Cargo Description, and optionally the Weight (tons), the Preferred Pickup Date and any Special Instructions.</li>
-<li>If you already know the price, tick “Add a quote now” and fill in the quote (see <a href="#quoting">section 3.3</a>).</li>
+<li>Enter the Cargo Description, and optionally the Weight (tons), the Quantity in bags or units (for loads counted that way), the Truck Type Needed, the Preferred Pickup Date and any Special Instructions. Leave Truck Type Needed on “Any truck” if it doesn’t matter. Choose the Trip Type: One-way (the default), Return empty, when the truck comes back empty and you charge for the return, or Multi-drop, when one load goes to several places. For Multi-drop, add each drop before the destination, in order, under “Drops before the destination” (section 4.10).</li>
+<li>To quote straight away, tick “Add a quote now” and fill in the quote (see <a href="#quoting">section 3.3</a>). Leave the Amount blank to use the rate card price.</li>
 <li>Save. The request gets a number such as REQ-2026-0001 and starts as Pending, or Quoted if you added a quote.</li>
 </ol>
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>If a location or service type is missing from the list, click “+ Add” next to the field to create it without leaving the form. Only an Admin can add service types.</p>
 </div></aside>
 <h2 id="quoting"><span class="num">3.3</span> Quoting<a class="anchor" href="#quoting" aria-label="Link to this section">#</a></h2>
-<p>On the request page, click “+ Add Quote” (or “+ Revise Quote” once there is one). Enter the Amount, choose the Currency (it starts as the latest quote’s currency, or else the client’s default), set the date the quote is Valid Until (today or later), add any Notes, then click “Save Quote.”</p>
+<p>On the request page, click “+ Add Quote” (or “+ Revise Quote” once there is one). Check the Transport Amount and Currency, set the date the quote is Valid Until (today or later), add any Notes, then click “Save Quote.”</p>
+<p>The quote form shows the rate card price for the request, worked out from the rates in <a href="locations-and-service-types.html#rates">section 6.4</a>: for example “30 t × GHS 120.00 per tonne = GHS 3,600.00.” The Amount and Currency are filled in from it. If you have agreed a different price, just change the Amount; the quote list then shows what the rate card said next to your price.</p>
+<p>A green box means a rate matches the request exactly. An amber box means the rate is the nearest one (for example it is set for a different truck type), or the request is missing something the rate needs, such as the weight for a per-tonne rate; edit the request or enter the amount yourself. A grey box means no rate applies, and you enter the price by hand.</p>
+<p>To bill extras on top of the transport price, use “+ Add a charge…” under Additional Charges and pick a charge (<a href="locations-and-service-types.html#additional-charges">section 6.5</a>). Its amount fills in from the client’s price, and the quantity from the request: the tonnes, the route’s km, or the bags or units, or 1 for a flat charge. Enter the number of days or hours for a per-day or per-hour charge. Change either if needed. If the charge is priced in another currency, the amount is converted to the quote’s currency at today’s rate; check it.</p>
+<p>The form adds it up: transport + return + charges = quote total. The quote list, and the client in the portal, see the total with the transport amount and each charge under it. If you changed a charge’s amount, the quote list shows what the price list said.</p>
+<p>On a Return empty request the form also shows a Return Empty Amount. It is filled in from the rate card’s Return Empty price (<a href="locations-and-service-types.html#rates">section 6.4</a>), as an amount or a percentage of the transport price. Change it if you have agreed something else, or enter 0 if the return is free. The quote list shows it as its own line, “+ Return empty,” and the client sees it in the portal. If the rate card has no return price, the return is free.</p>
 <ul>
 <li>The first quote moves the request from Pending to Quoted.</li>
 <li>You can revise a quote as often as you need while the request is Pending or Quoted. Each revision gets its own number (QUO-…) and the newest is marked “Latest.” The client sees the latest one.</li>
-<li>When an Admin creates a trip from the request, the latest quote’s amount and currency are filled in as the trip’s value (see <a href="trips.html#creating-a-trip">section 4.1</a>).</li>
+<li>When an Admin creates a trip from the request, the latest quote’s amount and currency are filled in as the trip’s value (see <a href="trips.html#creating-a-trip">section 4.1</a>), and its charges are copied to the trip (<a href="trips.html#charges-on-a-trip">section 4.8</a>).</li>
 </ul>
 <h2 id="accepting-or-rejecting"><span class="num">3.4</span> Accepting or rejecting<a class="anchor" href="#accepting-or-rejecting" aria-label="Link to this section">#</a></h2>
 <p>When the client agrees, click “Accept” on the request page. Clients can also accept or reject a quote themselves in the portal (see <a href="the-client-portal.html#what-clients-can-do">section 14.2</a>); the timeline then shows “Client (portal)” as the person who made the change.</p>
@@ -121,7 +126,7 @@
   <a class="pager-next" href="trips.html"><span class="pager-dir">Next</span><span class="pager-title">Trips</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Haulage user manual · Version 1.3 · October 2026</p>
+  <p class="footer-manual">IBS Haulage user manual · Version 1.10 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -131,7 +136,7 @@
   <ol><li class="lvl-2"><a href="#how-a-request-moves">How a request moves</a></li><li class="lvl-2"><a href="#recording-a-request">Recording a request</a></li><li class="lvl-2"><a href="#quoting">Quoting</a></li><li class="lvl-2"><a href="#accepting-or-rejecting">Accepting or rejecting</a></li><li class="lvl-2"><a href="#editing-and-deleting">Editing and deleting</a></li><li class="lvl-2"><a href="#finding-a-request">Finding a request</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=d72fe9bd" defer></script>
+<script src="search-index.js?v=86a6b1e0" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>

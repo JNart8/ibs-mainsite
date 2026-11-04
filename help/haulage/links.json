@@ -108,6 +108,10 @@
     "title": "4.7 Cancelling or deleting a trip"
   },
   {
+    "href": "trips.html#charges-on-a-trip",
+    "title": "4.8 Charges on a trip"
+  },
+  {
     "href": "fleet-trucks-and-drivers.html",
     "title": "Chapter 5: Fleet: Trucks and Drivers"
   },
@@ -120,6 +124,10 @@
     "title": "5.2 Drivers"
   },
   {
+    "href": "fleet-trucks-and-drivers.html#truck-types",
+    "title": "5.3 Truck types"
+  },
+  {
     "href": "locations-and-service-types.html",
     "title": "Chapter 6: Locations and Service Types"
   },
@@ -128,8 +136,20 @@
     "title": "6.1 Locations"
   },
   {
+    "href": "locations-and-service-types.html#routes",
+    "title": "6.2 Routes"
+  },
+  {
     "href": "locations-and-service-types.html#service-types",
-    "title": "6.2 Service types"
+    "title": "6.3 Service types"
+  },
+  {
+    "href": "locations-and-service-types.html#rates",
+    "title": "6.4 Rates"
+  },
+  {
+    "href": "locations-and-service-types.html#additional-charges",
+    "title": "6.5 Additional charges"
   },
   {
     "href": "clients.html",
@@ -150,6 +170,10 @@
   {
     "href": "clients.html#deactivating-or-deleting-a-client",
     "title": "7.4 Deactivating or deleting a client"
+  },
+  {
+    "href": "clients.html#client-groups",
+    "title": "7.5 Client groups"
   },
   {
     "href": "invoices.html",
