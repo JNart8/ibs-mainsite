@@ -74,7 +74,7 @@
 <aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Admin and Finance, under Finance → Accounts.</p>
 </div></aside>
 <h2 id="cash-mobile-money-and-bank-accounts"><span class="num">11.1</span> Cash, mobile money and bank accounts<a class="anchor" href="#cash-mobile-money-and-bank-accounts" aria-label="Link to this section">#</a></h2>
-<p>Accounts are where your money is: office cash, mobile money wallets and bank accounts. Every payment received, expense paid, transfer and bank charge moves an account’s balance, and each account keeps a full ledger. All balances are kept in cedis (GHS).</p>
+<p>Accounts are where your money is: office cash, mobile money wallets and bank accounts. Every payment received, expense paid, transfer and bank charge moves an account’s balance, and each account keeps a full ledger. All balances are kept in your base currency (GHS unless your company chose another in Settings, <a href="#currencies-and-exchange-rates">section 11.7</a>).</p>
 <p>A new system starts with three accounts, Office Cash, MTN Mobile Money and Main Bank Account, all with a zero balance. Edit them to match your real accounts before you start.</p>
 <p>The Accounts page shows each account with its balance, and the Total Balance of all active accounts. One account of each type can be the default, which is picked first on forms.</p>
 <h2 id="adding-an-account"><span class="num">11.2</span> Adding an account<a class="anchor" href="#adding-an-account" aria-label="Link to this section">#</a></h2>
@@ -82,7 +82,7 @@
 <li>Finance → Accounts → “New Account.”</li>
 <li>Enter the Account Name and choose the Type: Cash, Mobile Money or Bank.</li>
 <li>For Mobile Money, choose the Network (MTN, Telecel or AirtelTigo) and enter the Number and Registered Name. For Bank, enter the Bank Name and Account Number, and optionally the Branch, Account Name and SWIFT Code.</li>
-<li>Enter the Opening Balance (GHS): what the account holds today.</li>
+<li>Enter the Opening Balance (in your base currency): what the account holds today.</li>
 <li>Tick “Set as default for this type” if it should be picked first on forms.</li>
 <li>Click “Create Account.”</li>
 </ol>
@@ -94,31 +94,31 @@
 <ol>
 <li>Finance → Accounts → “Transfer.”</li>
 <li>Choose the From Account and the To Account. The form shows each one’s balance.</li>
-<li>Enter the Amount (GHS), the Date and a Description.</li>
-<li>If the transfer cost a fee, open “Transfer Charges (optional),” choose the Charge Account the fee came out of, and enter the Transfer Charge (GHS), and any Other Charges (GHS), with descriptions.</li>
+<li>Enter the Amount (in your base currency), the Date and a Description.</li>
+<li>If the transfer cost a fee, open “Transfer Charges (optional),” choose the Charge Account the fee came out of, and enter the Transfer Charge and any Other Charges (in your base currency), with descriptions.</li>
 <li>Click “Execute Transfer.” It gets a reference such as TRF-2026-0001.</li>
 </ol>
 <h2 id="recording-a-bank-charge"><span class="num">11.5</span> Recording a bank charge<a class="anchor" href="#recording-a-bank-charge" aria-label="Link to this section">#</a></h2>
-<p>For a charge that isn’t part of a transfer, such as a monthly bank fee, open the account and click “+ Record Bank Charge.” Enter the Description, Amount (GHS) and Date, then click “Save Charge.”</p>
+<p>For a charge that isn’t part of a transfer, such as a monthly bank fee, open the account and click “+ Record Bank Charge.” Enter the Description, Amount (in your base currency) and Date, then click “Save Charge.”</p>
 <h2 id="deactivating-or-deleting-an-account"><span class="num">11.6</span> Deactivating or deleting an account<a class="anchor" href="#deactivating-or-deleting-an-account" aria-label="Link to this section">#</a></h2>
 <p>An account can only be deleted if its balance is zero and it has no transactions. Otherwise, deactivate it from its Edit page: it stops appearing on forms and its history stays.</p>
 <h2 id="currencies-and-exchange-rates"><span class="num">11.7</span> Currencies and exchange rates<a class="anchor" href="#currencies-and-exchange-rates" aria-label="Link to this section">#</a></h2>
 <aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Admin and Finance, under Finance → Currencies.</p>
 </div></aside>
-<p>The currency list holds the currencies staff can choose for clients, quotes, trips, expenses, invoices, proformas and payments, and their exchange rates to cedis. It starts with GHS, USD, EUR and NGN; add others as you need them.</p>
+<p>The currency list holds the currencies staff can choose for clients, quotes, trips, expenses, invoices, proformas and payments, and their exchange rates to your base currency. It starts with GHS, USD, EUR and NGN; add others as you need them.</p>
 <div class="table-wrap"><table>
 <thead><tr><th scope="col">Column</th><th scope="col">What it means</th></tr></thead>
 <tbody>
 <tr><td>Code</td><td>The 3-letter international code, e.g. USD</td></tr>
 <tr><td>Name</td><td>The currency’s name, e.g. US Dollar</td></tr>
-<tr><td>Today's Rate</td><td>How many cedis one unit is worth today, e.g. “1 USD = GHS 15.2500,” or “Not set”</td></tr>
+<tr><td>Today's Rate</td><td>How many units of your base currency one unit is worth today, e.g. “1 USD = GHS 15.2500” when GHS is the base, or “Not set”</td></tr>
 <tr><td>Since</td><td>The date today’s rate applies from</td></tr>
 <tr><td>Status</td><td>Active currencies appear on forms; inactive ones don’t</td></tr>
 </tbody></table></div>
 <p>Rates are kept with the date they apply from, so the history stays: each rate applies from its date until the next one. To add a rate:</p>
 <ol>
 <li>Finance → Currencies, then click “Rates &amp; Edit” on the currency.</li>
-<li>Under Exchange Rates, set Applies From (the first day the rate applies, today unless you change it) and the Rate to GHS (cedis per unit).</li>
+<li>Under Exchange Rates, set Applies From (the first day the rate applies, today unless you change it) and the Rate to your base currency (units of it per 1 unit of this currency).</li>
 <li>Click “Add Rate.”</li>
 </ol>
 <p>How the forms use the rates:</p>
@@ -133,10 +133,11 @@
 <li>“New Currency” adds one, with its code (e.g. XOF), name and, if you know it, its first rate and the date it applies from.</li>
 <li>On a currency’s page, “Save Changes” updates its name. The code can’t be changed, because saved records use it.</li>
 <li>Adding a rate for a date that already has one replaces it. “Remove” deletes a rate entered by mistake; the rates around it then apply.</li>
-<li>“Deactivate” takes a currency off the forms. Records already in that currency keep it. GHS, and the default currency in Settings, can’t be deactivated.</li>
+<li>“Deactivate” takes a currency off the forms. Records already in that currency keep it. The base currency, and the default currency in Settings, can’t be deactivated.</li>
+<li>Base currency: set it under Settings (<a href="administration.html#settings">section 13.2</a>) before you record anything. Enter the 3-letter code and the name, for example NGN and Nigerian Naira. If you change nothing it stays GHS, so existing companies are unaffected. Once any quote, trip, expense, invoice, proforma, payment or account entry exists, the code is locked and cannot be changed, because every past amount is stored in it; the name can still be corrected. Nothing already recorded is ever converted or rewritten. Exchange rates for other currencies are always units of the base currency per 1 unit of that currency.</li>
 <li>“Delete” works only for a currency that nothing uses yet. Once a currency is used, deactivate it instead.</li>
 </ul>
-<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>GHS is the base currency, always at 1. Accounts, reports and trip profit are all in cedis, worked out with each record’s own exchange rate. Every rate added or removed is recorded in the Audit Log.</p>
+<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>The base currency (GHS unless your company chose another) is always at 1 and needs no rate. Accounts, reports and trip profit are all in it, worked out with each record’s own exchange rate. Every rate added or removed is recorded in the Audit Log.</p>
 </div></aside>
 
   </article>
@@ -145,7 +146,7 @@
   <a class="pager-next" href="reports.html"><span class="pager-dir">Next</span><span class="pager-title">Reports</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Haulage user manual · Version 1.10 · November 2026</p>
+  <p class="footer-manual">IBS Haulage user manual · Version 1.14 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -155,7 +156,7 @@
   <ol><li class="lvl-2"><a href="#cash-mobile-money-and-bank-accounts">Cash, mobile money and bank accounts</a></li><li class="lvl-2"><a href="#adding-an-account">Adding an account</a></li><li class="lvl-2"><a href="#the-account-page-and-ledger">The account page and ledger</a></li><li class="lvl-2"><a href="#moving-money-between-accounts">Moving money between accounts</a></li><li class="lvl-2"><a href="#recording-a-bank-charge">Recording a bank charge</a></li><li class="lvl-2"><a href="#deactivating-or-deleting-an-account">Deactivating or deleting an account</a></li><li class="lvl-2"><a href="#currencies-and-exchange-rates">Currencies and exchange rates</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=86a6b1e0" defer></script>
+<script src="search-index.js?v=5e891a9b" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
