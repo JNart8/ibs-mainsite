@@ -80,8 +80,8 @@
 <li>Open the accepted request and click “Convert to Trip.” The New Trip form opens with the request’s details filled in.</li>
 <li>Choose the Truck and the Driver.</li>
 <li>Check the Client, Origin, Destination (they must differ), Trip Type, Cargo Description and Weight (tons), and set the Pickup Time if you know it.</li>
-<li>Admins also see Trip Value, Currency and Exchange Rate. The value and currency come from the latest quote, and the rate is today’s rate from the currency list (<a href="accounts-and-cash-book.html#currencies-and-exchange-rates">section 11.7</a>). Check them: for any currency other than GHS, the rate is required. When an Operations user creates the trip, the system takes the value and currency from the latest quote by itself.</li>
-<li>Click “Create Trip.” The trip gets a number such as TRP-2026-0001 and starts as Assigned. The request becomes Converted.</li>
+<li>Admins also see Trip Value, Currency and Exchange Rate. The value and currency come from the latest quote, and the rate is today’s rate from the currency list (<a href="accounts-and-cash-book.html#currencies-and-exchange-rates">section 11.7</a>). Check them: for any currency other than your base currency, the rate is required. For a Return empty trip they also see the Return Empty Amount, filled in from the quote. When an Operations user creates the trip, the system takes the value and currency from the latest quote by itself.</li>
+<li>Click “Create Trip.” The trip gets a number such as TRP-2026-0001 and starts as Assigned. The request becomes Converted. A request is converted only once: if someone else converts it first, for example in another tab, you’re told which trip was made and no second trip is created.</li>
 </ol>
 <p>You can also create a trip without a request: Operations → Trips → “New Trip.”</p>
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>A truck or driver who is already on another active trip can’t be assigned. When a trip is created, its truck and driver change to “On Trip” automatically.</p>
@@ -100,19 +100,19 @@
 <tr><td>Delivered</td><td>“Start Return Journey”</td><td>Returning</td><td>Return departure time</td></tr>
 <tr><td>Returning</td><td>“Complete Trip”</td><td>Completed</td><td>Return arrival and completion time</td></tr>
 </tbody></table></div>
-<p>When a trip is completed, its truck and driver go back to Available. Stages can’t be skipped or undone, so check before you click.</p>
+<p>When a trip is completed, its truck and driver go back to Available. They stay On Trip while the trip is Delivered, so they can’t be put on another trip until it is completed (or given a return load). Stages can’t be skipped or undone, so check before you click.</p>
 <p>A Delivered trip can also take a return load instead of being completed straight away (section 4.9). On a Multi-drop trip, “Mark Delivered” is replaced by marking each stop delivered (section 4.10).</p>
 <h2 id="the-trip-page"><span class="num">4.3</span> The trip page<a class="anchor" href="#the-trip-page" aria-label="Link to this section">#</a></h2>
 <p>The trip page shows the truck, driver, route, cargo and the recorded times, the Trip Type and, for a Return empty trip, the Return Empty price, with these tabs:</p>
 <ul>
-<li><strong>Overview:</strong> the trip details. Admin and Finance also see the Financial Summary: Trip Value, Charges, Total Expenses, Profit / Loss, any pass-through charges with the cost recorded for them, the total To Invoice, and Invoice Status, with a “Create Invoice” link if the trip hasn’t been invoiced yet.</li>
+<li><strong>Overview:</strong> the trip details. Admin and Finance also see the Financial Summary: Trip Value, Charges, Total Expenses, Profit / Loss, any pass-through charges with the cost recorded for them, the total To Invoice, and Invoice Status, with a “Create Invoice” link once the trip is delivered, if it hasn’t been invoiced yet. Until then it says “Invoice once delivered.”</li>
 <li><strong>Charges:</strong> the additional charges billed with the trip (Admin and Finance only). See <a href="#charges-on-a-trip">section 4.8</a>.</li>
 <li><strong>Expenses:</strong> the expenses logged against the trip (Admin and Finance only).</li>
 <li><strong>Timeline:</strong> every change of stage, with who made it, when, and any comment.</li>
 <li><strong>Assignment History:</strong> every change of truck or driver.</li>
 </ul>
 <h2 id="reassigning-a-truck-or-driver"><span class="num">4.4</span> Reassigning a truck or driver<a class="anchor" href="#reassigning-a-truck-or-driver" aria-label="Link to this section">#</a></h2>
-<p>If a truck breaks down or a driver can’t continue, click “Reassign” on an active trip. Choose the new truck and/or driver, and decide for each whether the one you’re replacing should be “Set back to available.” Untick it if, say, the old truck is going for repair. Add a note and save. The change is recorded in the Assignment History.</p>
+<p>If a truck breaks down or a driver can’t continue, click “Reassign” on an active trip. Choose the new truck and/or driver, and decide for each whether the one you’re replacing should be “Set back to available.” Untick it if, say, the old truck is going for repair: an unticked truck goes to Maintenance and an unticked driver is set On Leave, so neither is offered for trips. Set them available from the Trucks or Drivers list when they’re ready. Add a note and save. The change is recorded in the Assignment History.</p>
 <h2 id="logging-trip-expenses"><span class="num">4.5</span> Logging trip expenses<a class="anchor" href="#logging-trip-expenses" aria-label="Link to this section">#</a></h2>
 <aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Admin and Finance.</p>
 </div></aside>
@@ -120,22 +120,22 @@
 <li>Open the trip and go to the Expenses tab.</li>
 <li>Click “+ Log Expense.”</li>
 <li>Choose the Account the money came from and the expense Category (e.g. Fuel, Toll, Driver Allowance).</li>
-<li>Enter the Amount and choose the Currency. Choosing a currency fills in the Exchange Rate to cedis for the expense date (<a href="accounts-and-cash-book.html#currencies-and-exchange-rates">section 11.7</a>); change it if you paid at a different rate. Add a Description, the date, and attach a photo or scan of the Receipt if you have one.</li>
-<li>Save. The amount is taken off the account’s balance straight away.</li>
+<li>Enter the Amount and choose the Currency. Choosing a currency fills in the Exchange Rate to your base currency for the expense date (<a href="accounts-and-cash-book.html#currencies-and-exchange-rates">section 11.7</a>); change it if you paid at a different rate. Add a Description, the date, and attach a photo or scan of the Receipt if you have one: a JPG, PNG or PDF of up to 2 MB. If anything isn’t right, the form stays open, says what to fix and keeps what you typed.</li>
+<li>Save. The amount is taken off the account’s balance straight away. Click “View” next to an expense to open its receipt. Receipts open only for Admin and Finance users, and never for clients.</li>
 </ol>
 <p>To take an expense off, click “Remove.” The amount goes back into the account, and the reversal shows in the account’s ledger.</p>
-<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>A trip’s Profit / Loss is its value plus its charges (converted to cedis) minus its expenses. Pass-through charges, and the costs recorded for them with “Record cost,” are left out (<a href="#charges-on-a-trip">section 4.8</a>). Log every expense against the right trip to keep the Trip Profitability report accurate.</p>
+<aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>A trip’s Profit / Loss is its value plus its charges (converted to your base currency) minus its expenses. Pass-through charges, and the costs recorded for them with “Record cost,” are left out (<a href="#charges-on-a-trip">section 4.8</a>). Log every expense against the right trip to keep the Trip Profitability report accurate.</p>
 </div></aside>
 <h2 id="editing-a-trip-and-its-value"><span class="num">4.6</span> Editing a trip and its value<a class="anchor" href="#editing-a-trip-and-its-value" aria-label="Link to this section">#</a></h2>
-<p>Click “Edit” on the trip page to correct its details. Only an Admin sees and changes the trip value, currency and exchange rate. Once the trip has departed (En Route and later), the Audit Log records any change to them as a financial override.</p>
+<p>Click “Edit” on the trip page to correct its details. Only an Admin sees and changes the trip value, currency and exchange rate. Once the trip has departed (En Route and later), the Audit Log records a change to any of them as a financial override. An edit that leaves them as they were is an ordinary update.</p>
 <p>The Trip Type can be changed until the truck leaves (En Route). A Return empty trip has a Return Empty Amount, copied from the quote; only an Admin can change it. If the quote kept the rate card price and the rate’s return is a percentage, the return follows the delivered figures like the trip value. Changing a trip to One-way drops its return price. Changing a trip away from Multi-drop removes its stops and its Extra drop charge.</p>
 <p>The trip’s Distance starts as the route’s distance (<a href="locations-and-service-types.html#routes">section 6.2</a>). Under Delivery, record what was actually carried once the load arrives: the Delivered Weight (for example from the weighbridge ticket) and, for loads counted in bags or units, the number delivered. Change the Distance if the truck took another road.</p>
 <p>If the trip was priced from a rate card per tonne, km, bag or unit, and the quote kept the rate card price, the trip value follows these figures: for example 28.5 delivered tonnes at GHS 120.00 per tonne makes the value GHS 3,420.00, never less than the rate’s minimum charge. The Audit Log records each change as “repriced,” and the trip page shows how the value was worked out. The value stops following the figures if an Admin sets it by hand, if the quote used a different agreed price, or once the trip is on an invoice.</p>
 <h2 id="cancelling-or-deleting-a-trip"><span class="num">4.7</span> Cancelling or deleting a trip<a class="anchor" href="#cancelling-or-deleting-a-trip" aria-label="Link to this section">#</a></h2>
 <ul>
-<li>To cancel a trip that hasn’t been completed, click “Cancel Trip” and enter the reason. Its truck and driver go back to Available.</li>
+<li>To cancel a trip that hasn’t been completed, click “Cancel Trip” and enter the reason. Its truck and driver go back to Available. A trip billed on an invoice can’t be cancelled: cancel the invoice first (or, if it’s a draft, take the trip off it).</li>
 <li>If expenses have been logged against the trip, it can’t be cancelled until an Admin ticks “Override and cancel even if expenses have been logged.” Check the Expenses tab first.</li>
-<li>A trip can only be deleted if it has no logged expenses and isn’t on any invoice. Otherwise cancel it.</li>
+<li>To delete a trip, click “Delete” on the trip page. It shows only when the trip has no logged expenses and has never been on an invoice; otherwise cancel it. Its truck and driver go back to Available, and a request it was made from goes back to Accepted, so it can be converted again.</li>
 </ul>
 <aside class="callout callout-caution"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.75 18.25 17H1.75L10 2.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="14.4" r="1" fill="currentColor"/></svg><span>Caution</span></p><div class="callout-body"><p>Cancelling a trip can’t be undone.</p>
 </div></aside>
@@ -161,7 +161,7 @@
 <p>A multi-drop trip takes one load to several places in a row. Choose Multi-drop as the Trip Type on the request or the trip. On a request, add each drop before the destination under “Drops before the destination”, in the order the truck should visit them; the Destination is the last drop. A Multi-drop request needs at least one drop, and the request page shows the whole route, for example Accra → Kumasi → Tamale. The quote form starts with an Extra drop charge for the drops (<a href="transport-requests.html#quoting">section 3.3</a>), and a trip made from the request starts with the same stops. Stops can still be added or removed on the trip, as below.</p>
 <p><strong>Who can do this:  </strong>Admin and Operations.</p>
 <p>Adding stops. Open the trip while it is Assigned or Loading. On the Overview tab, under Stops, pick a location and click “Add Stop.” The first stop you add records the trip’s current destination as stop 1, so add the others after it, in the order the truck will visit them. The last stop is the trip’s destination, and the Distance follows it. “Remove” takes a stop off; with one stop left the trip is a normal trip again. Stops are fixed once the truck leaves.</p>
-<p>Price. The trip is priced at the rate to the last stop (<a href="locations-and-service-types.html#rates">section 6.4</a>), unless an Admin has entered the value by hand. Each stop after the first adds an “Extra drop” charge on the Charges tab (<a href="#charges-on-a-trip">section 4.8</a>): three stops make two extra drops. Its amount comes from the Extra drop charge type (<a href="locations-and-service-types.html#additional-charges">section 6.5</a>), including any special price for the client or group. If the charge type has no amount, the charge starts at zero: set the amount under the charge types, or edit the charge on the trip.</p>
+<p>Price. The trip is priced at the rate to the last stop (<a href="locations-and-service-types.html#rates">section 6.4</a>), unless the value was typed by hand or agreed on the quote at a different price. Such a value stays as it is when stops are added or removed, and the message says so: check it still covers the stops. Each stop after the first adds an “Extra drop” charge on the Charges tab (<a href="#charges-on-a-trip">section 4.8</a>): three stops make two extra drops. Its amount comes from the Extra drop charge type (<a href="locations-and-service-types.html#additional-charges">section 6.5</a>), including any special price for the client or group. If the charge type has no amount, the charge starts at zero: set the amount under the charge types, or edit the charge on the trip.</p>
 <p>Delivering. Once the trip is En Route, each stop shows a “Delivered” button, with boxes for the Tons and the quantity delivered there. When the last stop is delivered the trip moves to Delivered by itself, and its delivered weight and quantity are the totals of the stops. “Mark Delivered” is not available while a stop is still pending.</p>
 <p><strong>Caution:  </strong>Changing the Trip Type away from Multi-drop removes all the stops and the Extra drop charge.</p>
 </div></aside>
@@ -172,7 +172,7 @@
   <a class="pager-next" href="fleet-trucks-and-drivers.html"><span class="pager-dir">Next</span><span class="pager-title">Fleet: Trucks and Drivers</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Haulage user manual · Version 1.10 · November 2026</p>
+  <p class="footer-manual">IBS Haulage user manual · Version 1.14 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -182,7 +182,7 @@
   <ol><li class="lvl-2"><a href="#creating-a-trip">Creating a trip</a></li><li class="lvl-2"><a href="#moving-a-trip-through-its-stages">Moving a trip through its stages</a></li><li class="lvl-2"><a href="#the-trip-page">The trip page</a></li><li class="lvl-2"><a href="#reassigning-a-truck-or-driver">Reassigning a truck or driver</a></li><li class="lvl-2"><a href="#logging-trip-expenses">Logging trip expenses</a></li><li class="lvl-2"><a href="#editing-a-trip-and-its-value">Editing a trip and its value</a></li><li class="lvl-2"><a href="#cancelling-or-deleting-a-trip">Cancelling or deleting a trip</a></li><li class="lvl-2"><a href="#charges-on-a-trip">Charges on a trip</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=86a6b1e0" defer></script>
+<script src="search-index.js?v=5e891a9b" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>

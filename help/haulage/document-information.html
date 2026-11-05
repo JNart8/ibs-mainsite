@@ -74,7 +74,7 @@
 <p>This manual was produced from the current state of the IBS TMS codebase and reflects the screens, fields and roles in the application as of the date below. If the application is updated after this date, some field names or workflows described here may change.</p>
 <p>Version 1.0 — October 2026.</p>
 <p>Version 1.1 — October 2026. Adds the currency list (<a href="accounts-and-cash-book.html#currencies-and-exchange-rates">section 11.7</a>): currencies are chosen from a list, today’s exchange rate is filled in on forms, and invoices have their own currency and exchange rate fields.</p>
-<p>Version 1.2 — October 2026. Invoice balances and status are worked out in each invoice’s own currency (<a href="payments.html#recording-a-payment">section 9.1</a>); client balances show one line per currency, and statements are in cedis (<a href="clients.html#the-client-page">section 7.2</a>).</p>
+<p>Version 1.2 — October 2026. Invoice balances and status are worked out in each invoice’s own currency (<a href="payments.html#recording-a-payment">section 9.1</a>); client balances show one line per currency, and statements are in the base currency (<a href="clients.html#the-client-page">section 7.2</a>).</p>
 <p>Version 1.3 — October 2026. Currencies move to the Finance menu and Finance users can manage them (<a href="accounts-and-cash-book.html#currencies-and-exchange-rates">section 11.7</a>). Exchange rates are kept with the date they apply from, and forms fill in the rate for the record’s date.</p>
 <p>Version 1.4 — November 2026. The system is renamed IBS Transport Management System (IBS TMS). Locations have a unique code, and Ghana locations pick their region from a list (<a href="locations-and-service-types.html#locations">section 6.1</a>). New Routes list with distances (<a href="locations-and-service-types.html#routes">section 6.2</a>), and a Settings switch for routes that cover both directions (<a href="administration.html#settings">section 13.2</a>). Service types move to <a href="locations-and-service-types.html#service-types">section 6.3</a>.</p>
 <p>Version 1.5 — November 2026. Truck types become a managed list (<a href="fleet-trucks-and-drivers.html#truck-types">section 5.3</a>). Client groups (<a href="clients.html#client-groups">section 7.5</a>). Requests can record a quantity in bags or units and the truck type needed (<a href="transport-requests.html#recording-a-request">section 3.2</a>). New rate cards (<a href="locations-and-service-types.html#rates">section 6.4</a>) price quotes automatically (<a href="transport-requests.html#quoting">section 3.3</a>); the service type’s default rate per ton is replaced by them. Trips take their value from the quote, record the delivered weight, quantity and distance, and follow the rate card on them (<a href="trips.html#creating-a-trip">sections 4.1</a> and <a href="trips.html#editing-a-trip-and-its-value">4.6</a>).</p>
@@ -83,6 +83,10 @@
 <p>Version 1.8 — November 2026. Trip types: requests and trips are One-way or Return empty (<a href="transport-requests.html#recording-a-request">sections 3.2</a> and <a href="trips.html#creating-a-trip">4.1</a>). A Return empty job has a return price, taken from the rate card (<a href="locations-and-service-types.html#rates">section 6.4</a>), shown as its own line on quotes (<a href="transport-requests.html#quoting">section 3.3</a>), trips (<a href="trips.html#the-trip-page">sections 4.3</a> and <a href="trips.html#editing-a-trip-and-its-value">4.6</a>) and invoices (<a href="invoices.html#creating-an-invoice">section 8.2</a>), and counted in trip profit.</p>
 <p>Version 1.9 — November 2026. Return loads: a second, linked trip for the same truck and driver, with its own client and invoice (section 4.9). Multi-drop trips: stops, an Extra drop charge for each stop after the first, and delivery stop by stop (section 4.10).</p>
 <p>Version 1.10 — November 2026. Multi-drop requests list their drops on the request form (<a href="transport-requests.html#recording-a-request">section 3.2</a>). The quote starts with an Extra drop charge for them, and the trip made from the request starts with the same stops (section 4.10).</p>
+<p>Version 1.11 — November 2026. The only active Admin can’t be deactivated or changed to another role (<a href="administration.html#users">section 13.1</a>). The Audit Log also records wrong passwords and lockouts (<a href="administration.html#audit-log">section 13.4</a>).</p>
+<p>Version 1.12 — November 2026. The base currency is now a company setting (GHS unless changed), so a company outside Ghana can run in its own home currency. It is locked once any financial record exists (<a href="accounts-and-cash-book.html#currencies-and-exchange-rates">sections 11.7</a> and <a href="administration.html#settings">13.2</a>).</p>
+<p>Version 1.13 — November 2026. Invoices take delivered trips only; bill in advance with a proforma (<a href="invoices.html#creating-an-invoice">section 8.2</a>). A trip on an invoice can’t be cancelled, and a trip can be deleted from its page (<a href="trips.html#cancelling-or-deleting-a-trip">section 4.7</a>). A truck and driver stay committed while their trip is Delivered (<a href="trips.html#moving-a-trip-through-its-stages">section 4.2</a>). On Reassign, an unticked truck goes to Maintenance and an unticked driver On Leave (<a href="trips.html#reassigning-a-truck-or-driver">section 4.4</a>). Draft invoices have a Delete button (<a href="invoices.html#issuing-editing-and-cancelling">section 8.3</a>).</p>
+<p>Version 1.14 — November 2026. Receipts open only for Admin and Finance, and an expense or quote that isn’t saved says why (<a href="trips.html#logging-trip-expenses">section 4.5</a>). A request is converted to a trip only once (<a href="trips.html#creating-a-trip">section 4.1</a>). A trip value typed by hand stays when stops change (section 4.10). Only a real change of money is logged as a financial override (<a href="trips.html#editing-a-trip-and-its-value">section 4.6</a>). Invoice lines need a quantity above 0 and a price of 0 or more (<a href="invoices.html#creating-an-invoice">section 8.2</a>). Revenue by service type is in the base currency with tax (<a href="reports.html#the-reports">section 12.1</a>). SVG logos with scripts are refused (<a href="administration.html#settings">section 13.2</a>).</p>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -90,14 +94,14 @@
   <span></span>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Haulage user manual · Version 1.10 · November 2026</p>
+  <p class="footer-manual">IBS Haulage user manual · Version 1.14 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
 </main>
 <aside class="on-this-page" aria-hidden="true"></aside>
 </div>
-<script src="search-index.js?v=86a6b1e0" defer></script>
+<script src="search-index.js?v=5e891a9b" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
