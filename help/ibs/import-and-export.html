@@ -112,6 +112,7 @@
 <p>“Export” buttons appear throughout the system — on Customer Transactions, Account Ledgers, the Audit Log, and most Reports (including Stock by Branch and the Expiry Report) — and download a CSV of whatever is currently filtered on screen. The sales export lists each line item once, with that line's share of any whole-cart discount, and — while truck &amp; driver recording is on — truck_number, driver_name, and driver_phone columns. The Reports → Sales Report export gets matching Truck, Driver, and Driver's Phone columns. Both the sales export and the purchases export (Finance → Purchases → “📤 Export Filtered”) have net_line_total, tax_percent, tax_amount, and gross_line_total columns; the purchases export also gives unit_cost_excl_tax. The customer and supplier exports include a tin column, and the Tax Report has its own export (<a href="reports.html#available-on-every-plan">section 19.1</a>). While selling services is on, the products export has type and price_at_sale columns; the stock exports leave services out.</p>
 <p>While branch prices are on, the products export has a branch_selling_price column for your branch, and the Branch Prices page has “Download Current Prices” for every branch you can price (<a href="products-and-categories.html#prices-at-each-branch">section 8.6</a>).</p>
 <p>Users who can't see profit (<a href="reports.html#who-sees-profit">section 19.4</a>) get the Stock Valuation, Top Selling, and Dead Stock exports without their profit columns, and can't export Profit &amp; Loss or Profit Margins.</p>
+<p>Exporting needs the Export Data permission; without it the Export buttons don't show. Exports that include cost prices (products, stock, Stock Valuation, Inventory, Dead Stock, Low Stock, and Expiry) also need See Cost Prices.</p>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -119,7 +120,7 @@
   <a class="pager-next" href="administration.html"><span class="pager-dir">Next</span><span class="pager-title">Administration</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.10 · October 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.12 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -129,7 +130,7 @@
   <ol><li class="lvl-2"><a href="#importing-data">Importing data</a></li><li class="lvl-2"><a href="#exporting-data">Exporting data</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=e5a4fc79" defer></script>
+<script src="search-index.js?v=3a290ddd" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>

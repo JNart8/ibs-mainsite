@@ -168,6 +168,30 @@
     "title": "5.3 Managing a purchase afterward"
   },
   {
+    "href": "purchases.html#supplier-bonuses",
+    "title": "5.4 Supplier bonuses"
+  },
+  {
+    "href": "purchases.html#supplier-bonuses-turning-it-on",
+    "title": "Turning it on"
+  },
+  {
+    "href": "purchases.html#supplier-bonuses-free-goods-on-an-invoice",
+    "title": "Free goods on an invoice"
+  },
+  {
+    "href": "purchases.html#supplier-bonuses-bonus-credit",
+    "title": "Bonus credit"
+  },
+  {
+    "href": "purchases.html#supplier-bonuses-where-bonuses-show",
+    "title": "Where bonuses show"
+  },
+  {
+    "href": "purchases.html#supplier-bonuses-turning-it-off",
+    "title": "Turning it off"
+  },
+  {
     "href": "customers.html",
     "title": "Chapter 6: Customers"
   },
@@ -208,8 +232,48 @@
     "title": "Where it shows"
   },
   {
+    "href": "customers.html#opening-debts-after-go-live",
+    "title": "After go-live"
+  },
+  {
     "href": "customers.html#opening-debts-correcting-a-mistake",
     "title": "Correcting a mistake"
+  },
+  {
+    "href": "customers.html#writing-off-a-debt",
+    "title": "6.4 Writing off a debt"
+  },
+  {
+    "href": "customers.html#writing-off-a-debt-writing-it-off",
+    "title": "Writing it off"
+  },
+  {
+    "href": "customers.html#writing-off-a-debt-where-it-shows",
+    "title": "Where it shows"
+  },
+  {
+    "href": "customers.html#writing-off-a-debt-if-they-pay-after-all",
+    "title": "If they pay after all"
+  },
+  {
+    "href": "customers.html#writing-off-a-debt-while-part-of-a-sale-is-written-off",
+    "title": "While part of a sale is written off"
+  },
+  {
+    "href": "customers.html#contra-a-customer-who-is-also-a-supplier",
+    "title": "6.5 Contra: a customer who is also a supplier"
+  },
+  {
+    "href": "customers.html#contra-a-customer-who-is-also-a-supplier-recording-a-contra",
+    "title": "Recording a contra"
+  },
+  {
+    "href": "customers.html#contra-a-customer-who-is-also-a-supplier-what-it-does",
+    "title": "What it does"
+  },
+  {
+    "href": "customers.html#contra-a-customer-who-is-also-a-supplier-reversing-a-contra",
+    "title": "Reversing a contra"
   },
   {
     "href": "suppliers.html",
@@ -648,6 +712,10 @@
     "title": "A menu item I expect to see is missing."
   },
   {
+    "href": "frequently-asked-questions.html#why-cant-i-see-cost-prices-or-stock-values",
+    "title": "Why can't I see cost prices or stock values?"
+  },
+  {
     "href": "frequently-asked-questions.html#i-voided-a-sale-purchase-by-mistake-can-i-undo-it",
     "title": "I voided a sale/purchase by mistake. Can I undo it?"
   },
@@ -730,6 +798,22 @@
   {
     "href": "frequently-asked-questions.html#why-does-a-purchase-say-its-covered-by-payments-on-the-suppliers-account",
     "title": "Why does a purchase say it's covered by payments on the supplier's account?"
+  },
+  {
+    "href": "frequently-asked-questions.html#we-cant-add-an-opening-debt-any-more",
+    "title": "We can't add an opening debt any more."
+  },
+  {
+    "href": "frequently-asked-questions.html#a-customer-will-never-pay-how-do-i-clear-the-debt",
+    "title": "A customer will never pay. How do I clear the debt?"
+  },
+  {
+    "href": "frequently-asked-questions.html#our-supplier-gave-us-free-goods-how-do-i-record-them",
+    "title": "Our supplier gave us free goods. How do I record them?"
+  },
+  {
+    "href": "frequently-asked-questions.html#a-business-we-sell-to-also-sells-to-us-can-we-cancel-out-what-we-owe-each-other",
+    "title": "A business we sell to also sells to us. Can we cancel out what we owe each other?"
   },
   {
     "href": "frequently-asked-questions.html#a-switch-in-settings-optional-features-says-its-included-in-another-plan",
