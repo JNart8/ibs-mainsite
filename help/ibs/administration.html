@@ -104,6 +104,7 @@
 <aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires roles.manage, and custom roles: included in Enterprise, an add-on on Growth, and not available on Core. With more than one branch, only company-wide users can add, change, or delete a role; a branch-level user can open the roles to look.</p>
 </div></aside>
 <p>Administration → Roles lists built-in roles (Admin, Staff, Cashier — these can't be deleted) alongside any custom roles you've created. “+ Add Role” opens a name field and a checkbox grid of permissions grouped by category.</p>
+<p>Most modules have a “Manage …” permission for using them, and separate permissions for their risky actions: editing and voiding purchases, changing prices, deleting records, correcting deposits, taking stock out, seeing cost prices, and giving discounts. Reports and exports have their own too. When these were added (version 1.12), every role that could already do an action kept it, so untick what a role shouldn't do. Everything a permission covers is refused, not only hidden.</p>
 <aside class="callout callout-note"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.25" r="1" fill="currentColor"/></svg><span>Note</span></p><div class="callout-body"><p>The Admin role can never lose the users.manage or roles.manage permissions — if unchecked, they're automatically re-added on save, so you can't accidentally lock yourself out. A role currently assigned to a user can't be deleted. When building a custom role for anyone who sells, remember to tick “Access Sales / POS.”</p>
 </div></aside>
 <h3 id="roles-and-permissions-built-in-role-defaults">Built-in role defaults<a class="anchor" href="#roles-and-permissions-built-in-role-defaults" aria-label="Link to this section">#</a></h3>
@@ -111,8 +112,8 @@
 <thead><tr><th scope="col">Role</th><th scope="col">Access</th></tr></thead>
 <tbody>
 <tr><td>Admin</td><td>Every permission in the system</td></tr>
-<tr><td>Staff</td><td>Everything except Users, Settings, Roles, Branches, Audit Log, Stock Transfers, Back-date Sales, Edit / Void Sales, and View Profit</td></tr>
-<tr><td>Cashier</td><td>POS and Sales (Access Sales / POS) — none of the management permissions. On Core and Growth, also Count Cash while Settings → “Cashiers can count the cash” is on.</td></tr>
+<tr><td>Staff</td><td>Everything except Users, Settings, Roles, Branches, Audit Log, Stock Transfers, Back-date Sales, Edit / Void Sales, View Profit, Reverse / Edit Account Transfers, Record Opening Debts After Go-Live, Write Off Customer Debts, and Set Off Customer and Supplier Debts</td></tr>
+<tr><td>Cashier</td><td>POS and Sales (Access Sales / POS) with Give Discounts at the POS, plus View Reports, Export Data, and See Cost Prices — none of the management permissions. On Core and Growth, also Count Cash while Settings → “Cashiers can count the cash” is on.</td></tr>
 </tbody></table></div>
 <h3 id="roles-and-permissions-full-permission-reference">Full permission reference<a class="anchor" href="#roles-and-permissions-full-permission-reference" aria-label="Link to this section">#</a></h3>
 <div class="table-wrap"><table>
@@ -124,23 +125,37 @@
 <tr><td>branches.manage</td><td>Manage Branches</td></tr>
 <tr><td>audit.view</td><td>View Audit Log (and the Dashboard's high-risk change alerts)</td></tr>
 <tr><td>products.manage</td><td>Manage Products</td></tr>
+<tr><td>products.prices</td><td>Change Selling Prices: an existing product's standard or branch price, on the product page and in the imports. Adding a product still sets its first price (<a href="products-and-categories.html#prices-at-each-branch">section 8.6</a>)</td></tr>
+<tr><td>products.delete</td><td>Delete / Reactivate Products (<a href="products-and-categories.html#deactivating-and-reactivating-a-product">section 8.3</a>)</td></tr>
+<tr><td>costs.view</td><td>See Cost Prices: cost prices, average costs, stock values, and margins on product, stock, category, supplier, and Dashboard pages, the Inventory, Dead Stock, Damaged Stock, and Stock Valuation reports, and exports with costs. Purchases always show what they cost</td></tr>
 <tr><td>categories.manage</td><td>Manage Categories</td></tr>
 <tr><td>stock.manage</td><td>Manage Stock (in/out/adjustments)</td></tr>
+<tr><td>stock.adjust</td><td>Stock Out &amp; Adjustments (<a href="stock-management.html#stock-out">sections 9.2</a> and <a href="stock-management.html#stock-adjustment">9.3</a>)</td></tr>
 <tr><td>stock.transfer</td><td>Transfer Stock Between Branches</td></tr>
 <tr><td>stock.mark_damaged</td><td>Mark Stock as Damaged (and clear a mistaken mark) — see <a href="stock-management.html#damaged-stock">section 9.4</a></td></tr>
 <tr><td>suppliers.manage</td><td>Manage Suppliers</td></tr>
+<tr><td>suppliers.delete</td><td>Delete / Deactivate Suppliers</td></tr>
 <tr><td>purchases.manage</td><td>Manage Purchases</td></tr>
+<tr><td>purchases.edit</td><td>Edit Purchases (<a href="purchases.html#managing-a-purchase-afterward">section 5.3</a>)</td></tr>
+<tr><td>purchases.void</td><td>Void Purchases (<a href="purchases.html#managing-a-purchase-afterward">section 5.3</a>)</td></tr>
 <tr><td>customers.manage</td><td>Manage Customers</td></tr>
+<tr><td>customers.delete</td><td>Delete Customers</td></tr>
+<tr><td>deposits.edit</td><td>Edit / Delete Deposits: correcting a customer's deposit or a payment made on a supplier's page</td></tr>
 <tr><td>transactions.manage</td><td>View Customer Transactions</td></tr>
 <tr><td>distributor.manage</td><td>Manage Direct Deliveries</td></tr>
 <tr><td>sales.access</td><td>Access Sales / POS (and proformas)</td></tr>
 <tr><td>sales.backdate</td><td>Back-date a sale in POS</td></tr>
 <tr><td>sales.edit</td><td>Edit / Void Sales (and cancel proformas)</td></tr>
+<tr><td>sales.discount</td><td>Give Discounts at the POS: line and sale discounts, on proformas, and in the sales import. A converted proforma keeps its discount (<a href="point-of-sale-pos.html#recording-a-sale">section 3.1</a>)</td></tr>
 <tr><td>financial_accounts.access</td><td>Access Financial Accounts</td></tr>
+<tr><td>transfers.edit</td><td>Reverse / Edit Account Transfers (<a href="financial-accounts.html#account-ledger">section 15.4</a>)</td></tr>
 <tr><td>cash.count</td><td>Count Cash: count a drawer at closing (<a href="financial-accounts.html#counting-the-cash">section 15.5</a>)</td></tr>
 <tr><td>expenses.manage</td><td>Manage Expenses</td></tr>
+<tr><td>expenses.delete</td><td>Delete Expenses</td></tr>
 <tr><td>suspense.manage</td><td>Manage the Suspense Account</td></tr>
 <tr><td>profit.view</td><td>View Profit: profit in reports, exports, and on the Dashboard (<a href="reports.html#who-sees-profit">section 19.4</a>)</td></tr>
+<tr><td>reports.view</td><td>View Reports: the Reports menu and every report (<a href="reports.html">Chapter 19</a>)</td></tr>
+<tr><td>data.export</td><td>Export Data: every Export button (<a href="import-and-export.html#exporting-data">section 20.2</a>)</td></tr>
 <tr><td>opening_debts.record</td><td>Record Opening Debts After Go-Live: add, delete, and import opening debts once the go-live date has passed (<a href="customers.html#opening-debts">section 6.3</a>)</td></tr>
 <tr><td>debts.write_off</td><td>Write Off Customer Debts, and reverse a write-off (<a href="customers.html#writing-off-a-debt">section 6.4</a>)</td></tr>
 <tr><td>debts.contra</td><td>Set Off Customer and Supplier Debts: record and reverse contras (<a href="customers.html#contra-a-customer-who-is-also-a-supplier">section 6.5</a>)</td></tr>
@@ -220,7 +235,7 @@
   <a class="pager-next" href="plan-tiers-and-feature-availability.html"><span class="pager-dir">Next</span><span class="pager-title">Plan Tiers &amp; Feature Availability</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.11 · November 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.12 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -230,7 +245,7 @@
   <ol><li class="lvl-2"><a href="#users">Users</a></li><li class="lvl-3"><a href="#users-creating-a-user">Creating a user</a></li><li class="lvl-3"><a href="#users-managing-an-existing-user">Managing an existing user</a></li><li class="lvl-2"><a href="#roles-and-permissions">Roles &amp; Permissions</a></li><li class="lvl-3"><a href="#roles-and-permissions-built-in-role-defaults">Built-in role defaults</a></li><li class="lvl-3"><a href="#roles-and-permissions-full-permission-reference">Full permission reference</a></li><li class="lvl-2"><a href="#branches">Branches</a></li><li class="lvl-2"><a href="#audit-log">Audit Log</a></li><li class="lvl-2"><a href="#settings">Settings</a></li><li class="lvl-2"><a href="#subscription">Subscription</a></li><li class="lvl-3"><a href="#subscription-renewing">Renewing</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=0dab7542" defer></script>
+<script src="search-index.js?v=3a290ddd" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
