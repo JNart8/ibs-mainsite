@@ -51,7 +51,7 @@
 <li><a href="point-of-sale-pos.html"><span class="n">3</span><span>Point of Sale (POS)</span></a></li>
 <li><a href="sales-history.html"><span class="n">4</span><span>Sales History</span></a></li>
 <li><a href="purchases.html"><span class="n">5</span><span>Purchases</span></a></li>
-<li class="is-current"><a href="customers.html" aria-current="page"><span class="n">6</span><span>Customers</span></a><ol class="nav-sections"><li><a href="#adding-a-customer"><span class="n">6.1</span>Adding a customer</a></li><li><a href="#the-customer-detail-page"><span class="n">6.2</span>The customer detail page</a></li><li><a href="#opening-debts"><span class="n">6.3</span>Opening debts</a></li></ol></li>
+<li class="is-current"><a href="customers.html" aria-current="page"><span class="n">6</span><span>Customers</span></a><ol class="nav-sections"><li><a href="#adding-a-customer"><span class="n">6.1</span>Adding a customer</a></li><li><a href="#the-customer-detail-page"><span class="n">6.2</span>The customer detail page</a></li><li><a href="#opening-debts"><span class="n">6.3</span>Opening debts</a></li><li><a href="#writing-off-a-debt"><span class="n">6.4</span>Writing off a debt</a></li><li><a href="#contra-a-customer-who-is-also-a-supplier"><span class="n">6.5</span>Contra: a customer who is also a supplier</a></li></ol></li>
 <li><a href="suppliers.html"><span class="n">7</span><span>Suppliers</span></a></li>
 <li><a href="products-and-categories.html"><span class="n">8</span><span>Products &amp; Categories</span></a></li>
 <li><a href="stock-management.html"><span class="n">9</span><span>Stock Management</span></a></li>
@@ -90,7 +90,7 @@
 <li>Click “Save Customer.”</li>
 </ol>
 <h2 id="the-customer-detail-page"><span class="num">6.2</span> The customer detail page<a class="anchor" href="#the-customer-detail-page" aria-label="Link to this section">#</a></h2>
-<p>Shows the customer's current balance and gives you: 📄 Statement, + Deposit, + Opening Debt, Credit Limit, and Edit.</p>
+<p>Shows the customer's current balance and gives you: 📄 Statement, + Deposit, Credit Limit, + Opening Debt (<a href="#opening-debts">section 6.3</a>), ⇄ Contra (<a href="#contra-a-customer-who-is-also-a-supplier">section 6.5</a>), and Edit. Debts written off (<a href="#writing-off-a-debt">section 6.4</a>) and contras are listed further down the page.</p>
 <h3 id="the-customer-detail-page-recording-a-deposit">Recording a deposit<a class="anchor" href="#the-customer-detail-page-recording-a-deposit" aria-label="Link to this section">#</a></h3>
 <ol>
 <li>Open the customer, click “+ Deposit.”</li>
@@ -139,8 +139,56 @@
 <li>Receivables (<a href="reports.html#advanced-reports-growth-and-enterprise-only">section 19.2</a>), aged from the owed-since date, and the Dashboard's receivables and overdue counts.</li>
 <li>Customer Transactions (<a href="customer-transactions.html">Chapter 16</a>), with the type Opening debt.</li>
 </ul>
+<h3 id="opening-debts-after-go-live">After go-live<a class="anchor" href="#opening-debts-after-go-live" aria-label="Link to this section">#</a></h3>
+<p>Once the business has gone live, a new debt should be a credit sale, so that stock, revenue, and tax are recorded. Set the day you started recording sales in IBS under Administration → Settings → General → <strong>Go-live date</strong>. While it's blank, nothing changes.</p>
+<p>Once it's set, an opening debt must be owed since before the go-live date, in the form and in the import. From the go-live date on, only roles with the <strong>Record Opening Debts After Go-Live</strong> permission (opening_debts.record; Admin by default) see “+ Opening Debt,” Delete, and “📋 Import Opening Debts.” Recording payments against opening debts is never locked. A go-live date in the future locks nothing until that day.</p>
 <h3 id="opening-debts-correcting-a-mistake">Correcting a mistake<a class="anchor" href="#opening-debts-correcting-a-mistake" aria-label="Link to this section">#</a></h3>
-<p>An opening debt entered by mistake can be deleted from the customer's page while nothing has been paid on it.</p>
+<p>An opening debt entered by mistake can be deleted from the customer's page while nothing has been paid or written off on it (after go-live, only with the permission above).</p>
+<h2 id="writing-off-a-debt"><span class="num">6.4</span> Writing off a debt<a class="anchor" href="#writing-off-a-debt" aria-label="Link to this section">#</a></h2>
+<p>When a customer will never pay what they owe, or you agree to take less, write off what won't be paid. It isn't a refund or a void: the goods were sold, so the sale and its revenue stand. No money moves, and it isn't an expense. The debt and the customer's balance owe less, and the Profit &amp; Loss shows it as <strong>Debts written off</strong>.</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires the Write Off Customer Debts permission (debts.write_off), which the Admin role has by default.</p>
+</div></aside>
+<h3 id="writing-off-a-debt-writing-it-off">Writing it off<a class="anchor" href="#writing-off-a-debt-writing-it-off" aria-label="Link to this section">#</a></h3>
+<ol>
+<li>Click “Write Off” on the sale's page, next to an opening debt on the customer's page, or next to the debt in Reports → Receivables.</li>
+<li>Enter the Amount to write off: all that's still owed, or the part they won't pay.</li>
+<li>Choose why: <strong>Bad debt</strong> (they won't pay) or <strong>Settled for less</strong> (you agreed to take less).</li>
+<li>Write a short Explanation, such as “customer closed the business in March,” and check the Date: the Profit &amp; Loss counts it on that day.</li>
+<li>Click “Write Off” and confirm.</li>
+</ol>
+<h3 id="writing-off-a-debt-where-it-shows">Where it shows<a class="anchor" href="#writing-off-a-debt-where-it-shows" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>The sale's page shows the amount written off in its summary, with the reason and who did it. A sale written off in full shows as Written off in the sales list.</li>
+<li>The customer's balance and statement, as a “Written off” line. Their page lists every write-off.</li>
+<li>Receivables no longer counts what was written off.</li>
+<li>The Profit &amp; Loss and its export: Debts written off, under Operating Expenses.</li>
+<li>Reports → 🧾 <strong>Debts Written Off</strong> (needs Manage Customers): every write-off in the period, by customer and by reason, and write-offs reversed in it.</li>
+<li>The Audit Log.</li>
+</ul>
+<h3 id="writing-off-a-debt-if-they-pay-after-all">If they pay after all<a class="anchor" href="#writing-off-a-debt-if-they-pay-after-all" aria-label="Link to this section">#</a></h3>
+<p>On the sale's or the customer's page, type why in the box next to the write-off and click “Reverse.” The debt is owed again, and an unspent deposit the customer holds pays it straight away; otherwise record the payment as usual. On the Profit &amp; Loss the reversal comes off the period it was made in, so earlier months don't change.</p>
+<h3 id="writing-off-a-debt-while-part-of-a-sale-is-written-off">While part of a sale is written off<a class="anchor" href="#writing-off-a-debt-while-part-of-a-sale-is-written-off" aria-label="Link to this section">#</a></h3>
+<p>A sale with part of it written off can't be edited or voided, because both rebuild what the sale owes and would undo the write-off. Reverse the write-off first. Likewise, an opening debt with a write-off can't be deleted.</p>
+<h2 id="contra-a-customer-who-is-also-a-supplier"><span class="num">6.5</span> Contra: a customer who is also a supplier<a class="anchor" href="#contra-a-customer-who-is-also-a-supplier" aria-label="Link to this section">#</a></h2>
+<p>When a business you sell to also sells to you, you can agree to cancel what it owes you against what you owe it, and pay or collect only the difference. A contra records this in one step. No money moves and profit doesn't change; only the two balances go down. Agree it in writing with the other business first.</p>
+<aside class="callout callout-access"><p class="callout-label"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8.75" width="12" height="8.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 8.75V6.5a3 3 0 0 1 6 0v2.25" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Who can do this</span></p><div class="callout-body"><p>Requires the Set Off Customer and Supplier Debts permission (debts.contra), which the Admin role has by default, and access to both customers and suppliers.</p>
+</div></aside>
+<h3 id="contra-a-customer-who-is-also-a-supplier-recording-a-contra">Recording a contra<a class="anchor" href="#contra-a-customer-who-is-also-a-supplier-recording-a-contra" aria-label="Link to this section">#</a></h3>
+<ol>
+<li>Click “⇄ Contra” on the customer's page (when they owe you) or on the supplier's page (when you owe them).</li>
+<li>Choose the Customer and the Supplier. Each list shows how much is owed.</li>
+<li>Enter the Amount: at most the smaller of the two debts.</li>
+<li>Enter the Agreement reference (required), such as the date of the signed letter, the Date, and optional Notes, and click “Record Contra.”</li>
+</ol>
+<p>For example, you owe Kofi Ltd 10,000 for cement and Kofi Ltd owes you 4,000 for goods it bought from you. A 4,000 contra clears what Kofi Ltd owes you and leaves 6,000 for you to pay them.</p>
+<h3 id="contra-a-customer-who-is-also-a-supplier-what-it-does">What it does<a class="anchor" href="#contra-a-customer-who-is-also-a-supplier-what-it-does" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>On the customer's side, it pays their oldest debts first, the way a deposit does (<a href="#the-customer-detail-page">section 6.2</a>). Their statement shows a “Contra” line.</li>
+<li>On the supplier's side, it's a payment on their account, counted against their oldest purchases and opening debts first (<a href="suppliers.html#opening-debts">section 7.3</a>). Their history shows it as a payment by Contra.</li>
+<li>Both pages list the contra. No financial account changes, and no report counts it as revenue, cost, or an expense.</li>
+</ul>
+<h3 id="contra-a-customer-who-is-also-a-supplier-reversing-a-contra">Reversing a contra<a class="anchor" href="#contra-a-customer-who-is-also-a-supplier-reversing-a-contra" aria-label="Link to this section">#</a></h3>
+<p>Type why in the box next to the contra and click “Reverse.” Both debts are owed again, both ledger lines are removed, and the contra stays on both pages, marked as reversed.</p>
 
   </article>
   <nav class="pager" aria-label="Previous and next chapters">
@@ -148,17 +196,17 @@
   <a class="pager-next" href="suppliers.html"><span class="pager-dir">Next</span><span class="pager-title">Suppliers</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.10 · October 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.11 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
 </main>
 <aside class="on-this-page" aria-label="On this page">
   <p class="otp-title">On this page</p>
-  <ol><li class="lvl-2"><a href="#adding-a-customer">Adding a customer</a></li><li class="lvl-2"><a href="#the-customer-detail-page">The customer detail page</a></li><li class="lvl-3"><a href="#the-customer-detail-page-recording-a-deposit">Recording a deposit</a></li><li class="lvl-3"><a href="#the-customer-detail-page-adjusting-a-credit-limit">Adjusting a credit limit</a></li><li class="lvl-2"><a href="#opening-debts">Opening debts</a></li><li class="lvl-3"><a href="#opening-debts-adding-an-opening-debt">Adding an opening debt</a></li><li class="lvl-3"><a href="#opening-debts-importing-opening-debts">Importing opening debts</a></li><li class="lvl-3"><a href="#opening-debts-paying-it-off">Paying it off</a></li><li class="lvl-3"><a href="#opening-debts-where-it-shows">Where it shows</a></li><li class="lvl-3"><a href="#opening-debts-correcting-a-mistake">Correcting a mistake</a></li></ol>
+  <ol><li class="lvl-2"><a href="#adding-a-customer">Adding a customer</a></li><li class="lvl-2"><a href="#the-customer-detail-page">The customer detail page</a></li><li class="lvl-3"><a href="#the-customer-detail-page-recording-a-deposit">Recording a deposit</a></li><li class="lvl-3"><a href="#the-customer-detail-page-adjusting-a-credit-limit">Adjusting a credit limit</a></li><li class="lvl-2"><a href="#opening-debts">Opening debts</a></li><li class="lvl-3"><a href="#opening-debts-adding-an-opening-debt">Adding an opening debt</a></li><li class="lvl-3"><a href="#opening-debts-importing-opening-debts">Importing opening debts</a></li><li class="lvl-3"><a href="#opening-debts-paying-it-off">Paying it off</a></li><li class="lvl-3"><a href="#opening-debts-where-it-shows">Where it shows</a></li><li class="lvl-3"><a href="#opening-debts-after-go-live">After go-live</a></li><li class="lvl-3"><a href="#opening-debts-correcting-a-mistake">Correcting a mistake</a></li><li class="lvl-2"><a href="#writing-off-a-debt">Writing off a debt</a></li><li class="lvl-3"><a href="#writing-off-a-debt-writing-it-off">Writing it off</a></li><li class="lvl-3"><a href="#writing-off-a-debt-where-it-shows">Where it shows</a></li><li class="lvl-3"><a href="#writing-off-a-debt-if-they-pay-after-all">If they pay after all</a></li><li class="lvl-3"><a href="#writing-off-a-debt-while-part-of-a-sale-is-written-off">While part of a sale is written off</a></li><li class="lvl-2"><a href="#contra-a-customer-who-is-also-a-supplier">Contra: a customer who is also a supplier</a></li><li class="lvl-3"><a href="#contra-a-customer-who-is-also-a-supplier-recording-a-contra">Recording a contra</a></li><li class="lvl-3"><a href="#contra-a-customer-who-is-also-a-supplier-what-it-does">What it does</a></li><li class="lvl-3"><a href="#contra-a-customer-who-is-also-a-supplier-reversing-a-contra">Reversing a contra</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=e5a4fc79" defer></script>
+<script src="search-index.js?v=0dab7542" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>

@@ -92,6 +92,8 @@
 <tr><td>Low Stock Alert</td><td>Products under their reorder level, with severity and days-until-stockout, filterable by category</td></tr>
 <tr><td>Expiry Report</td><td>Only while batch tracking is on. Every tracked batch, earliest expiry first: product, branch, batch no., expiry date, days to go, status, quantity, and value at cost. Summary cards for Expired, Expiring within N days, Unknown Expiry, and All Tracked Stock. Filter by status (default: “Needs attention”) and category.</td></tr>
 <tr><td>Damaged Stock</td><td>Only while damaged stock is switched on (<a href="stock-management.html#damaged-stock">section 9.4</a>). Damaged items in stock now, per product, with their value at cost and at the normal price. For a period: how many were marked damaged, sold (with their normal price, what they sold for, and the discount given), returned or written off, and cleared as a mistake. Filter by period and category.</td></tr>
+<tr><td>Supplier Bonuses</td><td>Only while supplier bonuses are switched on, for users who can manage purchases. Free goods and bonus credit from each supplier in the period, the credit left to spend, and the purchases behind them. See <a href="purchases.html#supplier-bonuses">section 5.4</a>.</td></tr>
+<tr><td>Debts Written Off</td><td>For users who can manage customers. Customer debts written off in the period, by customer and by reason, and write-offs reversed in it. See <a href="customers.html#writing-off-a-debt">section 6.4</a>.</td></tr>
 <tr><td>Tax Report</td><td>Tax charged on sales (output tax) and paid on purchases (input tax) for a period, each by rate, with the sales and purchases that carried no tax, and the Net tax payable (or refundable). Periods: This Month, Last Month, This Quarter, This Year, or a custom range. Print it, or export every taxed sale and purchase — with the customer's or supplier's TIN — to CSV.</td></tr>
 <tr><td>Daily Cash</td><td>Only with Access Financial Accounts. One cash drawer, day by day: cash brought forward, money in and out, money sent to the bank and mobile money, cash counts, and what's carried forward. See <a href="#daily-cash-report">section 19.5</a>.</td></tr>
 </tbody></table></div>
@@ -102,7 +104,7 @@
 <tbody>
 <tr><td>Receivables</td><td>Outstanding customer debt, with 0/30/60/90+ day aging buckets and risk level. Opening debts are aged from the date they're owed since (<a href="customers.html#opening-debts">section 6.3</a>).</td></tr>
 <tr><td>Payables</td><td>Outstanding supplier debt, sortable by amount, name, or age, including opening debts (<a href="suppliers.html#opening-debts">section 7.3</a>). Payments made on a supplier's page count against their oldest debts.</td></tr>
-<tr><td>Profit &amp; Loss Statement</td><td>Revenue, cost of goods sold, gross profit, operating expenses, and net profit for a period, with category breakdown, a daily trend, and comparison to the prior period. Only for those who can see profit (<a href="#who-sees-profit">section 19.4</a>).</td></tr>
+<tr><td>Profit &amp; Loss Statement</td><td>Revenue, cost of goods sold, gross profit, operating expenses, and net profit for a period, with category breakdown, a daily trend, and comparison to the prior period. Only for those who can see profit (<a href="#who-sees-profit">section 19.4</a>). Debts written off (<a href="customers.html#writing-off-a-debt">section 6.4</a>) are taken off net profit, and supplier bonuses received are noted under COGS (<a href="purchases.html#supplier-bonuses">section 5.4</a>).</td></tr>
 <tr><td>Dead Stock</td><td>Products with no sales in a chosen number of days (default 90) that are still holding stock value</td></tr>
 <tr><td>Profit Margins</td><td>Per-product margin analysis, sortable by margin, profit, or revenue. Only for those who can see profit (<a href="#who-sees-profit">section 19.4</a>).</td></tr>
 <tr><td>Customer Credit Settlement</td><td>Multi-branch only. When customers deposit money at one branch and spend it at another, this shows each branch's Deposits Issued, Credit Redeemed, amount already Settled, and Net Position — plus a Suggested Settlement table saying which branch should pay which, and how much.</td></tr>
@@ -163,7 +165,7 @@
   <a class="pager-next" href="import-and-export.html"><span class="pager-dir">Next</span><span class="pager-title">Import &amp; Export</span></a>
 </nav>
   <footer class="site-footer">
-  <p class="footer-manual">IBS Business Management user manual · Version 1.10 · October 2026</p>
+  <p class="footer-manual">IBS Business Management user manual · Version 1.11 · November 2026</p>
   <p class="footer-links"><a href="https://ibsolutionsglobal.com/">ibsolutionsglobal.com</a><a href="mailto:info@ibsolutionsglobal.com">info@ibsolutionsglobal.com</a></p>
   <p class="footer-base">© 2026 Implant Business Solutions (IB Solutions Global), Accra</p>
 </footer>
@@ -173,7 +175,7 @@
   <ol><li class="lvl-2"><a href="#available-on-every-plan">Available on every plan</a></li><li class="lvl-2"><a href="#advanced-reports-growth-and-enterprise-only">Advanced reports (Growth &amp; Enterprise only)</a></li><li class="lvl-2"><a href="#settling-customer-credit-between-branches">Settling customer credit between branches</a></li><li class="lvl-2"><a href="#who-sees-profit">Who sees profit</a></li><li class="lvl-2"><a href="#daily-cash-report">Daily Cash Report</a></li><li class="lvl-3"><a href="#daily-cash-report-one-day">One day</a></li><li class="lvl-3"><a href="#daily-cash-report-several-days">Several days</a></li><li class="lvl-3"><a href="#daily-cash-report-changed-since-counted">Changed since counted</a></li></ol>
 </aside>
 </div>
-<script src="search-index.js?v=e5a4fc79" defer></script>
+<script src="search-index.js?v=0dab7542" defer></script>
 <script src="../assets/help.js?v=84e48b29" defer></script>
 </body>
 </html>
