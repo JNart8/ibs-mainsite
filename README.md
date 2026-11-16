@@ -3,11 +3,12 @@
 The website of IB Solutions Global (Implant Business Solutions), Accra:
 IBS Business Management and IBS Haulage.
 
-A static site with no build step. To publish it, run the "Deploy website"
-workflow from the Actions tab: it uploads `index.html` and the `assets/`
-and `help/` folders to the web root over FTPS. The secrets it needs are listed at the
-top of `.github/workflows/deploy.yml`. Uploading the same files by hand
-works too.
+A static site with no build step. Every push to main publishes it through
+the "Deploy website" workflow (it can also be run by hand from the Actions
+tab): it uploads `index.html`, `404.html`, `.htaccess` and the `assets/`
+and `help/` folders to the web root on the Hostinger server over SSH
+(rsync). The secret it needs is listed at the top of
+`.github/workflows/deploy.yml`. Uploading the same files by hand works too.
 
 - `index.html`: the page
 - `404.html`: the "page not found" page; `.htaccess` tells the server to

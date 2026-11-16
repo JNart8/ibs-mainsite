@@ -1,22 +1,20 @@
-# Uploads the website to the live server over FTPS.
+# Uploads the website to the live server (Hostinger) over SSH with rsync.
 # It runs by itself on every push to main (merged pull requests included)
 # and deploys for real. Pushes that only change README.md don't deploy.
 # It can also be run by hand: Actions tab → "Deploy website" → Run
-# workflow. There "Dry run" is ticked by default: it logs in and lists
+# workflow. There "Dry run" is ticked by default: it connects and lists
 # what would be uploaded without changing anything.
 #
-# Required repo secrets (Settings → Secrets and variables → Actions):
-#   FTP_SERVER    e.g. ftp.ibsolutionsglobal.com
-#   FTP_USERNAME
-#   FTP_PASSWORD
-# Optional repo variable:
-#   FTP_SERVER_DIR  the web root as the FTP account sees it, ending in "/".
-#                   Defaults to "./" (an account whose root is the web root).
-#                   Use "public_html/" for the main cPanel account.
+# Required repo secret (Settings → Secrets and variables → Actions):
+#   SSH_PRIVATE_KEY  the private half of a key added in hPanel →
+#                    Advanced → SSH Access (named "ibs-github-deploy")
+# Optional repo variables, to override the defaults below:
+#   SSH_HOST, SSH_PORT, SSH_USER, DEPLOY_PATH (the web root, ending in "/"),
+#   SSH_KNOWN_HOSTS (the server's host key lines, if they ever change)
 #
-# index.html, 404.html, .htaccess, assets/ and help/ (the user manuals) are uploaded. Files already on the server
-# that this workflow didn't upload are never deleted. The first run
-# overwrites the old index.html, so back it up from cPanel first.
+# index.html, 404.html, .htaccess, assets/ and help/ (the user manuals) are
+# uploaded. Files already on the server that this workflow didn't upload are
+# never deleted: the app subdomains' folders live in the same web root.
 name: Deploy website
 
 on:
@@ -27,9 +25,12 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Dry run (log in and list changes, upload nothing)
+        description: Dry run (connect and list changes, upload nothing)
         type: boolean
         default: true
+
+permissions:
+  contents: read
 
 concurrency:
   group: deploy-website
@@ -38,6 +39,14 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      SSH_HOST: ${{ vars.SSH_HOST || '217.65.157.84' }}
+      SSH_PORT: ${{ vars.SSH_PORT || '65002' }}
+      SSH_USER: ${{ vars.SSH_USER || 'u795144365' }}
+      DEPLOY_PATH: ${{ vars.DEPLOY_PATH || '/home/u795144365/domains/ibsolutionsglobal.com/public_html/' }}
+      SSH_KNOWN_HOSTS: ${{ vars.SSH_KNOWN_HOSTS }}
+      # Pushes always deploy; a hand run follows its "Dry run" box
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
     steps:
       - uses: actions/checkout@v7
 
@@ -50,20 +59,46 @@ jobs:
           sed -i "s/site\.css?v=dev/site.css?v=$v/; s/site\.js?v=dev/site.js?v=$v/" index.html
           test "$(grep -c "?v=$v" index.html)" -eq 2
 
-      # Pinned to the v4.4.0 commit: this action receives the FTP password
-      - uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          server-dir: ${{ vars.FTP_SERVER_DIR || './' }}
-          # Pushes always deploy; a hand run follows its "Dry run" box
-          dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
-          # Excluded paths are never uploaded or deleted on the server
-          exclude: |
-            **/.git*
-            **/.git*/**
-            .github/**
-            README.md
-            **/.help-site-build
+      - name: Set up SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          if [ -z "$SSH_PRIVATE_KEY" ]; then
+            echo "::error::The SSH_PRIVATE_KEY secret isn't set. See the notes at the top of this workflow."
+            exit 1
+          fi
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          # The server's public host keys, so the deploy refuses to talk to an impostor.
+          if [ -n "$SSH_KNOWN_HOSTS" ]; then
+            printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          else
+            cat > ~/.ssh/known_hosts <<'EOF'
+          [217.65.157.84]:65002 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINqdAGuE4tw+pGdHVvOmgkZDTdcu+UzEvTHZ5YV7+0kt
+          [217.65.157.84]:65002 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPJn943pF+j+tJ26SSk33IuUzgFwy9waiKbu/4iIwh3SXAXgsDqfbTRTSreT5QxO+PXQRcdquNH2hlRJtRnoqW0=
+          EOF
+          fi
+          cat > ~/.ssh/config <<EOF
+          Host server
+            HostName $SSH_HOST
+            Port $SSH_PORT
+            User $SSH_USER
+            IdentityFile ~/.ssh/deploy_key
+            IdentitiesOnly yes
+            BatchMode yes
+            StrictHostKeyChecking yes
+          EOF
+          ssh server "test -d '$DEPLOY_PATH'" || { echo "::error::$DEPLOY_PATH isn't a folder on the server. Set the DEPLOY_PATH variable."; exit 1; }
+
+      # Only changed files are sent (compared by content). No --delete:
+      # nothing on the server is ever removed.
+      - name: Upload changed files
+        run: |
+          flags=""
+          [ "$DRY_RUN" = "true" ] && flags="--dry-run" && echo "Dry run: nothing will be changed."
+          rsync --recursive --perms --chmod=D755,F644 --compress --checksum \
+            --itemize-changes --stats $flags \
+            --exclude='.git*' --exclude='.help-site-build' \
+            index.html 404.html .htaccess assets help \
+            "server:$DEPLOY_PATH"
