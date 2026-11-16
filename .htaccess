@@ -1,2 +1,13 @@
 # Show the site's own page for addresses that don't exist
 ErrorDocument 404 /404.html
+
+# The app subdomains (haulage., salesapp., demo-business-management-system.,
+# license.) live in folders inside this web root on the host. Their code,
+# .env files and keys sit outside each app's public/ folder, so refuse any
+# request for those folders that arrives through the main domain. The
+# subdomains themselves are served from <app>/public and aren't affected.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^(www\.)?ibsolutionsglobal\.com$ [NC]
+  RewriteRule ^(haulage|salesapp|demo-business-management-system|license)(/|$) - [F,L]
+</IfModule>
